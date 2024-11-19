@@ -1,0 +1,35 @@
+@import 'src/styles/index';
+
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: gap(2);
+
+  padding: gap(2);
+  //margin: gap(2);
+  border-radius: gap(2);
+
+  background: #282828;
+
+  .board_row {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 140px minmax(100px, 1fr);
+    align-self: start;
+  }
+}
+
+.books {
+  display: flex;
+  flex-direction: column;
+  gap: gap(2);
+
+  .link {
+    display: block;
+  }
+
+  .link:hover {
+    text-decoration: underline;
+  }
+}
+

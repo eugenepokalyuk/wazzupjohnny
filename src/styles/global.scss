@@ -1,0 +1,76 @@
+@import 'fonts';
+@import 'themes';
+@import 'constants';
+@import 'text';
+
+:root {
+}
+
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  min-width: $width_min;
+
+  @include background-theme($background);
+  @include font_Nunito;
+
+  color: #ffffff;
+
+  font-weight: $regular;
+  text-decoration-skip-ink: none;
+
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+p,
+ol,
+ul {
+  margin: 0;
+  white-space: break-spaces;
+}
+
+h1,
+h2 {
+  font-weight: unset;
+}
+
+label {
+  cursor: unset;
+}
+
+input,
+textarea {
+  font-weight: $regular;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+img {
+  display: block;
+}

@@ -1,0 +1,129 @@
+@import 'src/styles/index';
+
+.box {
+  width: 100vw;
+  background: transparent;
+
+  padding: 0 gap(6);
+
+  @media (max-width: $width_md) {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+
+  z-index: $header_index;
+
+  @include glass($width_xlg);
+
+  padding: gap(5);
+
+  height: 90px;
+
+  position: relative;
+
+  @media (max-width: $width_lg) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 100px;
+  }
+
+  @media (max-width: $width_md) {
+    padding: gap(5) gap(4);
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+  }
+
+  .desktop {
+    flex: 1;
+
+    @media (max-width: $width_lg) {
+      display: none;
+    }
+  }
+
+  .burger {
+    display: none;
+
+    font-size: 24px;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+    cursor: pointer;
+
+    padding: gap(2);
+    transition: transform 0.3s ease;
+
+    z-index: 2;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+
+      path {
+        stroke: $primary;
+      }
+    }
+
+    @media (max-width: $width_lg) {
+      display: block;
+      z-index: 9999;
+    }
+  }
+
+  .mobile_menu {
+    display: none;
+
+    @media (max-width: $width_lg) {
+      display: block;
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      background-color: #333;
+      padding: gap(5);
+      display: flex;
+      flex-direction: column;
+      gap: gap(5);
+      z-index: 1000;
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        padding: gap(2) 0;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .mobile_buttons {
+        display: flex;
+        flex-direction: column;
+        gap: gap(4);
+      }
+    }
+  }
+}

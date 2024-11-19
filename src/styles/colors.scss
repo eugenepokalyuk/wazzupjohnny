@@ -1,0 +1,37 @@
+$primary: #44FF62;
+$accent: #5B51FF;
+$yellow: #FFE704;
+$black: #000000;
+$white: #ffffff;
+$purple: #4321FF;
+
+$blue: blue;
+
+$green: #38CE52;
+
+$background: #080B12;
+$background-1: #131824;
+$background-2: $purple;
+$background-3: rgba(255, 255, 255, 0.05);
+
+$light-gray: #333333;
+$gray-border: rgba(197, 197, 197, 0.2);
+
+$light-dark: #1B1E24;
+$dark-bg: #0F1116;
+$dark-gray: #2C2F36;
+
+$translucent-white: rgba(255, 255, 255, 0.1);
+$translucent-black: rgba(0, 0, 0, 0.6);
+
+$button-hover-bg: darken($primary, 10%);
+$button-disabled-bg: lighten($gray-border, 10%);
+
+$text-primary: $white;
+$text-secondary: lighten($light-gray, 10%);
+$text-muted: lighten($light-gray, 20%);
+$text-highlight: $yellow;
+
+$error: #FF4B4B;
+$warning: #FF9900;
+$success: $primary;
