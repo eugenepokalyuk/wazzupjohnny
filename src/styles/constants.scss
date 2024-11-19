@@ -1,0 +1,25 @@
+$width_xlg: 1440px;
+$width_lg: 1024px;
+$width_xmd: 960px;
+$width_md: 768px; //640px;
+$width_sm: 480px;
+$width_xsm: 400px;
+$width_xxsm: 340px;
+$width_min: 340px;
+
+$width_btn_3: 352px;
+$width_btn_2: 240px;
+$width_btn_1: 180px;
+
+$header_index: 100;
+
+$br_full: 9999px;
+$br_4: 16px;
+$br_3: 12px;
+$br_2: 8px;
+$br_1: 4px;
+
+@mixin glass($width) {
+  width: min(100%, #{$width});
+  margin: 0 auto;
+}

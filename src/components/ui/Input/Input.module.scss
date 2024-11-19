@@ -1,0 +1,38 @@
+@import 'src/styles/index';
+
+.input_container {
+  outline: 6px solid rgba(197, 197, 197, 0.2);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.input_label {
+  @include text_Default;
+
+  margin-bottom: 8px;
+  color: $light-gray;
+}
+
+.input {
+  @include font_Nunito;
+  @include text_Default;
+
+  height: 49px;
+
+  border: none;
+
+  padding: gap(3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #ffffff;
+
+  transition: opacity 0.3s ease;
+
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,10 @@
+@import 'src/styles/index';
+
+.box {
+  width: 100vw;
+  @include background-theme($background);
+
+  @media (max-width: $width_md) {
+    width: 100%;
+  }
+}

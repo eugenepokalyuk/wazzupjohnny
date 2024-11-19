@@ -1,0 +1,9 @@
+@import 'src/styles/index';
+
+.box {
+  z-index: 100;
+  display: block;
+
+  height: min-content;
+  padding: gap(4);
+}

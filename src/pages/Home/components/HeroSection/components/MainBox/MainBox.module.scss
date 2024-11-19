@@ -1,0 +1,52 @@
+@import 'src/styles/index';
+
+.box {
+  display: grid;
+  grid-template-columns: 100px 1fr auto; // Автоматическая ширина для wrapper
+  height: 100%;
+
+  .wrapper {
+    // TODO: исправить
+    z-index: 99999;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    width: 350px;
+    height: 100%;
+
+    &.hidden {
+      transform: translateX(100%);
+    }
+
+    .toggle_button {
+      position: absolute;
+      top: 20px;
+      left: -60px;
+      width: 50px;
+      height: 50px;
+
+      background-color: $background-1;
+      color: #fff;
+      border: none;
+      border-radius: $br_full;
+      cursor: pointer;
+      text-align: center;
+
+      &:hover {
+        background-color: lighten($background-1, 10%);
+      }
+    }
+
+    .icon {
+      transition: transform 0.3s ease-in-out;
+      transform: rotate(180deg);
+      font-size: 72px;
+
+      &.icon_open {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}

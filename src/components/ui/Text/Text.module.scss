@@ -1,0 +1,6 @@
+@import 'src/styles/index';
+
+.text {
+  @include font_Tickerbit;
+  font-size: 16px;
+}

@@ -1,0 +1,5 @@
+@import 'src/styles/index';
+
+.box {
+  @include glass($width_xlg);
+}

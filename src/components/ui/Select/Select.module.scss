@@ -1,0 +1,74 @@
+@import 'src/styles/index';
+
+.select_container {
+  outline: 6px solid rgba(197, 197, 197, 0.2);
+
+  position: relative;
+  user-select: none;
+}
+
+.select_wrapper {
+  @include font_Nunito;
+  @include text_Default;
+
+  padding: gap(3);
+
+  height: 49px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+
+  background: #ffffff;
+
+  gap: gap(2);
+}
+
+.selected_option {
+  color: #374151;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    color: $white;
+
+    path {
+      fill: #0F1116;
+    }
+  }
+}
+
+.options_list {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+
+  z-index: 1000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  background: #ffffff;
+}
+
+.option {
+  padding: 10px 20px;
+  @include text_Default;
+
+  color: #374151;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e7e7e7;
+  }
+}

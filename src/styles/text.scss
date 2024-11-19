@@ -1,0 +1,104 @@
+@import 'constants';
+
+$bold: 700;
+$semi_bold: 600;
+$medium: 500;
+$regular: 400;
+$light: 300;
+$extra_light: 200;
+$thin: 100;
+
+@mixin text_Title_big() {
+  font-size: 72.28px;
+  line-height: 75.82px;
+}
+
+@mixin text_Title() {
+  font-size: 48px;
+  line-height: 50.35px;
+}
+
+@mixin text_Title_small() {
+  font-size: 35px;
+}
+
+@mixin text_Subtitle() {
+  font-size: 40px;
+  line-height: 40px;
+}
+
+@mixin text_Default_v2() {
+  font-size: 24px;
+  line-height: 40px;
+}
+
+@mixin text_Default_v1() {
+  font-size: 22px;
+  line-height: 32px;
+}
+
+@mixin text_Default() {
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.06em;
+}
+
+@mixin text_Heading() {
+  font-size: 28px;
+  line-height: 67px;
+}
+
+@mixin text_Body_v1() {
+  font-size: 18px;
+  line-height: 19px;
+  letter-spacing: 0.06em;
+}
+
+@mixin text_Body() {
+  font-size: 16px;
+  line-height: 19.2px;
+  letter-spacing: 0.06em;
+}
+
+@mixin text_Body_small() {
+  font-size: 14px;
+  line-height: 33.6px;
+}
+
+// tablet
+
+@media (max-width: $width_md) {
+  @mixin text_Title_big() {
+    font-size: 64px;
+    line-height: 67px;
+  }
+}
+
+// mobile
+
+@media (max-width: $width_sm) {
+  @mixin text_Title_big() {
+    font-size: 35px;
+    line-height: 36.72px;
+  }
+
+  @mixin text_Title() {
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  @mixin text_Title_small() {
+    font-size: 20px;
+    line-height: 48px;
+  }
+
+  @mixin text_Subtitle() {
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+  @mixin text_Default_v1() {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}

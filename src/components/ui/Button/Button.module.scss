@@ -1,0 +1,94 @@
+@import 'src/styles/index';
+
+.button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 49px;
+  border-radius: gap(1);
+
+  cursor: pointer;
+  border: none;
+  overflow: hidden;
+
+  .icon {
+    margin-right: gap(2);
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: gap(4);
+      height: gap(4);
+    }
+  }
+
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.default {
+  @include font_Tickerbit;
+  @include text_Body;
+
+  padding: gap(3);
+}
+
+.medium {
+  @include font_Tickerbit;
+  height: 68px;
+
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 38.4px;
+  letter-spacing: 0.06em;
+
+  padding: gap(3) gap(11);
+
+
+  @media (max-width: $width_md) {
+    height: 49px;
+  }
+}
+
+.green {
+  @include button-theme($primary, $black, $gray-border);
+}
+
+.black {
+  @include button-theme($black, $white, $gray-border);
+}
+
+.black-green-border {
+  @include button-theme($black, $white, $gray-border);
+}
+
+.blue {
+  @include button-theme($accent, $white, $gray-border);
+}
+
+.white {
+  @include button-theme($white, $black, $gray-border);
+}
+
+.icon {
+  background-color: transparent;
+  color: transparent;
+  border-color: transparent;
+  outline-color: transparent;
+}
+
+@media (max-width: $width_md) {
+  .button {
+    @include text_Body;
+    padding: gap(3);
+  }
+}
+
+.wide {
+  width: 100%;
+}

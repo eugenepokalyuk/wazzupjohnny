@@ -1,0 +1,44 @@
+@import 'src/styles/index';
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.spinner {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-left-color: $primary;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.medium {
+  width: 60px;
+  height: 60px;
+}
+
+.small {
+  width: 40px;
+  height: 40px;
+}
+
+.xs {
+  width: 30px;
+  height: 30px;
+}
+
+.green {
+  border-left-color: $primary;
+}
+
+.black {
+  border-left-color: black;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

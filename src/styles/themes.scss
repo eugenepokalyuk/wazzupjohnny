@@ -1,0 +1,12 @@
+@import './colors.scss';
+
+@mixin background-theme($bg-color) {
+  background-color: $bg-color;
+}
+
+
+@mixin button-theme($bg-color, $text-color, $border-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  outline-color: $border-color;
+}
