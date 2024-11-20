@@ -1,16 +1,24 @@
 import { FC } from 'react';
 import clsx from 'clsx';
+
+import { Size, Variant } from '@components/ui';
+
 import classes from './Loader.module.scss';
 
 interface LoaderProps {
-  size?:'xs'|'small'|'medium';
-  color?:'green'|'black';
+  size?:Size;
+  variant?:Variant;
 }
 
-export const Loader:FC<LoaderProps> = ({ size = 'medium', color = 'green' }) => {
-  return (
-    <div className={classes.loader}>
-      <div className={clsx(classes.spinner, classes[size], classes[color])}></div>
-    </div>
-  );
-};
+export const Loader:FC<LoaderProps> = ({
+                                         size = Size.MD,
+                                         variant = Variant.Default,
+                                         ...props
+                                       }) => (
+  <div
+    className={clsx(classes.loader, classes[size], classes[variant])}
+    {...props}
+  >
+    <div className={classes.spinner}></div>
+  </div>
+);

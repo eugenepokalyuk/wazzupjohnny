@@ -1,0 +1,27 @@
+@import 'src/styles/index';
+
+.cardFooter {
+  @include card-theme(transparent, $br_6, gap(4));
+
+  // Sizes
+
+  &.xs {
+    padding: gap(1);
+  }
+
+  &.sm {
+    padding: gap(2);
+  }
+
+  &.md {
+    padding: gap(3);
+  }
+
+  &.lg {
+    padding: gap(4);
+  }
+
+  &.xl {
+    padding: gap(5);
+  }
+}

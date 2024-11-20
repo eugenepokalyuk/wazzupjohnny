@@ -1,12 +1,26 @@
 @import './colors.scss';
+@import './mixins.scss';
 
 @mixin background-theme($bg-color) {
   background-color: $bg-color;
 }
 
-
 @mixin button-theme($bg-color, $text-color, $border-color) {
   background-color: $bg-color;
   color: $text-color;
-  outline-color: $border-color;
+  border-color: $border-color;
+
+  @include brightness-effects();
+}
+
+@mixin card-theme($bg-color, $border-radius, $padding) {
+  background-color: $bg-color;
+  border-radius: $border-radius;
+  padding: $padding;
+}
+
+@mixin toast-theme($bg-color, $text-color, $box-shadow) {
+  background-color: $bg-color;
+  color: $text-color;
+  box-shadow: $box-shadow;
 }

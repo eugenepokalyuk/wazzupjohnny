@@ -4,10 +4,10 @@ export const config = {
   mouseStiffness: 0.2,
   defaultFontSizeRatio: 0.08,
   largeFontSizeRatio: 0.12,
-  smallFontSizeRatio: 0.04,
+  smallFontSizeRatio: 0.05,
   leadingRatio: 0.8,
-  fontFamily: 'Angus, Arial, sans-serif',
-  fontWeight: 400,
+  fontFamily: 'Unbounded, monospace',
+  fontWeight: 500,
   rectangleCornerRadius: 20,
   textTranslationY: 6,
 };

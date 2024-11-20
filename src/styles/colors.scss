@@ -1,37 +1,55 @@
-$primary: #44FF62;
-$accent: #5B51FF;
-$yellow: #FFE704;
-$black: #000000;
-$white: #ffffff;
-$purple: #4321FF;
+// project colors
+$primary: #B0FF00;
+$accent: #FFD829;
+$secondary: #262626;
+$default: #f5f5f5;
 
-$blue: blue;
+$pack-color: #B0FF00;
+$logo-color: #7C97C5;
 
-$green: #38CE52;
+// base colors
+$white: #fff;
+$gray: #5a5a5a;
+$black: #000;
+$yellow: #FFD600;
 
-$background: #080B12;
-$background-1: #131824;
-$background-2: $purple;
-$background-3: rgba(255, 255, 255, 0.05);
+// backgrounds
+$background: #222;
+$background_1: #262626;
+$background-main: #DFEBFF;
+$background-white: #FFFFFF;
 
-$light-gray: #333333;
-$gray-border: rgba(197, 197, 197, 0.2);
+// text
+$text-default: $white;
+$text-primary: $black;
+$text-secondary: $gray;
 
-$light-dark: #1B1E24;
-$dark-bg: #0F1116;
-$dark-gray: #2C2F36;
+$text-white: $white;
+$text-black: $black;
+$text-yellow: $yellow;
 
-$translucent-white: rgba(255, 255, 255, 0.1);
-$translucent-black: rgba(0, 0, 0, 0.6);
-
-$button-hover-bg: darken($primary, 10%);
-$button-disabled-bg: lighten($gray-border, 10%);
-
-$text-primary: $white;
-$text-secondary: lighten($light-gray, 10%);
-$text-muted: lighten($light-gray, 20%);
-$text-highlight: $yellow;
-
-$error: #FF4B4B;
-$warning: #FF9900;
+// status
+$error: #ff4b4b;
+$warning: #ff9900;
 $success: $primary;
+
+// animations
+$transition-duration: 0.3s;
+$transition-ease: ease;
+$transition: all $transition-duration $transition-ease;
+
+// shadows
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+// hover
+
+// active
+
+// skeleton
+$skeleton-bg-default: #e0e0e0;
+$skeleton-bg-primary: #bbdefb;
+$skeleton-bg-secondary: #c8e6c9;
+$skeleton-bg-accent: #ffcdd2;
+
+// button
+$button-main: #e2e2e2;

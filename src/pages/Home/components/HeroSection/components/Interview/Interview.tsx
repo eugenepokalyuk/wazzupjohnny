@@ -1,9 +1,13 @@
 import { FC } from 'react';
 
+import { Tags, Text } from '@components/ui';
+
 import classes from './Interview.module.scss';
 
 export const Interview: FC = () => (
   <div className={classes.box}>
-    <h1>{'Привет! Меня зовут Евгений. Я занимаюсь фронтенд разработкой'}</h1>
+    <Text tag={Tags.Heading} className={classes.title}>
+      {'Привет! Меня зовут\nЕвгений. Я занимаюсь\nфронтенд разработкой'}
+    </Text>
   </div>
 );

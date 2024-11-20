@@ -1,0 +1,62 @@
+@import 'src/styles/index';
+
+.title_box {
+  display: flex;
+  flex-direction: column;
+  gap: gap(4);
+  margin-bottom: gap(6);
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: gap(4);
+  margin-bottom: gap(20);
+
+  &.even {
+    flex-direction: row;
+  }
+
+  &.odd {
+    flex-direction: row-reverse;
+  }
+
+  @include md_down() {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &.even, &.odd {
+      flex-direction: column;
+    }
+
+    .image, .text {
+      width: 100%;
+    }
+  }
+}
+
+.image {
+  width: 50%;
+  border-radius: $br_4;
+  box-shadow: $box-shadow;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: gap(2);
+  width: 50%;
+}
+
+.links {
+  margin-top: gap(2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: gap(2);
+
+  a {
+    text-decoration: none;
+  }
+}

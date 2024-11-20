@@ -1,0 +1,15 @@
+@import './colors.scss';
+
+@mixin brightness-effects($hover-brightness: 0.8, $active-brightness: 0.6) {
+  transition: $transition;
+
+  &:hover {
+    -webkit-filter: brightness($hover-brightness);
+    filter: brightness($hover-brightness);
+  }
+
+  &:active {
+    -webkit-filter: brightness($active-brightness);
+    filter: brightness($active-brightness);
+  }
+}

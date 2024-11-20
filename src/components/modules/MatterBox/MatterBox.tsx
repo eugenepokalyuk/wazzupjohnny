@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { FC, useEffect, useRef } from 'react';
-import Two, { Rectangle } from 'two.js';
+import Two from 'two.js';
 import { Bodies, Body, Engine, Mouse, MouseConstraint, World } from 'matter-js';
 
 import { Skill } from '@services/Api';
@@ -12,21 +12,15 @@ interface Props {
   skills: Skill[];
 }
 
-interface TwoText extends Text {
-  isWord?: boolean;
-  rectangle?: typeof Rectangle;
-  entity?: Body;
-}
-
 interface Bounds {
   length: number;
   thickness: number;
   properties: {
     isStatic: boolean;
   };
-  left?: { entity: Body };
-  right?: { entity: Body };
-  bottom?: { entity: Body };
+  left?: { entity: Body; rectangle: typeof Two.Rectangle };
+  right?: { entity: Body; rectangle: typeof Two.Rectangle };
+  bottom?: { entity: Body; rectangle: typeof Two.Rectangle };
 }
 
 export const MatterBox: FC<Props> = ({ skills }) => {
@@ -35,9 +29,8 @@ export const MatterBox: FC<Props> = ({ skills }) => {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const vector = new Two.Vector();
+    const vector = new Two.Vector(0, 0);
     const entities: Body[] = [];
-    let mouse: MouseConstraint | undefined;
 
     const two = new Two({
       type: Two.Types.canvas,
@@ -48,7 +41,7 @@ export const MatterBox: FC<Props> = ({ skills }) => {
     }).appendTo(containerRef.current);
 
     const solver = Engine.create();
-    solver.world.gravity.y = 1;
+    solver.world.gravity.y = config.gravity;
 
     const bounds: Bounds = {
       length: containerRef.current.clientWidth,
@@ -62,18 +55,20 @@ export const MatterBox: FC<Props> = ({ skills }) => {
     bounds.right = createBoundary(bounds.thickness, bounds.length);
     bounds.bottom = createBoundary(bounds.length, bounds.thickness);
 
-    World.add(solver.world, [
-      bounds.left.entity,
-      bounds.right.entity,
-      bounds.bottom.entity,
-    ]);
+    if (bounds.left && bounds.right && bounds.bottom) {
+      World.add(solver.world, [
+        bounds.left.entity,
+        bounds.right.entity,
+        bounds.bottom.entity,
+      ]);
+    }
 
     const defaultStyles = {
       size: two.width * config.defaultFontSizeRatio,
       weight: config.fontWeight,
       fill: 'white',
       leading: two.width * config.defaultFontSizeRatio * config.leadingRatio,
-      family: 'Angus, Arial, sans-serif',
+      family: config.fontFamily,
       alignment: 'center' as const,
       baseline: 'baseline' as const,
       margin: {
@@ -88,7 +83,7 @@ export const MatterBox: FC<Props> = ({ skills }) => {
 
     resize();
 
-    mouse = addMouseInteraction();
+    addMouseInteraction();
 
     two.bind('resize', resize).bind('update', update);
 
@@ -110,7 +105,7 @@ export const MatterBox: FC<Props> = ({ skills }) => {
     function resize() {
       const thickness = bounds.thickness;
 
-      vector.x = -thickness / 2;
+      vector.x = (-thickness + 200) / 2;
       vector.y = two.height / 2;
       Body.setPosition(bounds.left!!.entity, vector);
 
@@ -129,24 +124,29 @@ export const MatterBox: FC<Props> = ({ skills }) => {
       const leading = size * config.leadingRatio;
 
       two.scene.children.forEach((child) => {
-        if ((child as TwoText).isWord && child.text) {
-          const text = (child as TwoText).text;
+        if (child.isWord && child.text) {
+          const text = child.text;
           text.size = size;
           text.leading = leading;
 
           const rect = text.getBoundingClientRect(true);
-          const rectangle = (child as TwoText).rectangle;
-          const entity = (child as TwoText).entity;
+          const rectangle = child.rectangle;
+          const entity = child.entity;
 
           if (rectangle && entity) {
-            rectangle.width = rect.width;
+            rectangle.width = rect.width / 2;
             rectangle.height = rect.height;
 
             Body.scale(entity, 1 / entity.scale.x, 1 / entity.scale.y);
-            Body.scale(entity, rect.width, rect.height);
-            entity.scale.set(rect.width, rect.height);
+            Body.scale(entity, rect.width / 2, rect.height);
+            entity.scale.set(rect.width / 2, rect.height);
 
             text.size = size / 3;
+
+            Body.set(entity, {
+              width: rect.width / 2,
+              height: rect.height,
+            });
           }
         }
       });
@@ -157,7 +157,7 @@ export const MatterBox: FC<Props> = ({ skills }) => {
       let y = -two.height;
 
       skills.forEach(({ name, color, backgroundColor }) => {
-        const group = new Two.Group() as TwoText;
+        const group = new Two.Group() as Text;
         const text = new Two.Text(name, 0, 0, {
           ...defaultStyles,
           fill: color,
@@ -166,36 +166,37 @@ export const MatterBox: FC<Props> = ({ skills }) => {
         group.isWord = true;
 
         const rect = text.getBoundingClientRect();
-        const ox = x + rect.width / 2;
-        const oy = y + rect.height / 2;
 
         if (x + rect.width >= two.width) {
           x = defaultStyles.margin.left;
           y += defaultStyles.leading;
         }
 
+        const ox = x + rect.width / 2;
+        const oy = y + rect.height / 2;
+
         group.translation.set(ox, oy);
-        text.translation.y = 6;
+
+        text.translation.y = config.textTranslationY;
 
         const rectangle = new Two.RoundedRectangle(
           0,
           0,
           rect.width,
           rect.height,
-          20,
+          config.rectangleCornerRadius,
         );
 
         rectangle.fill = backgroundColor;
         rectangle.noStroke();
 
-        const entity = Bodies.rectangle(ox, oy, 1, 1);
-        // const entity = Bodies.rectangle(ox, oy, rect.width, rect.height);
+        const entity: Text = Bodies.rectangle(ox, oy, 1, 1);
 
         Body.scale(entity, rect.width, rect.height);
         entity.scale = new Two.Vector(rect.width, rect.height);
         entity.object = group;
 
-        const randomAngle = (Math.random() * 30 - 15) * (Math.PI / 180); // В радианах
+        const randomAngle = (Math.random() * 30 - 15) * (Math.PI / 180);
         Body.setAngle(entity, randomAngle);
 
         entities.push(entity);
@@ -215,7 +216,7 @@ export const MatterBox: FC<Props> = ({ skills }) => {
     function update() {
       Engine.update(solver);
 
-      entities.forEach((entity) => {
+      entities.forEach((entity: Text) => {
         if (entity.object) {
           entity.object.position.copy(entity.position);
           entity.object.rotation = entity.angle;
@@ -228,17 +229,9 @@ export const MatterBox: FC<Props> = ({ skills }) => {
 
       rectangle.visible = false;
 
-      rectangle.entity = Bodies.rectangle(
-        0,
-        0,
-        width,
-        height,
-        bounds.properties,
-      );
+      const entity = Bodies.rectangle(0, 0, width, height, bounds.properties);
 
-      rectangle.entity.position = rectangle.position;
-
-      return rectangle;
+      return { rectangle, entity };
     }
 
     return () => {

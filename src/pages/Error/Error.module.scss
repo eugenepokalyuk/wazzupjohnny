@@ -1,0 +1,26 @@
+.box {
+  display: grid;
+  place-items: center;
+  height: 100svh;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 360px;
+    height: 180px;
+  }
+
+  .card_content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 0;
+
+    h1, p {
+      color: #fff;
+    }
+  }
+}

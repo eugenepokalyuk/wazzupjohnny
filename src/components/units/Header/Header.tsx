@@ -1,35 +1,73 @@
-import { FC, useState } from 'react';
-import { useLocation } from 'react-router';
+import { FC, useEffect, useState } from 'react';
 
-import { Button, CloseIcon, HamburgerIcon } from '@components/ui';
+import { Link, MenuCloseIcon, MenuOpenIcon } from '@components/ui';
+import { Urls } from '@services/Route';
 
-import classes from './Header.module.scss';
-import { NavigationMobile } from './components/NavigationMobile/NavigationMobile';
 import { NavigationDesktop } from './components/NavigationDesktop/NavigationDesktop';
+import { NavigationMobile } from './components/NavigationMobile/NavigationMobile';
+import classes from './Header.module.scss';
 
-export const Header:FC = () => {
-  const location = useLocation();
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+export interface RouteLink {
+  key: string;
+  url: string;
+  label: string;
+}
 
-  const isActive = (path:string) => location.pathname === path;
+export const Header: FC = () => {
+  const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const handleMenuToggle = () => {
+    setMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
+  const RouteLinks: RouteLink[] = [
+    {
+      key: Urls.Projects,
+      url: Urls.Projects,
+      label: 'Проекты',
+    },
+    {
+      key: Urls.About,
+      url: Urls.About,
+      label: 'Самопрезентация',
+    },
+    {
+      key: Urls.WishList,
+      url: Urls.WishList,
+      label: 'Список желаний',
+    },
+    {
+      key: Urls.Articles,
+      url: Urls.Articles,
+      label: 'Статьи',
+    },
+  ];
 
   return (
     <header className={classes.box}>
-      <nav className={classes.header}>
-        <div className={classes.desktop}>
-          <NavigationDesktop isActive={isActive} />
-        </div>
+      <div className={classes.logo}>
+        <Link to={Urls.Home}>{'wazzupjohnny'}</Link>
+      </div>
 
-        <Button className={classes.burger} size="icon" onClick={toggleMenu}>
-          {isMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
-        </Button>
+      <NavigationDesktop RouteLinks={RouteLinks} />
 
-        {isMenuOpen && <NavigationMobile toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />}
-      </nav>
+      <div className={classes.burger_menu} onClick={handleMenuToggle}>
+        {isMenuOpen ? <MenuCloseIcon /> : <MenuOpenIcon />}
+      </div>
+
+      {isMenuOpen && <NavigationMobile RouteLinks={RouteLinks} />}
     </header>
   );
 };

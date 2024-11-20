@@ -1,51 +1,35 @@
 import { FC } from 'react';
+import { useLocation } from 'react-router';
 
-import { Urls } from '@services/Route';
-import { Link } from '@components/ui';
+import { RouteLink } from '@components/units';
+import { Link, Size, Tags, Text } from '@components/ui';
 
 import classes from './NavigationDesktop.module.scss';
+import clsx from 'clsx';
 
 interface Props {
-  isActive: (path: string) => boolean;
+  RouteLinks: RouteLink[];
 }
 
-export const NavigationDesktop: FC<Props> = ({ isActive }) => (
-  <nav className={classes.nav_links}>
-    <div className={classes.links}>
-      <Link
-        to={Urls.Home}
-        className={isActive(Urls.Home) ? classes.active : ''}
-      >
-        {'Home'}
-      </Link>
+export const NavigationDesktop: FC<Props> = ({ RouteLinks }) => {
+  const location = useLocation();
 
-      <Link
-        to={Urls.Projects}
-        className={isActive(Urls.Projects) ? classes.active : ''}
-      >
-        {'Projects'}
-      </Link>
-
-      <Link
-        to={Urls.SelfPresentation}
-        className={isActive(Urls.SelfPresentation) ? classes.active : ''}
-      >
-        {'Self-presentation'}
-      </Link>
-
-      <Link
-        to={Urls.Goodies}
-        className={isActive(Urls.Goodies) ? classes.active : ''}
-      >
-        {'Goodies'}
-      </Link>
-
-      <Link
-        to={Urls.About}
-        className={isActive(Urls.About) ? classes.active : ''}
-      >
-        {'About'}
-      </Link>
-    </div>
-  </nav>
-);
+  return (
+    <nav className={classes.nav_links}>
+      {RouteLinks.map((link) => (
+        <Link
+          key={link.key}
+          to={link.url}
+          className={clsx(
+            classes.link,
+            location.pathname === link.url ? classes.active : null,
+          )}
+        >
+          <Text tag={Tags.Heading_2} size={Size.LG}>
+            {link.label}
+          </Text>
+        </Link>
+      ))}
+    </nav>
+  );
+};

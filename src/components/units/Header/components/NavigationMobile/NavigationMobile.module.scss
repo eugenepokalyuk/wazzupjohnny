@@ -1,58 +1,24 @@
 @import 'src/styles/index';
 
 .mobile_menu {
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100vh;
-
-  background-color: $background;
-
-  padding: gap(5);
+  position: absolute;
+  top: 60px;
+  right: 0;
+  z-index: 1000;
 
   display: flex;
   flex-direction: column;
-  gap: gap(5);
+  gap: gap(4);
 
-  z-index: 999;
+  width: 100%;
+  height: calc(100dvh - 30px);
 
-  .logo_wrapper {
-    height: 65px;
+  background-color: $background;
+  padding: gap(4);
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .menu_links {
-    @include font_Tickerbit;
-
-    display: flex;
-    flex-direction: column;
-    gap: gap(2);
-
-    padding: gap(5) gap(7);
-
-    background: $background-3;
-
-    a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      padding: gap(2) 0;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  .mobile_buttons {
-    display: flex;
-    flex-direction: column;
-    gap: gap(4);
-  }
+.mobile_menu_link {
+  border: 2px solid $gray;
+  padding: gap(4);
+  border-radius: $br_2;
 }

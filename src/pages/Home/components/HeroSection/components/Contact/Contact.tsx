@@ -1,10 +1,10 @@
 import { FC } from 'react';
 
-import Avatar from '@public/images/avatar.png';
 import { GitHubIcon, Link, TelegramIcon } from '@components/ui';
+import Avatar from '@public/images/avatar.png';
+import { Links } from '@utils/constants';
 
 import classes from './Contact.module.scss';
-import { Links } from '@utils/constants';
 
 export const Contact: FC = () => (
   <div className={classes.box}>

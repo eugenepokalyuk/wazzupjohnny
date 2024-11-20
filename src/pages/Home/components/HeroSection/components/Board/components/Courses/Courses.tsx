@@ -4,14 +4,13 @@ import { Link, Text } from '@components/ui';
 
 import classes from './Courses.module.scss';
 import { CoursesMock } from './Courses.mock';
+import { BoardCard } from '../BoardCard/BoardCard';
 
 export const Courses: FC = () => (
-  <div className={classes.board}>
-    <Text>{'Прошел крутые курсы'}</Text>
-
+  <BoardCard title="Прошел крутые курсы">
     {CoursesMock.map((course, index) => (
       <div key={index} className={classes.board_row}>
-        <Text>{course.title}</Text>
+        <Text className={classes.category_title}>{course.title}</Text>
 
         <div className={classes.lessons}>
           {course.lessons.map((lesson, lessonIndex) => (
@@ -22,5 +21,5 @@ export const Courses: FC = () => (
         </div>
       </div>
     ))}
-  </div>
+  </BoardCard>
 );

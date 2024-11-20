@@ -1,51 +1,55 @@
-import { FC, ReactNode } from 'react';
+import { ButtonHTMLAttributes, FC, ReactNode } from 'react';
 import clsx from 'clsx';
 
-import { Loader } from '@components/ui';
+import { Loader, Size, Variant } from '@components/ui';
 
 import classes from './Button.module.scss';
 
-interface Props {
-  onClick?: () => void;
-  className?: string;
-  variant?: 'green' | 'black' | 'black-green-border' | 'blue' | 'white';
-  size?: 'default' | 'medium' | 'icon';
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  size?: Size;
+  variant?: Variant;
   icon?: ReactNode;
   isLoading?: boolean;
-  children: ReactNode;
   wide?: boolean;
+  outline?: boolean;
+  onClick?: () => void;
+  disabled?: boolean;
 }
 
 export const Button: FC<Props> = ({
-  onClick,
-  className,
-  variant = 'green',
-  size = 'default',
+  size = Size.MD,
+  variant = Variant.Default,
   icon,
   isLoading = false,
+  wide = false,
+  outline = false,
+  onClick,
+  disabled = false,
   children,
-  wide,
-}) => {
-  return (
-    <button
-      className={clsx(
-        classes.button,
-        classes[variant],
-        classes[size],
-        wide && classes.wide,
-        className,
-      )}
-      onClick={onClick}
-      disabled={isLoading}
-    >
-      {isLoading ? (
-        <Loader size="xs" color="black" />
-      ) : (
-        <>
-          {icon && <span className={classes.icon}>{icon}</span>}
-          {children}
-        </>
-      )}
-    </button>
-  );
-};
+  ...props
+}) => (
+  <button
+    className={clsx(
+      props.className,
+      classes.button,
+      classes[size],
+      classes[variant],
+      { [classes.wide]: wide },
+      { [classes.loading]: isLoading },
+      { [classes.disabled]: disabled },
+      { [outline ? classes.outline : classes.filled]: true },
+    )}
+    onClick={onClick}
+    disabled={disabled || isLoading}
+  >
+    {isLoading ? (
+      <Loader />
+    ) : (
+      <>
+        {icon && <span className={classes.icon}>{icon}</span>}
+
+        {children}
+      </>
+    )}
+  </button>
+);

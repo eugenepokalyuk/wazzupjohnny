@@ -19,10 +19,10 @@ body,
 }
 
 body {
-  min-width: $width_min;
+  min-width: $width_xs;
 
   @include background-theme($background);
-  @include font_Nunito;
+  font-family: 'Inter', monospace;
 
   color: #ffffff;
 
@@ -40,6 +40,8 @@ a {
 
 h1,
 h2,
+h3,
+h4,
 p,
 ol,
 ul {
@@ -51,6 +53,14 @@ h1,
 h2 {
   font-weight: unset;
 }
+
+h1,
+h2,
+h3,
+h4, h5, h6 {
+  font-family: 'Unbounded', sans-serif;
+}
+
 
 label {
   cursor: unset;
@@ -73,4 +83,11 @@ input[type='number'] {
 
 img {
   display: block;
+}
+
+ul {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
 }

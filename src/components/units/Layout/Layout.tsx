@@ -1,23 +1,18 @@
-import React, { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { Outlet } from 'react-router-dom';
-import clsx from 'clsx';
 
 import classes from './Layout.module.scss';
 import { Header } from '../Header/Header';
-import { Footer } from '../Footer/Footer';
 
 interface Props {
-  children?:React.ReactNode;
+  children?:ReactNode;
+  header?:ReactNode;
 }
 
-export const Layout:FC<Props> = ({ children }) => (
-  <div className={clsx(classes.box, classes.background)}>
-    <Header />
+export const Layout:FC<Props> = ({ header, children }) => (
+  <div className={classes.box}>
+    {header ? header : <Header />}
 
-    <main className={classes.main_content}>
-      {children || <Outlet />}
-    </main>
-
-    <Footer />
+    <main className={classes.main}>{children || <Outlet />}</main>
   </div>
 );

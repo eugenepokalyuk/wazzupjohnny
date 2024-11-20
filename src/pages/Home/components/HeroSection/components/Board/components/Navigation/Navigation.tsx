@@ -1,25 +1,27 @@
 import { FC } from 'react';
 
-import { Button, Link } from '@components/ui';
+import { Button, Link, Size, Variant } from '@components/ui';
 import { Urls } from '@services/Route';
 
-import classes from './Navigation.module.scss';
+import { BoardCard } from '../BoardCard/BoardCard';
 
 export const Navigation: FC = () => {
   const NavigationLinksMock = [
     { label: 'Проекты', url: Urls.Projects },
-    { label: 'Самопрезентация', url: Urls.SelfPresentation },
+    { label: 'Самопрезентация', url: Urls.About },
     { label: 'Список желаний', url: Urls.WishList },
     { label: 'Пишу статьи', url: Urls.Articles },
   ];
 
   return (
-    <div className={classes.board}>
+    <BoardCard>
       {NavigationLinksMock.map((link, index) => (
         <Link key={index} to={link.url}>
-          <Button wide>{link.label}</Button>
+          <Button size={Size.XL} variant={Variant.Accent} wide>
+            {link.label}
+          </Button>
         </Link>
       ))}
-    </div>
+    </BoardCard>
   );
 };

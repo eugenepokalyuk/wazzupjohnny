@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @import 'src/styles/index';
 
 .box {
@@ -5,16 +7,24 @@
   grid-template-columns: 100px 1fr auto; // Автоматическая ширина для wrapper
   height: 100%;
 
-  .wrapper {
-    // TODO: исправить
-    z-index: 99999;
+  @include md_down() {
+    grid-template-columns: 1fr; // Автоматическая ширина для wrapper
+  }
 
+  .wrapper {
     position: relative;
+    z-index: 100;
+
     display: flex;
     align-items: center;
     transition: transform 0.3s ease-in-out;
     width: 350px;
     height: 100%;
+
+    @include md_down() {
+      width: 100%;
+      order: 3;
+    }
 
     &.hidden {
       transform: translateX(100%);
@@ -35,14 +45,18 @@
       text-align: center;
 
       &:hover {
-        background-color: lighten($background-1, 10%);
+        background-color: color.scale($background-1, $lightness: 10%);
+      }
+
+      @include md_down() {
+        display: none;
       }
     }
 
     .icon {
       transition: transform 0.3s ease-in-out;
       transform: rotate(180deg);
-      font-size: 72px;
+      font-size: 24px;
 
       &.icon_open {
         transform: rotate(0deg);

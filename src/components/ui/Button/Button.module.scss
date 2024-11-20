@@ -1,94 +1,103 @@
 @import 'src/styles/index';
 
 .button {
-  position: relative;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  height: 49px;
-  border-radius: gap(1);
-
+  padding: gap(2) gap(4);
+  border-radius: $br_2;
   cursor: pointer;
-  border: none;
-  overflow: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
 
-  .icon {
-    margin-right: gap(2);
-    display: flex;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: $regular;
+
+  user-select: none;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &.wide {
+    width: 100%;
+  }
+
+  &.loading {
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-
-    svg {
-      width: gap(4);
-      height: gap(4);
-    }
   }
 
-  & > * {
-    position: relative;
-    z-index: 2;
+  &.filled {
+    border: none;
   }
-}
 
-.default {
-  @include font_Tickerbit;
-  @include text_Body;
-
-  padding: gap(3);
-}
-
-.medium {
-  @include font_Tickerbit;
-  height: 68px;
-
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 38.4px;
-  letter-spacing: 0.06em;
-
-  padding: gap(3) gap(11);
-
-
-  @media (max-width: $width_md) {
-    height: 49px;
+  &.outline {
+    background-color: transparent;
+    border-width: 2px;
+    border-style: solid;
   }
-}
-
-.green {
-  @include button-theme($primary, $black, $gray-border);
-}
-
-.black {
-  @include button-theme($black, $white, $gray-border);
-}
-
-.black-green-border {
-  @include button-theme($black, $white, $gray-border);
-}
-
-.blue {
-  @include button-theme($accent, $white, $gray-border);
-}
-
-.white {
-  @include button-theme($white, $black, $gray-border);
 }
 
 .icon {
-  background-color: transparent;
-  color: transparent;
-  border-color: transparent;
-  outline-color: transparent;
+  margin-right: gap(1);
 }
 
-@media (max-width: $width_md) {
-  .button {
-    @include text_Body;
-    padding: gap(3);
+.xs {
+  padding: gap(1) gap(2);
+  font-size: 0.75rem;
+}
+
+.sm {
+  padding: gap(2) gap(3);
+  font-size: 0.8rem;
+}
+
+.md {
+  padding: gap(2) gap(4);
+  font-size: 0.875rem;
+}
+
+.lg {
+  padding: gap(3) gap(5);
+  font-size: 1rem;
+}
+
+.xl {
+  padding: gap(4) gap(6);
+  font-size: 1.125rem;
+}
+
+.default {
+  @include button-theme($button-main, $text-black, $default);
+
+  &.outline {
+    @include button-theme(transparent, $default, $default);
   }
 }
 
-.wide {
-  width: 100%;
+.primary {
+  @include button-theme($primary, $white, $primary);
+
+  &.outline {
+    @include button-theme(transparent, $primary, $primary);
+  }
+}
+
+.secondary {
+  @include button-theme($secondary, $white, $secondary);
+
+  &.outline {
+    @include button-theme(transparent, $secondary, $secondary);
+  }
+}
+
+.accent {
+  @include button-theme($accent, $black, $accent);
+
+  &.outline {
+    @include button-theme(transparent, $accent, $accent);
+  }
 }
