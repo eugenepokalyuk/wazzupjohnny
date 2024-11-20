@@ -1,0 +1,28 @@
+@import 'src/styles/index';
+
+.cardHeader {
+  @include card-theme(transparent, $br_6, gap(4));
+  font-weight: $medium;
+
+  // Sizes
+
+  &.xs {
+    padding: gap(1);
+  }
+
+  &.sm {
+    padding: gap(2);
+  }
+
+  &.md {
+    padding: gap(3);
+  }
+
+  &.lg {
+    padding: gap(4);
+  }
+
+  &.xl {
+    padding: gap(5);
+  }
+}

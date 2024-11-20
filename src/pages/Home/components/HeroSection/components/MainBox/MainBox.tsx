@@ -20,7 +20,6 @@ export const MainBox: FC = () => {
 
       <Interview />
 
-      {/* TODO: Вынести логику скрытия в Board */}
       <div className={`${classes.wrapper} ${!isVisible ? classes.hidden : ''}`}>
         <Board />
 

@@ -1,0 +1,56 @@
+@import 'src/styles/index';
+
+.card {
+  @include card-theme(rgba($white, 0.06), 0, gap(4));
+  transition: $transition;
+  user-select: none;
+
+  // Sizes
+
+  &.xs {
+    padding: gap(2);
+    border-radius: $br_2;
+  }
+
+  &.sm {
+    padding: gap(3);
+    border-radius: $br_2;
+  }
+
+  &.md {
+    padding: gap(4);
+    border-radius: $br_3;
+  }
+
+  &.lg {
+    padding: gap(5);
+    border-radius: $br_3;
+  }
+
+  &.xl {
+    padding: gap(6);
+    border-radius: $br_4;
+  }
+
+  // Variants
+
+  &.default {
+    //background-color: rgba($default, 0.8);
+    color: $text-default;
+  }
+
+  &.primary {
+    background-color: rgba($primary, 0.8);
+    color: $white;
+  }
+
+  &.secondary {
+    background-color: rgba($secondary, 0.8);
+    color: $white;
+  }
+
+  &.accent {
+    background-color: rgba($accent, 0.8);
+    color: $black;
+  }
+}

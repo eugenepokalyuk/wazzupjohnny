@@ -6,4 +6,13 @@
 
   height: min-content;
   padding: gap(4);
+
+  .title {
+    font-size: 48px;
+    color: $text-default;
+  }
+
+  @include md_down() {
+    order: 2;
+  }
 }

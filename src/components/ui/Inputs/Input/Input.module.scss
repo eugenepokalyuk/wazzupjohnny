@@ -1,0 +1,119 @@
+@import 'src/styles/index';
+
+.input_container {
+  display: flex;
+  flex-direction: column;
+  gap: gap(1);
+  margin-bottom: gap(3);
+}
+
+.input {
+  width: 100%;
+
+  padding: gap(2);
+
+  border: 2px solid $accent;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &.error {
+    border-color: $error;
+  }
+}
+
+// Sizes
+.xs {
+  min-width: $width_btn_xs;
+
+  .input {
+    padding: gap(1) gap(2);
+    font-size: 12px;
+    border-radius: $br_2;
+  }
+}
+
+.sm {
+  min-width: $width_btn_sm;
+
+  .input {
+    padding: gap(1.5) gap(3);
+    font-size: 14px;
+    border-radius: $br_3;
+  }
+}
+
+.md {
+  min-width: $width_btn_md;
+
+  .input {
+    padding: gap(2) gap(4);
+    font-size: 16px;
+    border-radius: $br_3;
+  }
+}
+
+.lg {
+  min-width: $width_btn_lg;
+
+  .input {
+    padding: gap(2.5) gap(5);
+    font-size: 18px;
+    border-radius: $br_3;
+  }
+}
+
+.xl {
+  min-width: $width_btn_xl;
+
+  .input {
+    padding: gap(3) gap(6);
+    font-size: 20px;
+    border-radius: $br_3;
+  }
+}
+
+// Variants
+.default {
+  .input {
+    background: transparent;
+    border-color: $default;
+    color: $text-black;
+  }
+}
+
+.primary {
+  .input {
+    background: transparent;
+    border-color: $primary;
+    color: $text-default;
+  }
+}
+
+.secondary {
+  .input {
+    background: transparent;
+    border-color: $secondary;
+    color: $text-default;
+  }
+}
+
+.accent {
+  .input {
+    background: transparent;
+    border-color: $accent;
+    color: $text-default;
+  }
+}
+
+.error_message {
+  color: $error;
+  font-size: 14px;
+}
+
+.wide {
+  width: 100%;
+}

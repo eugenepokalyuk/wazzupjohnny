@@ -1,0 +1,88 @@
+@import 'src/styles/index';
+
+.textarea_container {
+  display: flex;
+  flex-direction: column;
+  gap: gap(1);
+  margin-bottom: gap(3);
+
+  .textarea {
+    width: 100%;
+    padding: gap(2);
+    border-radius: $br_3;
+    font-size: 16px;
+    border: 2px solid $accent;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &.error {
+      border-color: $error;
+    }
+
+    // Sizes
+
+    &.xs {
+      font-size: 0.75rem;
+      padding: gap(2);
+    }
+
+    &.sm {
+      font-size: 0.875rem;
+      padding: gap(2);
+    }
+
+    &.md {
+      font-size: 1rem;
+      padding: gap(3);
+    }
+
+    &.lg {
+      font-size: 1.25rem;
+      padding: gap(4);
+    }
+
+    &.xl {
+      font-size: 1.5rem;
+      padding: gap(5);
+    }
+
+    // Variants
+
+    &.default {
+      background: transparent;
+      border-color: $default;
+      color: $text-default;
+    }
+
+    &.primary {
+      background: transparent;
+      border-color: $primary;
+      color: $text-default;
+    }
+
+    &.secondary {
+      background: transparent;
+      border-color: $secondary;
+      color: $text-default;
+    }
+
+    &.accent {
+      background: transparent;
+      border-color: $accent;
+      color: $text-default;
+    }
+  }
+}
+
+.error_message {
+  color: $error;
+  font-size: 14px;
+}
+
+.wide {
+  width: 100%;
+}

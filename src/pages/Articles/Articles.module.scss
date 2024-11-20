@@ -1,0 +1,28 @@
+@import 'src/styles/index';
+
+.title_box {
+  display: flex;
+  flex-direction: column;
+  gap: gap(4);
+  margin-bottom: gap(4);
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: gap(4);
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: gap(4);
+
+  padding: gap(4);
+  border-radius: $br_4;
+  box-shadow: $box-shadow;
+
+  .link {
+    align-self: flex-end;
+  }
+}

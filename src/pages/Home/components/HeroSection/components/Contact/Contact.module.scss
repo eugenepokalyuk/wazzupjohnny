@@ -11,8 +11,18 @@
 
   padding: gap(4);
 
-  .image_box {
+  @include md_down() {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
+    height: 100%;
+
+    order: 1;
+  }
+
+  .image_box {
     .image {
       width: 80px;
       height: 120px;
@@ -22,10 +32,14 @@
     }
   }
 
-
   .icon_box {
     display: flex;
     flex-direction: column;
+
+    @include md_down() {
+      flex-direction: row;
+      gap: gap(4);
+    }
 
     .link {
       font-size: 72px;

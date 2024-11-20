@@ -2,12 +2,13 @@ export enum Urls {
   Home = '/',
 
   Projects = '/projects/',
-  SelfPresentation = '/self-presentation/',
+  About = '/about/',
   WishList = '/wish-list/',
   Articles = '/articles/',
-
-  Goodies = '/goodies/',
-  About = '/about/',
-
+  ArticlePage = '/articles/:slug/',
   Error = '*',
 }
+
+export const UrlSearch = {
+  Next: 'next',
+};

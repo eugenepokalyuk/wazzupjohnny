@@ -3,14 +3,13 @@ import { Link, Text } from '@components/ui';
 
 import classes from './Books.module.scss';
 import { BooksMock } from './Books.mock.ts';
+import { BoardCard } from '../BoardCard/BoardCard';
 
 export const Books: FC = () => (
-  <div className={classes.board}>
-    <Text>{'Нашел полезные штуки'}</Text>
-
+  <BoardCard title="Полезные штуки">
     {BooksMock.map((category, categoryIndex) => (
       <div key={categoryIndex} className={classes.board_row}>
-        <Text>{category.title}</Text>
+        <Text className={classes.category_title}>{category.title}</Text>
 
         <div className={classes.books}>
           {category.books.map((book, bookIndex) => (
@@ -27,5 +26,5 @@ export const Books: FC = () => (
         </div>
       </div>
     ))}
-  </div>
+  </BoardCard>
 );
