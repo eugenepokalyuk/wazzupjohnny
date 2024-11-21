@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { Layout } from '@components/units';
-import { Size, Tags, Text } from '@components/ui';
+import { Link, Size, Tags, Text } from '@components/ui';
 
 import classes from './ArticlePage.module.scss';
 import { ArticlesMock } from '../../Articles.mock.ts';
@@ -25,7 +25,11 @@ export const ArticlePage: FC = () => {
   return (
     <Layout>
       <div className={classes.article}>
-        <Text tag={Tags.Heading} size={Size.XL}>
+        <Text
+          tag={Tags.Heading}
+          size={Size.XL}
+          className={classes.article_title}
+        >
           {article.title}
         </Text>
 
@@ -44,12 +48,18 @@ export const ArticlePage: FC = () => {
             <Text tag={Tags.Heading} size={Size.MD}>
               {'Ссылки на другие ресурсы:'}
             </Text>
+
             <ul>
               {article.externalLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  <Link
+                    to={link.url}
+                    // @ts-ignore
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

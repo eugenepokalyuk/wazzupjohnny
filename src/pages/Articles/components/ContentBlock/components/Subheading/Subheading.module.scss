@@ -1,0 +1,9 @@
+@import 'src/styles/index';
+
+.subheading {
+  margin-bottom: gap(2);
+
+  font-weight: $semi_bold;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}

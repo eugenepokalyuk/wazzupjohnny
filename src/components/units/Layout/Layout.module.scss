@@ -17,6 +17,7 @@
   padding: gap(4) 0;
 
   @include md_down() {
+    max-width: 100vw;
     padding: gap(4);
   }
 }

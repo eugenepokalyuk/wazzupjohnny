@@ -5,6 +5,12 @@
   flex-direction: column;
   gap: gap(4);
 
+  width: 100%;
+
+  .article_title {
+    font-weight: $semi_bold;
+  }
+
   .content {
     margin-top: gap(4);
   }
