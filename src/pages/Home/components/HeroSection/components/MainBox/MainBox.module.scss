@@ -4,11 +4,11 @@
 
 .box {
   display: grid;
-  grid-template-columns: 100px 1fr auto; // Автоматическая ширина для wrapper
+  grid-template-columns: 100px 1fr auto;
   height: 100%;
 
   @include md_down() {
-    grid-template-columns: 1fr; // Автоматическая ширина для wrapper
+    grid-template-columns: 1fr;
   }
 
   .wrapper {

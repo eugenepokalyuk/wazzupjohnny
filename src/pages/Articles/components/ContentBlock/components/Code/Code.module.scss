@@ -1,0 +1,54 @@
+@import 'src/styles/index';
+
+.box {
+  display: flex;
+  flex-direction: column;
+
+  padding: gap(2);
+  margin: gap(2) 0;
+  background: $background_1;
+  border-radius: $br_2;
+
+  .btn {
+    background: #282c34;
+    align-self: flex-end;
+    text-transform: lowercase;
+
+    @include md_down() {
+      order: 2;
+      width: 100%;
+    }
+  }
+
+  .code {
+    background: #282c34;
+    color: #61dafb;
+    padding: gap(3);
+    border-radius: $br_2;
+
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #61dafb;
+      border-radius: $br_1;
+      border: 2px solid $background;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $background;
+      border-radius: $br_1;
+    }
+
+    // Firefox
+    scrollbar-width: thin;
+    scrollbar-color: #61dafb $background;
+  }
+}

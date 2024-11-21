@@ -1,9 +1,14 @@
 import { FC } from 'react';
 
-import { Link, Size, Tags, Text } from '@components/ui';
 import { ArticleContent, ContentType } from '@pages/Articles/Articles.types.ts';
 
-import classes from './ContentBlock.module.scss';
+import { Ad } from './components/Ad/Ad';
+import { Code } from './components/Code/Code';
+import { Heading } from './components/Heading/Heading';
+import { Link } from './components/Link/Link';
+import { List } from './components/List/List';
+import { Paragraph } from './components/Paragraph/Paragraph';
+import { Subheading } from './components/Subheading/Subheading';
 
 interface ContentBlockProps {
   block: ArticleContent;
@@ -12,63 +17,29 @@ interface ContentBlockProps {
 export const ContentBlock: FC<ContentBlockProps> = ({ block }) => {
   switch (block.type) {
     case ContentType.Heading:
-      return (
-        <Text tag={Tags.Heading} size={Size.LG} className={classes.heading}>
-          {block.content}
-        </Text>
-      );
+      return <Heading content={block.content || ''} />;
     case ContentType.Subheading:
-      return (
-        <Text
-          tag={Tags.Heading_2}
-          size={Size.MD}
-          className={classes.subheading}
-        >
-          {block.content}
-        </Text>
-      );
+      return <Subheading content={block.content || ''} />;
     case ContentType.Paragraph:
-      return (
-        <Text tag={Tags.Paragraph} size={Size.SM} className={classes.paragraph}>
-          {block.content}
-        </Text>
-      );
+      return <Paragraph content={block.content || ''} />;
     case ContentType.Code:
-      return (
-        <pre className={classes.code}>
-          <code>{block.content}</code>
-        </pre>
-      );
+      return <Code content={block.content || ''} />;
     case ContentType.List:
       return (
-        <div className={classes.list}>
-          {block.listTitle && (
-            <Text
-              tag={Tags.Heading_3}
-              size={Size.MD}
-              className={classes.listTitle}
-            >
-              {block.listTitle}
-            </Text>
-          )}
-          <ul>
-            {block.listItems?.map((item, index) => <li key={index}>{item}</li>)}
-          </ul>
-        </div>
+        <List listTitle={block.listTitle} listItems={block.listItems || []} />
       );
     case ContentType.Link:
       return (
-        block.linkUrl && (
-          <Link
-            to={block.linkUrl}
-            // @ts-ignores
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.link}
-          >
-            {block.content}
-          </Link>
-        )
+        <Link content={block.content || ''} linkUrl={block.linkUrl || '#'} />
+      );
+    case ContentType.Ad:
+      return (
+        <Ad
+          content={block.content || ''}
+          description={block.description}
+          imageUrl={block.imageUrl}
+          linkUrl={block.linkUrl || '#'}
+        />
       );
     default:
       return null;

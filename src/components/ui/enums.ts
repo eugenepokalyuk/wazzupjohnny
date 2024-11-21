@@ -15,6 +15,7 @@ export enum Size {
   MD = 'md',
   LG = 'lg',
   XL = 'xl',
+  XXL = 'xxl',
 }
 
 export enum Variant {

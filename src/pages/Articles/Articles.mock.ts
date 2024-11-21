@@ -12,15 +12,14 @@ export const ArticlesMock: Article[] = [
       {
         type: ContentType.Paragraph,
         content:
-          'В современном веб-разработке управление состоянием играет ключевую роль. При разработке сложных приложений на React важно не только эффективно управлять состоянием, но и обеспечивать производительность. Redux Toolkit и Reselect помогают разработчикам справляться с этими задачами, предлагая мощные инструменты для упрощения работы с состоянием и оптимизации',
+          'При разработке сложных приложений на React важно не только эффективно управлять состоянием, но и обеспечивать производительность. Redux Toolkit и Reselect помогают разработчикам справляться с этими задачами, предлагая мощные инструменты для упрощения работы с состоянием и оптимизации',
       },
       {
         type: ContentType.Paragraph,
         content:
-          'В этом блоге мы подробно рассмотрим, как использовать Redux Toolkit и Reselect для управления состоянием в React-приложениях. Мы также разберем, как их использование позволяет упростить селекторы и улучшить производительность',
+          'В данной статье рассмотрим, как использовать Redux Toolkit и Reselect для управления состоянием в React-приложениях. Разобрал, как их использование немного упрощает селекторы и улучшает производительность',
       },
       { type: ContentType.Heading, content: '1. Что такое Redux Toolkit?' },
-      { type: ContentType.Subheading, content: 'Почему Redux Toolkit?' },
       {
         type: ContentType.Paragraph,
         content:
@@ -28,7 +27,6 @@ export const ArticlesMock: Article[] = [
       },
       {
         type: ContentType.List,
-        content: '',
         listTitle: 'Основные преимущества Redux Toolkit:',
         listItems: [
           'Упрощенная настройка хранилища (store)',
@@ -40,11 +38,24 @@ export const ArticlesMock: Article[] = [
       { type: ContentType.Subheading, content: 'Установка Redux Toolkit' },
       {
         type: ContentType.Paragraph,
-        content: 'Для начала работы установим Redux Toolkit и React-Redux:',
+        content: 'Установка Redux Toolkit и React-Redux:',
       },
       {
         type: ContentType.Code,
         content: `npm install @reduxjs/toolkit react-redux`,
+      },
+      {
+        type: ContentType.Code,
+        content: `yarn add @reduxjs/toolkit react-redux`,
+      },
+      {
+        type: ContentType.Ad,
+        content: 'Redux DevTools',
+        description:
+          'Инструмент разработчика для поддержки рабочего процесса разработки Redux',
+        linkUrl: 'https://github.com/reduxjs/redux-devtools',
+        imageUrl:
+          'https://store-images.s-microsoft.com/image/apps.54512.e5c7db91-cf4b-444e-b68b-a1a8fbe7ee01.b82e5b58-7922-44e1-9164-aa86587b41f8.62951717-97c2-491c-9035-21bd71e3f2b9',
       },
       {
         type: ContentType.Heading,
@@ -53,7 +64,7 @@ export const ArticlesMock: Article[] = [
       { type: ContentType.Subheading, content: '2.1 configureStore' },
       {
         type: ContentType.Paragraph,
-        content: 'Для начала работы установим Redux Toolkit и React-Redux:',
+        content: 'Для начала установим Redux Toolkit и React-Redux:',
       },
       {
         type: ContentType.Paragraph,
@@ -80,7 +91,7 @@ export const store = configureStore({
       {
         type: ContentType.Paragraph,
         content:
-          'Функция createSlice объединяет описание действий (actions) и редьюсеров (reducers). Это сокращает количество шаблонного кода',
+          'Функция createSlice объединяет описание действий (actions) и редьюсеров (reducers), что сокращает количество шаблонного кода',
       },
       {
         type: ContentType.Code,
@@ -112,7 +123,7 @@ export const { increment, decrement, incrementByAmount } = counterSlice.actions;
       {
         type: ContentType.Paragraph,
         content:
-          'Reselect — это библиотека для создания мемоизированных селекторов. Селекторы — это функции, которые извлекают данные из состояния Redux. Мемоизация предотвращает повторные вычисления, если входные данные не изменились, что повышает производительность приложения.',
+          'Reselect — это библиотека для создания мемоизированных селекторов. Селекторы — это функции, которые извлекают данные из состояния Redux. Мемоизация предотвращает повторные вычисления, если входные данные не изменились, что повышает производительность приложения',
       },
       {
         type: ContentType.Paragraph,
@@ -123,8 +134,11 @@ export const { increment, decrement, incrementByAmount } = counterSlice.actions;
         content: `npm install reselect`,
       },
       {
+        type: ContentType.Code,
+        content: `yarn add reselect`,
+      },
+      {
         type: ContentType.List,
-        content: '',
         listTitle: 'Преимущества Reselect:',
         listItems: [
           'Мемоизация: Экономит ресурсы, пересчитывая данные только при изменении входных данных',
@@ -139,7 +153,7 @@ export const { increment, decrement, incrementByAmount } = counterSlice.actions;
       {
         type: ContentType.Paragraph,
         content:
-          'Давайте рассмотрим, как сочетать Redux Toolkit и Reselect для управления состоянием и оптимизации производительности',
+          'Сочетание Redux Toolkit и Reselect для управления состоянием и оптимизации производительности',
       },
       {
         type: ContentType.Subheading,
@@ -147,8 +161,7 @@ export const { increment, decrement, incrementByAmount } = counterSlice.actions;
       },
       {
         type: ContentType.Paragraph,
-        content:
-          'Создадим простое приложение для управления списком задач. Начнем с настройки хранилища:',
+        content: 'Настройка хранилища:',
       },
       {
         type: ContentType.Code,
@@ -199,7 +212,7 @@ export const { addTask, toggleTask } = tasksSlice.actions;`,
       },
       {
         type: ContentType.Paragraph,
-        content: 'Создадим мемоизированные селекторы для фильтрации задач:',
+        content: 'Мемоизированные селекторы для фильтрации задач:',
       },
       {
         type: ContentType.Code,
@@ -228,12 +241,11 @@ export const selectIncompleteTasks = createSelector(
       {
         type: ContentType.Paragraph,
         content:
-          'Используем useSelector для доступа к данным и useDispatch для вызова действий:',
+          'Использую useAppSelector для доступа к данным и useAppDispatch для вызова действий:',
       },
       {
         type: ContentType.Code,
-        content: `
-import { FC } from 'react';
+        content: `import { FC } from 'react';
 
 import { useAppSelector, useAppDispatch } from '@services/Store';
 
@@ -289,7 +301,7 @@ export const TaskList: FC = () => {
       {
         type: ContentType.Paragraph,
         content:
-          'Без мемоизации каждый рендер компонента вызывает пересчет всех селекторов, даже если данные не изменились. Reselect решает эту проблему, пересчитывая значения только при изменении входных данных',
+          'Без мемоизации рендер компонента вызывает пересчет всех селекторов, даже если данные не изменились. Reselect решает эту проблему, пересчитывая значения только при изменении входных данных',
       },
       {
         type: ContentType.Subheading,
@@ -314,11 +326,10 @@ export const TaskList: FC = () => {
       {
         type: ContentType.Paragraph,
         content:
-          'Использование Redux Toolkit и Reselect значительно упрощает работу с состоянием и улучшает производительность React-приложений. Redux Toolkit уменьшает объем шаблонного кода, а Reselect обеспечивает оптимизацию благодаря мемоизации. В сочетании эти инструменты предоставляют мощный и удобный способ управления состоянием',
+          'Использование Redux Toolkit и Reselect упрощает работу с состоянием и улучшает производительность приложения. Redux Toolkit уменьшает объем шаблонного кода, а Reselect обеспечивает оптимизацию благодаря мемоизации. В сочетании эти инструменты предоставляют мощный и удобный способ управления состоянием',
       },
       {
         type: ContentType.List,
-        content: '',
         listTitle: 'Ключевые моменты:',
         listItems: [
           'Redux Toolkit упрощает настройку и использование Redux',

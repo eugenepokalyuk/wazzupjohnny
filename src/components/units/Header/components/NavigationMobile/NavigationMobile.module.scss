@@ -17,8 +17,16 @@
   padding: gap(4);
 }
 
-.mobile_menu_link {
+.link {
   border: 2px solid $gray;
   padding: gap(4);
   border-radius: $br_2;
+}
+
+.active {
+  border-color: $accent;
+
+  & > * {
+    color: $accent;
+  }
 }

@@ -10,14 +10,17 @@ export enum ContentType {
   Code = 'code',
   List = 'list',
   Link = 'link',
+  Ad = 'ad',
 }
 
 export interface ArticleContent {
   type: ContentType;
-  content: string;
+  content?: string;
+  description?: string;
   listTitle?: string;
   listItems?: string[];
   linkUrl?: string;
+  imageUrl?: string;
 }
 
 export interface Article {

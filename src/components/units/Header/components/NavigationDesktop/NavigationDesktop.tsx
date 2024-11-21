@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { useLocation } from 'react-router';
+import clsx from 'clsx';
 
 import { RouteLink } from '@components/units';
 import { Link, Size, Tags, Text } from '@components/ui';
 
 import classes from './NavigationDesktop.module.scss';
-import clsx from 'clsx';
 
 interface Props {
   RouteLinks: RouteLink[];
