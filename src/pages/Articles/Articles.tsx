@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
+
 import { Layout } from '@components/units';
-import { Card, Size, Tags, Text } from '@components/ui';
+import { Button, Card, Link, Size, Tags, Text } from '@components/ui';
 
 import { ArticlesMock } from './Articles.mock';
 import classes from './Articles.module.scss';
@@ -15,7 +15,7 @@ export const Articles: FC = () => (
 
       <Text tag={Tags.Paragraph} size={Size.LG}>
         {
-          'Здесь вы найдёте статьи, которые я написал. Это материалы о разработке, фреймворках, и многое другое.'
+          'Здесь вы найдёте статьи, которые я написал. Это материалы о разработке, фреймворках, и многое другое'
         }
       </Text>
     </div>
@@ -28,7 +28,7 @@ export const Articles: FC = () => (
           </Text>
 
           <Link to={`/articles/${article.slug}`} className={classes.link}>
-            {'Читать статью'}
+            <Button outline>{'Читать статью'}</Button>
           </Link>
         </Card>
       ))}

@@ -6,6 +6,7 @@ import ImageSubTable from '/public/images/table.avif';
 import ImageSadhu from '/public/images/sadhu.jpg';
 import ImageMac from '/public/images/mac.webp';
 import ImagePS6 from '/public/images/ps6.jpg';
+import ImageTable from '/public/images/autotable.webp';
 
 export const WishListMock = [
   {
@@ -63,6 +64,15 @@ export const WishListMock = [
     description:
       'Мощный MacBook Pro для продуктивной работы и творческих задач',
     links: ['https://apple.com/macbook-pro'],
+  },
+  {
+    imageUrl: ImageTable,
+    title: 'Компьютерный стол с подъемным механизмом',
+    description:
+      'Круто когда можно поднять или опустить стол, особенно когда сидишь весь день за компом хочется поработать стоя!',
+    links: [
+      'https://www.ozon.ru/product/tehnoideal-kompyuternyy-stol-120h60h117-sm-1620413129',
+    ],
   },
   {
     imageUrl: ImageLight,
