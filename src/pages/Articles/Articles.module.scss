@@ -24,5 +24,13 @@
 
   .link {
     align-self: flex-end;
+
+    @include md_down() {
+      width: 100%;
+
+      button {
+        width: 100%;
+      }
+    }
   }
 }
