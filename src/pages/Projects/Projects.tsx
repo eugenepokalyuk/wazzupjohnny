@@ -49,6 +49,7 @@ export const Projects: FC = () => {
               size={Size.XS}
               className={selectedTags.includes(tag) ? classes.active : ''}
               onClick={() => toggleTag(tag)}
+              tilt
             >
               {tag}
             </Button>
@@ -68,7 +69,12 @@ export const Projects: FC = () => {
 
               <div className={classes.tags_box}>
                 {project.badges.map((badge, idx) => (
-                  <Button variant={Variant.Accent} size={Size.XS} key={idx}>
+                  <Button
+                    key={idx}
+                    variant={Variant.Accent}
+                    size={Size.XS}
+                    tilt
+                  >
                     {badge}
                   </Button>
                 ))}

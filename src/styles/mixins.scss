@@ -13,3 +13,15 @@
     filter: brightness($active-brightness);
   }
 }
+
+@mixin button-hover-tilt($scale-factor: 1.1, $rotate-x: 8deg, $rotate-y: 8deg) {
+  transition: transform .2s ease;
+
+  &:hover {
+    transform: rotateX($rotate-x) rotateY($rotate-y) scale($scale-factor);
+  }
+
+  &:active {
+    transform: rotateX(-$rotate-x) rotateY($rotate-y) scale($scale-factor);
+  }
+}

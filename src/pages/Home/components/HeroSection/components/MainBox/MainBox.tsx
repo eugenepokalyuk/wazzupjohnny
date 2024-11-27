@@ -23,7 +23,11 @@ export const MainBox: FC = () => {
       <div className={`${classes.wrapper} ${!isVisible ? classes.hidden : ''}`}>
         <Board />
 
-        <Button onClick={handleToggle} className={classes.toggle_button}>
+        <Button
+          onClick={handleToggle}
+          className={classes.toggle_button}
+          outline
+        >
           <ArrowIcon
             className={`${classes.icon} ${!isVisible ? classes.icon_open : ''}`}
           />

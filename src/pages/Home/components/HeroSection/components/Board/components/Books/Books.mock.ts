@@ -47,7 +47,7 @@ export const BooksMock = [
         name: 'Учебник по JS',
         description:
           'Перечитывай материалы, вникая глубже и выявляя ранее упущенные детали. Выполняй практические задания после каждого урока для закрепления знаний.',
-        link: 'https://learnjs.ru/',
+        link: 'https://learn.javascript.ru/',
       },
     ],
   },
@@ -71,6 +71,17 @@ export const BooksMock = [
           'Frontend Developer. Step by step guide to becoming a modern frontend developer in 2024',
         link: 'https://roadmap.sh/frontend',
       },
+      {
+        name: 'React roadmap',
+        description:
+          'Everything that is there to learn about React and the ecosystem in 2024.',
+        link: 'https://roadmap.sh/react',
+      },
+      {
+        name: 'TypeScript roadmap',
+        description: 'Everything you need to learn about TypeScript in 2024',
+        link: 'https://roadmap.sh/typescript',
+      },
     ],
   },
   {
@@ -81,23 +92,6 @@ export const BooksMock = [
         description:
           'Почему стек и подход к пет-проектам диаметрально противоположен тому, что вы делаете на работе',
         link: 'https://vas3k.blog/notes/indie_vs_corpo/',
-      },
-    ],
-  },
-  {
-    title: 'CSS Games',
-    books: [
-      {
-        name: 'Flexbox Froggy.',
-        description:
-          'Игра, в которой тебе нужно помочь лягушонку Фроги и его друзьям, написав CSS код',
-        link: 'https://flexboxfroggy.com/',
-      },
-      {
-        name: 'Grid Garden',
-        description:
-          'Место, где вы напишете CSS-код, чтобы вырастить морковный сад',
-        link: 'https://cssgridgarden.com/',
       },
     ],
   },

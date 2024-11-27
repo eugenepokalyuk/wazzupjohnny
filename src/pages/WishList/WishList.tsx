@@ -30,6 +30,7 @@ export const WishList: FC = () => (
           <Text tag={Tags.Heading} size={Size.LG}>
             {item.title}
           </Text>
+
           <Text tag={Tags.Paragraph} size={Size.MD}>
             {item.description}
           </Text>
@@ -44,7 +45,7 @@ export const WishList: FC = () => (
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button outline>{`Сслыка ${linkIndex + 1}`}</Button>
+                  <Button outline tilt>{`Сслыка ${linkIndex + 1}`}</Button>
                 </Link>
               ))}
             </div>

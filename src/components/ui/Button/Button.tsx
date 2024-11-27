@@ -14,6 +14,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   outline?: boolean;
   onClick?: () => void;
   disabled?: boolean;
+  tilt?: boolean;
 }
 
 export const Button: FC<Props> = ({
@@ -25,6 +26,7 @@ export const Button: FC<Props> = ({
   outline = false,
   onClick,
   disabled = false,
+  tilt = false,
   children,
   ...props
 }) => (
@@ -38,6 +40,7 @@ export const Button: FC<Props> = ({
       { [classes.loading]: isLoading },
       { [classes.disabled]: disabled },
       { [outline ? classes.outline : classes.filled]: true },
+      { [tilt ? classes.tilt : '']: true },
     )}
     onClick={onClick}
     disabled={disabled || isLoading}

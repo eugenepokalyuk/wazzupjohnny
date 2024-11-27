@@ -29,7 +29,7 @@ const stateManagers = [
 ];
 
 const bundlers = [
-  { name: 'Webpack', color: '#000000', backgroundColor: '#8DD6F9' },
+  { name: 'Webpack 5', color: '#000000', backgroundColor: '#8DD6F9' },
   { name: 'Vite', color: '#FFFFFF', backgroundColor: '#646fff' },
   { name: 'npm scripts', color: '#FFFFFF', backgroundColor: '#CB3837' },
 ];

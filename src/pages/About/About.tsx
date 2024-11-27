@@ -15,7 +15,7 @@ export const About: FC = () => (
 
       <Text tag={Tags.Paragraph} size={Size.LG}>
         {
-          'Профессиональный Frontend-разработчик с душой сноубордиста, любитель абиссинской кошки и настольных игр'
+          'Я профессиональный Frontend-разработчик с душой сноубордиста, который обожает скорость и свободу на склонах, ласковую абиссинскую кошку и тяжелую музыку'
         }
       </Text>
     </div>
@@ -27,12 +27,16 @@ export const About: FC = () => (
       >
         <img src={item.image} alt={item.title} className={classes.image} />
 
-        <div className={classes.text}>
+        <div className={classes.content}>
           <Text tag={Tags.Heading} size={Size.LG}>
             {item.title}
           </Text>
 
-          <Text tag={Tags.Paragraph} size={Size.MD}>
+          <Text
+            tag={Tags.Paragraph}
+            size={Size.MD}
+            className={classes.description}
+          >
             {item.description}
           </Text>
         </div>

@@ -101,3 +101,7 @@
     @include button-theme(transparent, $accent, $accent);
   }
 }
+
+.tilt {
+  @include button-hover-tilt();
+}
