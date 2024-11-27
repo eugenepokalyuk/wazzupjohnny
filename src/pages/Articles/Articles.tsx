@@ -28,7 +28,9 @@ export const Articles: FC = () => (
           </Text>
 
           <Link to={`/articles/${article.slug}`} className={classes.link}>
-            <Button outline>{'Читать статью'}</Button>
+            <Button outline tilt>
+              {'Читать статью'}
+            </Button>
           </Link>
         </Card>
       ))}

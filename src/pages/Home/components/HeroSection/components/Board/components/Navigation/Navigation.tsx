@@ -17,7 +17,7 @@ export const Navigation: FC = () => {
     <BoardCard>
       {NavigationLinksMock.map((link, index) => (
         <Link key={index} to={link.url}>
-          <Button size={Size.XL} variant={Variant.Accent} wide>
+          <Button size={Size.XL} variant={Variant.Accent} wide outline>
             {link.label}
           </Button>
         </Link>

@@ -25,6 +25,7 @@ export const Code: FC<Props> = ({ content }) => {
         variant={Variant.Secondary}
         className={classes.btn}
         onClick={handleCopy}
+        tilt
       >
         {copied ? 'Скопировано!' : 'Копировать'}
       </Button>

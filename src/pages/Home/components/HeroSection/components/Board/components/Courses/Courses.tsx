@@ -14,7 +14,12 @@ export const Courses: FC = () => (
 
         <div className={classes.lessons}>
           {course.lessons.map((lesson, lessonIndex) => (
-            <Link key={lessonIndex} to={lesson.link} className={classes.link}>
+            <Link
+              key={lessonIndex}
+              to={lesson.link}
+              className={classes.link}
+              newTab
+            >
               {lesson.name}
             </Link>
           ))}

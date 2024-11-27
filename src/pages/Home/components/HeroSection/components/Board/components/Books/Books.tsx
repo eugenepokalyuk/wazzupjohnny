@@ -14,7 +14,7 @@ export const Books: FC = () => (
         <div className={classes.books}>
           {category.books.map((book, bookIndex) => (
             <div key={bookIndex} className={classes.book_item}>
-              <Link to={book.link} className={classes.link}>
+              <Link to={book.link} className={classes.link} newTab>
                 {book.name}
               </Link>
 
