@@ -25,7 +25,7 @@ export const NavigationDesktop: FC<Props> = ({ RouteLinks }) => {
             location.pathname === link.url ? classes.active : null,
           )}
         >
-          <Text tag={Tags.Heading_2} size={Size.LG}>
+          <Text tag={Tags.Heading_3} size={Size.MD}>
             {link.label}
           </Text>
         </Link>
