@@ -24,7 +24,10 @@ export const WishList: FC = () => (
         key={index}
         className={`${classes.row} ${index % 2 === 0 ? classes.even : classes.odd}`}
       >
-        <img src={item.imageUrl} alt={item.title} className={classes.image} />
+        <div className={classes.imageBox}>
+          {item.gifted && <Button>{`🎁 Уже подарено!`}</Button>}
+          <img src={item.imageUrl} alt={item.title} className={classes.image} />
+        </div>
 
         <div className={classes.text}>
           <Text tag={Tags.Heading} size={Size.LG}>
