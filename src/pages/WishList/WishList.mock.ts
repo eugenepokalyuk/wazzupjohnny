@@ -2,7 +2,6 @@ import ImageAuto from '/public/images/autoschool.jpg';
 import ImageD2 from '/public/images/D2.webp';
 import ImageInstax from '/public/images/instax.gif';
 import ImageLight from '/public/images/light.webp';
-import ImageSubTable from '/public/images/table.avif';
 import ImageSadhu from '/public/images/sadhu.jpg';
 import ImageMac from '/public/images/mac.webp';
 import ImagePS6 from '/public/images/ps6.jpg';
@@ -42,17 +41,6 @@ export const WishListMock = [
     gifted: true,
   },
   {
-    imageUrl: ImageSubTable,
-    title: 'Подставка для монитора с выдвижным ящиком, антрацит',
-    description:
-      'Удобная подставка с выдвижным ящиком для монитора, чтобы хранить мелочи и улучшить эргономику рабочего места. Смари какая стилевая)',
-    links: [
-      'https://www.ikea.com/pl/pl/p/elloven-podstawka-pod-monitor-z-szuflada-antracyt-00485101/#content',
-      'https://ozon.ru/t/vrAjvk2',
-    ],
-    gifted: false,
-  },
-  {
     imageUrl: ImageSadhu,
     title: 'Доска Садху',
     description:
@@ -79,7 +67,7 @@ export const WishListMock = [
     links: [
       'https://www.ozon.ru/product/tehnoideal-kompyuternyy-stol-120h60h117-sm-1620413129',
     ],
-    gifted: false,
+    gifted: true,
   },
   {
     imageUrl: ImageLight,

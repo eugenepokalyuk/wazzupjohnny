@@ -49,20 +49,20 @@ export const ArticlePage: FC = () => {
               {'Ссылки на другие ресурсы:'}
             </Text>
 
-            <ul>
+            <div className={classes.links_grid}>
               {article.externalLinks.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    to={link.url}
-                    // @ts-ignore
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
+                <Link
+                  key={index}
+                  to={link.url}
+                  // @ts-ignore
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={classes.external_link}
+                >
+                  {link.label}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
         )}
       </div>
