@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 
 import { Layout } from '@components/units';
 import { Button, Card, Link, Size, Tags, Text } from '@components/ui';
@@ -6,42 +6,34 @@ import { Button, Card, Link, Size, Tags, Text } from '@components/ui';
 import { ArticlesMock } from './Articles.mock';
 import classes from './Articles.module.scss';
 
-export const Articles:FC = () => {
-  useEffect(() => {
-    document.title = 'Articles - wazzupjohnny';
-  }, []);
+export const Articles: FC = () => (
+  <Layout>
+    <div className={classes.title_box}>
+      <Text tag={Tags.Heading} size={Size.XL}>
+        {'Статьи'}
+      </Text>
 
-  return (
-    (
-      <Layout>
-        <div className={classes.title_box}>
-          <Text tag={Tags.Heading} size={Size.XL}>
-            {'Статьи'}
+      <Text tag={Tags.Paragraph} size={Size.LG}>
+        {
+          'Здесь вы найдёте статьи, которые я написал. Это материалы о разработке, фреймворках, и многое другое'
+        }
+      </Text>
+    </div>
+
+    <div className={classes.articles}>
+      {ArticlesMock.map((article) => (
+        <Card key={article.id} className={classes.article}>
+          <Text tag={Tags.Heading} size={Size.LG}>
+            {article.title}
           </Text>
 
-          <Text tag={Tags.Paragraph} size={Size.LG}>
-            {
-              'Здесь вы найдёте статьи, которые я написал. Это материалы о разработке, фреймворках, и многое другое'
-            }
-          </Text>
-        </div>
-
-        <div className={classes.articles}>
-          {ArticlesMock.map((article) => (
-            <Card key={article.id} className={classes.article}>
-              <Text tag={Tags.Heading} size={Size.LG}>
-                {article.title}
-              </Text>
-
-              <Link to={`/articles/${article.slug}`} className={classes.link}>
-                <Button outline tilt>
-                  {'Читать статью'}
-                </Button>
-              </Link>
-            </Card>
-          ))}
-        </div>
-      </Layout>
-    )
-  );
-};
+          <Link to={`/articles/${article.slug}`} className={classes.link}>
+            <Button outline tilt>
+              {'Читать статью'}
+            </Button>
+          </Link>
+        </Card>
+      ))}
+    </div>
+  </Layout>
+);

@@ -1,12 +1,12 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 
-import { Layout } from '@components/units';
 import { Button, Card, Link, Size, Tags, Text, Variant } from '@components/ui';
 
 import classes from './Projects.module.scss';
 import { ProjectArray } from './Projects.mock.tsx';
+import { Layout } from '@components/units';
 
-export const Projects:FC = () => {
+export const Projects: FC = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const uniqueTags = Array.from(
@@ -15,19 +15,15 @@ export const Projects:FC = () => {
 
   const filteredProjects = selectedTags.length
     ? ProjectArray.filter((project) =>
-      selectedTags.every((tag) => project.badges.includes(tag)),
-    )
+        selectedTags.every((tag) => project.badges.includes(tag)),
+      )
     : ProjectArray;
 
-  const toggleTag = (tag:string) => {
+  const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
       prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
     );
   };
-
-  useEffect(() => {
-    document.title = 'Projects - wazzupjohnny';
-  }, []);
 
   return (
     <Layout>
