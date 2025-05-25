@@ -1,15 +1,16 @@
-import ImageAuto from '/public/images/autoschool.jpg';
-import ImageD2 from '/public/images/D2.webp';
-import ImageInstax from '/public/images/instax.gif';
-import ImageLight from '/public/images/light.webp';
-import ImageSadhu from '/public/images/sadhu.jpg';
-import ImageMac from '/public/images/mac.webp';
-import ImagePS6 from '/public/images/ps6.jpg';
-import ImageTable from '/public/images/autotable.webp';
+import ImageAutoSrc from '/public/images/autoschool.jpg';
+import ImageD2Src from '/public/images/D2.webp';
+import ImageInstaxSrc from '/public/images/instax.png';
+import ImageLightSrc from '/public/images/light.webp';
+import ImageSadhuSrc from '/public/images/sadhu.jpg';
+import ImageMacSrc from '/public/images/mac.webp';
+import ImagePS5ProSrc from '/public/images/playstation.jpeg';
+import ImageTableSrc from '/public/images/autotable.webp';
+import ImageCoffeeSrc from '/public/images/coffee.webp';
 
 export const WishListMock = [
   {
-    imageUrl: ImageAuto,
+    imageUrl: ImageAutoSrc,
     title: 'Обучение в автошколе',
     description:
       'Хочу получить права, чтобы быть свободным в перемещениях и путешествовать за рулем ну и как в NSF гонять',
@@ -19,18 +20,15 @@ export const WishListMock = [
     gifted: false,
   },
   {
-    imageUrl: ImageInstax,
-    title: 'Fujifilm Instax Square SQ40',
+    imageUrl: ImageInstaxSrc,
+    title: 'Instax mini Evo™ BROWN',
     description:
       'Хочу Instax для моментальных фотографий — это как вернуть пленочную магию, но в современном стиле!',
-    links: [
-      'https://instax.com/sq40/en/',
-      'https://www.dns-shop.ru/product/16dd4824d23ced20/fotoapparat-momentalnoj-pecati-fujifilm-instax-square-sq40/',
-    ],
+    links: ['https://instax.com/mini_evo/en/'],
     gifted: false,
   },
   {
-    imageUrl: ImageD2,
+    imageUrl: ImageD2Src,
     title: 'Divoom Ditoo-Pro Retro Pixel Art Bluetooth Speaker',
     description:
       'Забавная ретро-колонка с пиксель-артом а также будильник, НОТИФИКЕЙШНЫ!!!',
@@ -41,7 +39,7 @@ export const WishListMock = [
     gifted: true,
   },
   {
-    imageUrl: ImageSadhu,
+    imageUrl: ImageSadhuSrc,
     title: 'Доска Садху',
     description:
       'Хочу для баланса и медитации. Для новичков подойдет 8 мм или 10 мм',
@@ -52,7 +50,7 @@ export const WishListMock = [
     gifted: true,
   },
   {
-    imageUrl: ImageMac,
+    imageUrl: ImageMacSrc,
     title: 'MacBook M4 Pro 14-inch',
     description:
       'Мощный MacBook Pro для продуктивной работы и творческих задач',
@@ -60,7 +58,7 @@ export const WishListMock = [
     gifted: false,
   },
   {
-    imageUrl: ImageTable,
+    imageUrl: ImageTableSrc,
     title: 'Компьютерный стол с подъемным механизмом',
     description:
       'Круто когда можно поднять или опустить стол, особенно когда сидишь весь день за компом хочется поработать стоя!',
@@ -70,7 +68,7 @@ export const WishListMock = [
     gifted: true,
   },
   {
-    imageUrl: ImageLight,
+    imageUrl: ImageLightSrc,
     title: 'VIJIM Ulanzi VL120 Full Color RGB Video Light',
     description: 'Хорошее освещение рабочего места',
     links: [
@@ -80,9 +78,19 @@ export const WishListMock = [
     gifted: true,
   },
   {
-    imageUrl: ImagePS6,
-    title: 'PlayStation 6',
+    imageUrl: ImageCoffeeSrc,
+    title: 'Varia VS3 Grinder',
+    description: 'Люблю кофе',
+    links: [
+      'https://www.variabrewing.com/products/varia-vs3-grinder?variant=39935807389795',
+    ],
+    gifted: false,
+  },
+  {
+    imageUrl: ImagePS5ProSrc,
+    title: 'PlayStation 5 Pro',
     description: 'Для чилла и игр — идеальный способ расслабиться)',
+    links: ['https://www.playstation.com/en-us/ps5/ps5-pro/'],
     gifted: false,
   },
 ];
