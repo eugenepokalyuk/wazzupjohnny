@@ -20,6 +20,7 @@ export const BoardCard: FC<Props> = ({ title, children }) => (
         {title}
       </Text>
     )}
+
     {children}
   </div>
 );
