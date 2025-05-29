@@ -6,47 +6,24 @@ const defaultProps = {
   fill: 'currentColor',
 };
 
-interface Props extends SVGProps<SVGSVGElement> {}
+interface Props extends SVGProps<SVGSVGElement> {
+}
 
-export const CloseIcon: FC<Props> = (props) => (
+export const CloseIcon:FC<Props> = (props) => (
   <svg viewBox="0 -960 960 960" {...defaultProps} {...props}>
     <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
   </svg>
 );
 
-export const MenuOpenIcon: FC<Props> = (props) => (
+export const MenuOpenIcon:FC<Props> = (props) => (
   <svg viewBox="0 -960 960 960" {...defaultProps} {...props}>
     <path d="M120-520v-320h320v320H120Zm0 400v-320h320v320H120Zm400-400v-320h320v320H520Zm0 400v-320h320v320H520Z" />
   </svg>
 );
 
-export const MenuCloseIcon: FC<Props> = (props) => (
+export const MenuCloseIcon:FC<Props> = (props) => (
   <svg viewBox="0 -960 960 960" {...defaultProps} {...props}>
     <path d="M666-440 440-666l226-226 226 226-226 226Zm-546-80v-320h320v320H120Zm400 400v-320h320v320H520Zm-400 0v-320h320v320H120Z" />
-  </svg>
-);
-
-export const BoltIcon: FC<Props> = (props) => (
-  <svg viewBox="0 -960 960 960" {...defaultProps} {...props}>
-    <path d="M400-80v-320H280v-480h400l-80 280h160L400-80Z" />
-  </svg>
-);
-
-export const ImageIcon: FC<Props> = (props) => (
-  <svg viewBox="0 -960 960 960" {...defaultProps} {...props}>
-    <path d="M240-280h480L570-480 450-320l-90-120-120 160ZM120-120v-720h720v720H120Zm220-440q25 0 42.5-17.5T400-620q0-25-17.5-42.5T340-680q-25 0-42.5 17.5T280-620q0 25 17.5 42.5T340-560Z" />
-  </svg>
-);
-
-export const VisibilityIcon: FC<Props> = (props) => (
-  <svg viewBox="0 -960 960 960" {...defaultProps} {...props}>
-    <path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Z" />
-  </svg>
-);
-
-export const VisibilityOffIcon: FC<Props> = (props) => (
-  <svg viewBox="0 -960 960 960" {...defaultProps} {...props}>
-    <path d="M792-56 624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM480-320q11 0 20.5-1t20.5-4L305-541q-3 11-4 20.5t-1 20.5q0 75 52.5 127.5T480-320Zm292 18L645-428q7-17 11-34.5t4-37.5q0-75-52.5-127.5T480-680q-20 0-37.5 4T408-664L306-766q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302ZM587-486 467-606q28-5 51.5 4.5T559-574q17 18 24.5 41.5T587-486Z" />
   </svg>
 );
 
@@ -56,7 +33,7 @@ export const ArrowIcon: FC<Props> = (props) => (
   </svg>
 );
 
-export const GitHubIcon: FC<Props> = (props) => (
+export const GitHubIcon:FC<Props> = (props) => (
   <svg viewBox="0 0 80 80" {...defaultProps} {...props}>
     <g clipPath="url(#clip0_127_2)">
       <circle cx="40" cy="40" r="39" stroke="white" strokeWidth="2" />
@@ -73,7 +50,7 @@ export const GitHubIcon: FC<Props> = (props) => (
   </svg>
 );
 
-export const TelegramIcon: FC<Props> = (props) => (
+export const TelegramIcon:FC<Props> = (props) => (
   <svg viewBox="0 0 80 80" {...defaultProps} {...props}>
     <g clipPath="url(#clip0_127_5)">
       <circle cx="40" cy="40" r="39" stroke="white" strokeWidth="2" />

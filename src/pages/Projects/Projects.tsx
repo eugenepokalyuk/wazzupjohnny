@@ -46,7 +46,7 @@ export const Projects: FC = () => {
           {uniqueTags.map((tag, index) => (
             <Button
               key={index}
-              size={Size.XS}
+              size={Size.SM}
               className={selectedTags.includes(tag) ? classes.active : ''}
               onClick={() => toggleTag(tag)}
               tilt
@@ -72,7 +72,7 @@ export const Projects: FC = () => {
                   <Button
                     key={idx}
                     variant={Variant.Accent}
-                    size={Size.XS}
+                    size={Size.SM}
                     tilt
                   >
                     {badge}

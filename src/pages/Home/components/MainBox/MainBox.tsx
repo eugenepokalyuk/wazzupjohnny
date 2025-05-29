@@ -18,7 +18,7 @@ export const MainBox: FC = () => {
     <div className={classes.box}>
       <Contact />
 
-      <Interview />
+    <Interview />
 
       <div className={`${classes.wrapper} ${!isVisible ? classes.hidden : ''}`}>
         <Board />

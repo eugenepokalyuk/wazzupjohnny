@@ -1,12 +1,15 @@
 import { FC } from 'react';
 
-import classes from './Home.module.scss';
-import { HeroSection } from './components/HeroSection/HeroSection';
+import { MatterBox } from '@components/modules';
+import { Skills } from '@services/Api';
 
-export const Home: FC = () => {
-  return (
-    <div className={classes.box}>
-      <HeroSection />
-    </div>
-  );
-};
+import classes from './Home.module.scss';
+import { MainBox } from './components/MainBox/MainBox';
+
+export const Home:FC = () => (
+  <section className={classes.section}>
+    <MainBox />
+
+    <MatterBox skills={Skills} />
+  </section>
+);
