@@ -56,18 +56,20 @@ export const Header: FC = () => {
   ];
 
   return (
-    <header className={classes.box}>
-      <div className={classes.logo}>
-        <Link to={Urls.Home}>{'wazzupjohnny'}</Link>
+    <header className={classes.header}>
+      <div className={classes.box}>
+        <div className={classes.logo}>
+          <Link to={Urls.Home}>{'wazzupjohnny'}</Link>
+        </div>
+
+        <NavigationDesktop RouteLinks={RouteLinks} />
+
+        <div className={classes.burger_menu} onClick={handleMenuToggle}>
+          {isMenuOpen ? <MenuCloseIcon /> : <MenuOpenIcon />}
+        </div>
+
+        {isMenuOpen && <NavigationMobile RouteLinks={RouteLinks} />}
       </div>
-
-      <NavigationDesktop RouteLinks={RouteLinks} />
-
-      <div className={classes.burger_menu} onClick={handleMenuToggle}>
-        {isMenuOpen ? <MenuCloseIcon /> : <MenuOpenIcon />}
-      </div>
-
-      {isMenuOpen && <NavigationMobile RouteLinks={RouteLinks} />}
     </header>
   );
 };
