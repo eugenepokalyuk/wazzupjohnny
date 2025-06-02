@@ -1,21 +1,21 @@
-export interface AboutItem {
-  title: string;
-  description: string;
-  image: string;
-}
-
 import ImageAstra from '/public/images/Astra.jpg';
 import ImageBoardgames from '/public/images/boardgames.jpg';
-import ImageSelfPresentation from '/public/images/selfpresentation.jpg';
+import ImageSelfPresentation2 from '/public/images/selfPresentation2.jpg';
 import ImageSmart from '/public/images/smart.jpg';
 import ImageSnowboarding from '/public/images/snowboarding.jpg';
 
-export const AboutMock: AboutItem[] = [
+export interface AboutItem {
+  title:string;
+  description:string;
+  image:string;
+}
+
+export const AboutMock:AboutItem[] = [
   {
     title: 'Меня зовут Женя',
     description:
       'Я frontend-разработчик с более трехлетним опытом создания интерактивных и удобных пользовательских интерфейсов. Моя специализация — React и TypeScript, а для управления состоянием я использую Redux (Thunk/Saga/Observable + RxJs), а также MobX. Мне знакомы современные инструменты разработки, включая сборщики Webpack и Vite, что позволяет мне создавать быстрые и надежные приложения',
-    image: ImageSelfPresentation,
+    image: ImageSelfPresentation2,
   },
   {
     title: 'Я стремлюсь',
