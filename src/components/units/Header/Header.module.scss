@@ -1,19 +1,29 @@
 @import 'src/styles/index';
 
-.box {
-  @include glass($width_xlg);
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
+.header {
   height: 100%;
   width: 100%;
 
   padding: gap(4);
 
   background: $background_1;
+}
+
+.box {
+  @include glass(720px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: gap(6);
+
+  @include lg_down {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: gap(2);
+  }
 }
 
 .logo {
