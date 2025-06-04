@@ -1,5 +1,5 @@
 import ImageAutoSrc from '/public/images/autoschool.jpg';
-import ImageInstaxSrc from '/public/images/instax.png';
+import ImageInstaxSrc from '/public/images/instax.jpg';
 import ImageMacSrc from '/public/images/mac.webp';
 import ImagePS5ProSrc from '/public/images/playstation.jpeg';
 import ImageCoffeeSrc from '/public/images/coffee.webp';

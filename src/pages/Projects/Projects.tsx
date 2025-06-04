@@ -1,10 +1,10 @@
 import { FC, useState } from 'react';
 
 import { Button, Card, Link, Size, Tags, Text, Variant } from '@components/ui';
+import { Layout } from '@components/units';
 
 import classes from './Projects.module.scss';
 import { ProjectArray } from './Projects.mock.tsx';
-import { Layout } from '@components/units';
 
 export const Projects: FC = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
