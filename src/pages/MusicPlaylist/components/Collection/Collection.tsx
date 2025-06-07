@@ -1,36 +1,34 @@
 import { FC } from 'react';
 
+import { Button, Link, Size, Variant } from '@components/ui';
+
 import classes from './Collection.module.scss';
 
 interface Props {
-  playlists: number[];
+  playlists:number[];
 }
 
-export const Collection: FC<Props> = ({ playlists }) => {
-  return (
-    <div className={classes.container}>
-      {playlists.map((playlist, index) => (
-        <CollectionCard key={index} playlist={playlist} />
-      ))}
-    </div>
-  );
-};
+export const Collection:FC<Props> = ({ playlists }) => (
+  <div className={classes.box}>
+    {playlists.map((playlist, index) => (
+      <CollectionCard key={index} playlist={playlist} index={playlists.length - index - 1} />
+    ))}
+  </div>
+);
 
 interface CardProps {
-  playlist: number;
+  playlist:number;
+  index:number;
 }
 
-const CollectionCard: FC<CardProps> = ({ playlist }) => (
-  <div className={classes.cardWrapper}>
+const CollectionCard:FC<CardProps> = ({ playlist, index }) => (
+  <div className={classes.card_box}>
     <div className={classes.card}>
-      <iframe
-        frameBorder="0"
-        className={classes.iframe}
-        src={`https://music.yandex.ru/iframe/playlist/mackspavlov/${playlist}`}
-        title={`Yandex Music Playlist ${playlist}`}
-      >
-        <a href="https://music.yandex.ru/users/mackspavlov">Евгений Покалюк</a> на Яндекс Музыке
-      </iframe>
+      <Link to={`https://music.yandex.ru/iframe/playlist/mackspavlov/${playlist}`}>
+        <Button size={Size.XL} variant={Variant.Default} wide>
+          {`Daily legends #${index + 1}`}
+        </Button>
+      </Link>
     </div>
   </div>
 );

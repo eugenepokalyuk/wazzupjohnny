@@ -12,8 +12,8 @@ export const MarqueeBanner:FC = () => (
           <span
             className={
               idx % 2 === 0
-                ? classes.marqueeContent
-                : classes.marqueeContentReverse
+                ? classes.marquee_content
+                : classes.marquee_content_reverse
             }
             data-text={text}
           >

@@ -1,14 +1,15 @@
 @import 'src/styles/index';
 
-.container {
+.box {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: gap(4);
+  gap: gap(2);
+
   padding: gap(4)
 }
 
-.cardWrapper {
+.card_box {
   width: 100%;
 
   @media (min-width: 640px) { /* sm */

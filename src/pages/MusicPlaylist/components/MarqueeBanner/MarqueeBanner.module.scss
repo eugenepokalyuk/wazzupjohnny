@@ -2,8 +2,6 @@
 
 .section {
   width: 100%;
-  //left: 0;
-  //box-sizing: content-box;
 }
 
 .marquee {
@@ -18,19 +16,23 @@
   }
 }
 
-.marqueeContent,
-.marqueeContentReverse {
+.marquee_content,
+.marquee_content_reverse {
   display: inline-block;
   font-size: 5rem;
   color: rgba(255, 255, 255, 0.5);
   white-space: nowrap;
+
+  @include md_down {
+    font-size: 2rem;
+  }
 }
 
-.marqueeContent {
+.marquee_content {
   animation: marquee-left 60s linear infinite;
 }
 
-.marqueeContentReverse {
+.marquee_content_reverse {
   animation: marquee-right 60s linear infinite;
 }
 
