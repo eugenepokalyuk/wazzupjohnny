@@ -82,7 +82,18 @@ export const Projects:FC = () => {
                 </div>
               </div>
 
-              <div>
+              <div className={classes.button_box}>
+                {project.url && <Link
+                  to={project.url}
+                  // @ts-ignore
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant={Variant.Secondary} wide>
+                    {'Посмотреть сайт'}
+                  </Button>
+                </Link>}
+
                 <Link
                   to={project.urlGitHub}
                   // @ts-ignore
