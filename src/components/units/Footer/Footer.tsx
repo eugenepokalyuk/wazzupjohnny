@@ -6,14 +6,18 @@ import { Urls } from '@services/Route';
 
 import classes from './Footer.module.scss';
 
-export const Footer:FC = () => (
-  <footer className={classes.footer}>
-    <div className={classes.box}>
-      <div className={classes.logo}>
-        <Link to={Urls.Home}>{'wazzupjohnny'}</Link>
-      </div>
+export const Footer:FC = () => {
+  const year = new Date().getFullYear();
 
-      <Text color={Color.Secondary}>{'© 2023-2025 Мой Плейлист. Все права защищены.'}</Text>
-    </div>
-  </footer>
-);
+  return (
+    <footer className={classes.footer}>
+      <div className={classes.box}>
+        <div className={classes.logo}>
+          <Link to={Urls.Home}>{'wazzupjohnny'}</Link>
+        </div>
+
+        <Text color={Color.Secondary}>{`©2023-${year} wazzupjohnny. Все права защищены`}</Text>
+      </div>
+    </footer>
+  );
+};
