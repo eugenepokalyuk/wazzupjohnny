@@ -6,6 +6,7 @@ export enum Urls {
   WishList = '/wish-list/',
   Articles = '/articles/',
   ArticlePage = '/articles/:slug/',
+  MusicPlaylist = '/playlist/',
   Error = '*',
 }
 

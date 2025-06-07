@@ -1,84 +1,28 @@
 @import 'src/styles/index';
 
 .footer {
-  @include background-theme($background_1);
+  width: 100%;
 
-  color: $text-black;
-  padding: gap(10) gap(4);
+  padding: gap(4);
 
-  border-top-right-radius: $br_6;
-  border-top-left-radius: $br_6;
-}
-
-.logo {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 24px;
-  font-weight: $bold;
-  color: $logo-color;
+  background: $background_1;
 }
 
 .box {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: gap(4);
+  @include glass(720px);
 
-  @include glass($width_xlg);
-
-  @media (max-width: $width_md) {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.narrow_column {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: gap(6);
-
-  h4 {
-    margin-bottom: gap(3);
-  }
 }
 
-.wide_column {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: gap(4);
+.logo {
+  z-index: 2;
 
-  @media (max-width: $width_md) {
-    grid-template-columns: 1fr min-content;
-  }
-
-  .column_section {
-    display: flex;
-    flex-direction: column;
-    gap: gap(6);
-
-    color: $text-default;
-
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: gap(6);
-
-      list-style: none;
-      padding: 0;
-
-      li {
-        margin-bottom: gap(2);
-
-        a {
-          color: $text-default;
-          text-decoration: none;
-
-          &:hover {
-            color: $accent;
-          }
-        }
-      }
-
-      h4 {
-        margin-bottom: gap(3);
-      }
-    }
-  }
+  font-family: 'Unbounded', sans-serif;
+  font-size: 24px;
+  font-weight: $bold;
+  color: $yellow;
 }

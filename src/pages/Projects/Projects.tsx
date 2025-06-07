@@ -6,7 +6,7 @@ import { Layout } from '@components/units';
 import classes from './Projects.module.scss';
 import { ProjectArray } from './Projects.mock.tsx';
 
-export const Projects: FC = () => {
+export const Projects:FC = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const uniqueTags = Array.from(
@@ -15,11 +15,11 @@ export const Projects: FC = () => {
 
   const filteredProjects = selectedTags.length
     ? ProjectArray.filter((project) =>
-        selectedTags.every((tag) => project.badges.includes(tag)),
-      )
+      selectedTags.every((tag) => project.badges.includes(tag)),
+    )
     : ProjectArray;
 
-  const toggleTag = (tag: string) => {
+  const toggleTag = (tag:string) => {
     setSelectedTags((prev) =>
       prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
     );
@@ -58,26 +58,28 @@ export const Projects: FC = () => {
       </div>
 
       <div className={classes.card_list}>
-        {!!filteredProjects?.length ? (
+        {filteredProjects.length > 0 ? (
           filteredProjects.map((project, index) => (
             <Card className={classes.card} key={index}>
-              <Text tag={Tags.Heading_3} size={Size.LG}>
-                {project.title}
-              </Text>
+              <div className={classes.card_box}>
+                <Text tag={Tags.Heading_3} size={Size.LG}>
+                  {project.title}
+                </Text>
 
-              <Text>{project.description}</Text>
+                <Text>{project.description}</Text>
 
-              <div className={classes.tags_box}>
-                {project.badges.map((badge, idx) => (
-                  <Button
-                    key={idx}
-                    variant={Variant.Accent}
-                    size={Size.SM}
-                    tilt
-                  >
-                    {badge}
-                  </Button>
-                ))}
+                <div className={classes.tags_box}>
+                  {project.badges.map((badge, idx) => (
+                    <Button
+                      key={idx}
+                      variant={Variant.Accent}
+                      size={Size.SM}
+                      tilt
+                    >
+                      {badge}
+                    </Button>
+                  ))}
+                </div>
               </div>
 
               <div>

@@ -21,3 +21,13 @@
     padding: gap(4);
   }
 }
+
+.wide {
+  max-width: 100vw;
+  padding: 0;
+
+  @include md_down() {
+    max-width: 100vw;
+  }
+}
+

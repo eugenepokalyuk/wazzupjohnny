@@ -9,11 +9,18 @@
 }
 
 .card_list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: gap(4);
 
   .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: gap(2);
+  }
+
+  .card_box {
     display: flex;
     flex-direction: column;
     gap: gap(2);

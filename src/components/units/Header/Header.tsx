@@ -53,6 +53,11 @@ export const Header: FC = () => {
       url: Urls.Articles,
       label: 'Статьи',
     },
+    {
+      key: Urls.MusicPlaylist,
+      url: Urls.MusicPlaylist,
+      label: 'Мой плейлист',
+    },
   ];
 
   return (

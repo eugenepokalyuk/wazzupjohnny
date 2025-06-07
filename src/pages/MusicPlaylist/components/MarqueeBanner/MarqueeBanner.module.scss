@@ -1,0 +1,53 @@
+@import 'src/styles/index';
+
+.section {
+  width: 100%;
+  //left: 0;
+  //box-sizing: content-box;
+}
+
+.marquee {
+  padding: 0.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+
+  &:first-child {
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+  }
+}
+
+.marqueeContent,
+.marqueeContentReverse {
+  display: inline-block;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+}
+
+.marqueeContent {
+  animation: marquee-left 60s linear infinite;
+}
+
+.marqueeContentReverse {
+  animation: marquee-right 60s linear infinite;
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

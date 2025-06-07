@@ -11,6 +11,7 @@ export const Navigation:FC = () => {
     { label: 'Самопрезентация', url: Urls.About },
     { label: 'Список желаний', url: Urls.WishList },
     { label: 'Пишу статьи', url: Urls.Articles },
+    { label: 'Мой плейлист', url: Urls.MusicPlaylist },
   ];
 
   return (
