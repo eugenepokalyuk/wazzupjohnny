@@ -7,6 +7,7 @@ import { Projects } from '@pages/Projects/Projects';
 import { About } from '@pages/About/About';
 import { WishList } from '@pages/WishList/WishList';
 import { Articles } from '@pages/Articles/Articles';
+import { MusicPlaylist } from '@pages/MusicPlaylist/MusicPlaylist';
 import { ArticlePage } from '@pages/Articles/components/ArticlePage/ArticlePage';
 import { Error } from '@pages/Error/Error';
 
@@ -36,6 +37,10 @@ export const appRoutes: RouteObject[] = [
   {
     path: Urls.ArticlePage,
     element: <ArticlePage />,
+  },
+  {
+    path: Urls.MusicPlaylist,
+    element: <MusicPlaylist />,
   },
 
   {
