@@ -33,7 +33,7 @@ export const ShapeWidget:FC<Props> = ({ visible, message }) => {
   };
 
   const [displayedText, setDisplayedText] = useState('');
-  const [typingIndex, setTypingIndex] = useState(0);
+  const [_, setTypingIndex] = useState(0);
 
   useEffect(() => {
     if (!message) {
