@@ -1,29 +1,42 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
-import { Button, Card, Link, Size, Tags, Text, Variant } from '@components/ui';
+import { Button, Size, Tags, Text } from '@components/ui';
 import { Layout } from '@components/units';
+import { ShapeWidget } from '@components/modules/Shape/ShapeWidget/ShapeWidget';
+import { projectArray } from '@services/Api';
 
 import classes from './Projects.module.scss';
-import { ProjectArray } from './Projects.mock.tsx';
+import { ProjectCard } from './ProjectCard/ProjectCard';
 
 export const Projects:FC = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [activeProjectIndex, setActiveProjectIndex] = useState<number>(0);
 
   const uniqueTags = Array.from(
-    new Set(ProjectArray.flatMap((project) => project.badges)),
+    new Set(projectArray.flatMap((project) => project.badges)),
   );
 
   const filteredProjects = selectedTags.length
-    ? ProjectArray.filter((project) =>
+    ? projectArray.filter((project) =>
       selectedTags.every((tag) => project.badges.includes(tag)),
     )
-    : ProjectArray;
+    : projectArray;
 
   const toggleTag = (tag:string) => {
     setSelectedTags((prev) =>
       prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
     );
   };
+
+  useEffect(() => {
+    setActiveProjectIndex(0);
+  }, []);
+
+  const handleVisible = (index:number) => {
+    setActiveProjectIndex(index);
+  };
+
+  const activeHint = filteredProjects[activeProjectIndex]?.hint || null;
 
   return (
     <Layout>
@@ -60,52 +73,13 @@ export const Projects:FC = () => {
       <div className={classes.card_list}>
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project, index) => (
-            <Card className={classes.card} key={index}>
-              <div className={classes.card_box}>
-                <Text tag={Tags.Heading_3} size={Size.LG}>
-                  {project.title}
-                </Text>
-
-                <Text>{project.description}</Text>
-
-                <div className={classes.tags_box}>
-                  {project.badges.map((badge, idx) => (
-                    <Button
-                      key={idx}
-                      variant={Variant.Accent}
-                      size={Size.SM}
-                      tilt
-                    >
-                      {badge}
-                    </Button>
-                  ))}
-                </div>
-              </div>
-
-              <div className={classes.button_box}>
-                {project.url && <Link
-                  to={project.url}
-                  // @ts-ignore
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button variant={Variant.Secondary} wide>
-                    {'Посмотреть сайт'}
-                  </Button>
-                </Link>}
-
-                <Link
-                  to={project.urlGitHub}
-                  // @ts-ignore
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button variant={Variant.Secondary} wide>
-                    {'Посмотреть код'}
-                  </Button>
-                </Link>
-              </div>
-            </Card>
+            <ProjectCard
+              key={index}
+              project={project}
+              index={index}
+              onVisible={handleVisible}
+              active={index === activeProjectIndex}
+            />
           ))
         ) : (
           <Text tag={Tags.Heading} size={Size.LG}>
@@ -115,6 +89,8 @@ export const Projects:FC = () => {
           </Text>
         )}
       </div>
+
+      <ShapeWidget visible={!!activeHint} message={activeHint} />
     </Layout>
   );
 };

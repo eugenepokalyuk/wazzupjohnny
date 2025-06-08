@@ -45,8 +45,8 @@
       font-size: 72px;
 
       .icon {
+        transition: scale 400ms;
         fill: none;
-        transition: font-size 0.2s;
       }
 
       .icon:hover {

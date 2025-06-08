@@ -2,11 +2,11 @@ import { FC } from 'react';
 
 import { Layout } from '@components/units';
 import { Size, Tags, Text } from '@components/ui';
+import { aboutMock } from '@services/Api';
 
 import classes from './About.module.scss';
-import { AboutMock } from './About.mock.ts';
 
-export const About: FC = () => (
+export const About:FC = () => (
   <Layout>
     <div className={classes.greetings_box}>
       <Text tag={Tags.Heading} size={Size.XL}>
@@ -20,7 +20,7 @@ export const About: FC = () => (
       </Text>
     </div>
 
-    {AboutMock.map((item, index) => (
+    {aboutMock.map((item, index) => (
       <div
         key={index}
         className={`${classes.row} ${index % 2 === 0 ? classes.even : classes.odd}`}

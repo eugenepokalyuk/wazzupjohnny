@@ -1,7 +1,8 @@
 import { FC } from 'react';
 
+import { Shape } from '@components/modules';
+
 import styles from './About.module.scss';
-import { Shape } from '../Shape/Shape';
 
 export const About:FC = () => (
   <div className={styles.box}>

@@ -3,14 +3,15 @@ import { useParams } from 'react-router-dom';
 
 import { Layout } from '@components/units';
 import { Link, Size, Tags, Text } from '@components/ui';
+import { articlesMock } from '@services/Api';
 
 import classes from './ArticlePage.module.scss';
-import { ArticlesMock } from '../../Articles.mock.ts';
 import { ContentBlock } from '../ContentBlock/ContentBlock';
+import { ReadingProgressBar } from '../ReadingProgressBar/ReadingProgressBar';
 
-export const ArticlePage: FC = () => {
-  const { slug } = useParams<{ slug: string }>();
-  const article = ArticlesMock.find((a) => a.slug === slug);
+export const ArticlePage:FC = () => {
+  const { slug } = useParams<{ slug:string }>();
+  const article = articlesMock.find((a) => a.slug === slug);
 
   if (!article) {
     return (
@@ -24,6 +25,8 @@ export const ArticlePage: FC = () => {
 
   return (
     <Layout>
+      <ReadingProgressBar />
+
       <div className={classes.article}>
         <Text
           tag={Tags.Heading}

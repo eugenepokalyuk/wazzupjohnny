@@ -2,12 +2,12 @@ import { FC } from 'react';
 
 import { Layout } from '@components/units';
 import { Button, Link, Size, Tags, Text } from '@components/ui';
+import { wishListMock } from '@services/Api';
 
 import classes from './WishList.module.scss';
-import { WishListMock } from './WishList.mock';
 
 export const WishList:FC = () => {
-  const sortedList = [...WishListMock].sort((a, b) => {
+  const sortedList = [...wishListMock].sort((a, b) => {
     return Number(a.gifted) - Number(b.gifted);
   });
 

@@ -28,3 +28,27 @@
   font-weight: $bold;
   color: $yellow;
 }
+
+.nav_links {
+  z-index: 1;
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: gap(4);
+
+  .link:hover {
+    & > * {
+      color: $accent;
+    }
+  }
+
+  .active {
+    & > * {
+      color: $accent;
+    }
+  }
+}

@@ -10,7 +10,7 @@ export interface AboutItem {
   image:string;
 }
 
-export const AboutMock:AboutItem[] = [
+export const aboutMock:AboutItem[] = [
   {
     title: 'Меня зовут Женя',
     description:
