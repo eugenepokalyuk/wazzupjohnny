@@ -2,6 +2,8 @@ import { FC, ReactNode } from 'react';
 import { Outlet } from 'react-router-dom';
 import clsx from 'clsx';
 
+import { Urls } from '@services/Route';
+
 import classes from './Layout.module.scss';
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
@@ -13,14 +15,50 @@ interface Props {
   wide?:boolean;
 }
 
-export const Layout:FC<Props> = ({ header, footer, wide, children }) => (
-  <div className={classes.box}>
-    {header === null ? null : <Header />}
+export interface RouteLink {
+  key:string;
+  url:string;
+  label:string;
+}
 
-    <main className={clsx(classes.main, {
-      [classes.wide]: wide
-    })}>{children || <Outlet />}</main>
+export const Layout:FC<Props> = ({ header, footer, wide, children }) => {
+  const RouteLinks:RouteLink[] = [
+    {
+      key: Urls.Projects,
+      url: Urls.Projects,
+      label: 'Проекты',
+    },
+    {
+      key: Urls.About,
+      url: Urls.About,
+      label: 'Самопрезентация',
+    },
+    {
+      key: Urls.WishList,
+      url: Urls.WishList,
+      label: 'Список желаний',
+    },
+    {
+      key: Urls.Articles,
+      url: Urls.Articles,
+      label: 'Статьи',
+    },
+    {
+      key: Urls.MusicPlaylist,
+      url: Urls.MusicPlaylist,
+      label: 'Мой плейлист',
+    },
+  ];
 
-    {footer === null ? null : <Footer />}
-  </div>
-);
+  return (
+    <div className={classes.box}>
+      {header === null ? null : <Header routeLinks={RouteLinks} />}
+
+      <main className={clsx(classes.main, {
+        [classes.wide]: wide,
+      })}>{children || <Outlet />}</main>
+
+      {footer === null ? null : <Footer routeLinks={RouteLinks} />}
+    </div>
+  );
+};

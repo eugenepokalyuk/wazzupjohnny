@@ -1,19 +1,18 @@
 import { FC, useEffect, useState } from 'react';
 
 import { Link, MenuCloseIcon, MenuOpenIcon } from '@components/ui';
+import { RouteLink } from '@components/units';
 import { Urls } from '@services/Route';
 
 import { NavigationDesktop } from './components/NavigationDesktop/NavigationDesktop';
 import { NavigationMobile } from './components/NavigationMobile/NavigationMobile';
 import classes from './Header.module.scss';
 
-export interface RouteLink {
-  key: string;
-  url: string;
-  label: string;
+interface Props {
+  routeLinks:RouteLink[];
 }
 
-export const Header: FC = () => {
+export const Header:FC<Props> = ({ routeLinks }) => {
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
 
   const handleMenuToggle = () => {
@@ -32,34 +31,6 @@ export const Header: FC = () => {
     };
   }, [isMenuOpen]);
 
-  const RouteLinks: RouteLink[] = [
-    {
-      key: Urls.Projects,
-      url: Urls.Projects,
-      label: 'Проекты',
-    },
-    {
-      key: Urls.About,
-      url: Urls.About,
-      label: 'Самопрезентация',
-    },
-    {
-      key: Urls.WishList,
-      url: Urls.WishList,
-      label: 'Список желаний',
-    },
-    {
-      key: Urls.Articles,
-      url: Urls.Articles,
-      label: 'Статьи',
-    },
-    {
-      key: Urls.MusicPlaylist,
-      url: Urls.MusicPlaylist,
-      label: 'Мой плейлист',
-    },
-  ];
-
   return (
     <header className={classes.header}>
       <div className={classes.box}>
@@ -67,13 +38,13 @@ export const Header: FC = () => {
           <Link to={Urls.Home}>{'wazzupjohnny'}</Link>
         </div>
 
-        <NavigationDesktop RouteLinks={RouteLinks} />
+        <NavigationDesktop routeLinks={routeLinks} />
 
         <div className={classes.burger_menu} onClick={handleMenuToggle}>
           {isMenuOpen ? <MenuCloseIcon /> : <MenuOpenIcon />}
         </div>
 
-        {isMenuOpen && <NavigationMobile RouteLinks={RouteLinks} />}
+        {isMenuOpen && <NavigationMobile routeLinks={routeLinks} />}
       </div>
     </header>
   );

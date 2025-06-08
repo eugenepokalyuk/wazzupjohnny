@@ -2,11 +2,11 @@ import { FC } from 'react';
 
 import { Layout } from '@components/units';
 import { Button, Card, Link, Size, Tags, Text } from '@components/ui';
+import { articlesMock } from '@services/Api';
 
-import { ArticlesMock } from './Articles.mock';
 import classes from './Articles.module.scss';
 
-export const Articles: FC = () => (
+export const Articles:FC = () => (
   <Layout>
     <div className={classes.title_box}>
       <Text tag={Tags.Heading} size={Size.XL}>
@@ -21,7 +21,7 @@ export const Articles: FC = () => (
     </div>
 
     <div className={classes.articles}>
-      {ArticlesMock.map((article) => (
+      {articlesMock.map((article) => (
         <Card key={article.id} className={classes.article}>
           <Text tag={Tags.Heading} size={Size.LG}>
             {article.title}

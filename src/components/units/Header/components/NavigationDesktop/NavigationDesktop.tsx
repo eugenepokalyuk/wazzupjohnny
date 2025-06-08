@@ -8,15 +8,15 @@ import { Link, Size, Tags, Text } from '@components/ui';
 import classes from './NavigationDesktop.module.scss';
 
 interface Props {
-  RouteLinks: RouteLink[];
+  routeLinks: RouteLink[];
 }
 
-export const NavigationDesktop: FC<Props> = ({ RouteLinks }) => {
+export const NavigationDesktop: FC<Props> = ({ routeLinks }) => {
   const location = useLocation();
 
   return (
     <nav className={classes.nav_links}>
-      {RouteLinks.map((link) => (
+      {routeLinks.map((link) => (
         <Link
           key={link.key}
           to={link.url}

@@ -12,28 +12,6 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: gap(4);
-
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: gap(2);
-  }
-
-  .card_box {
-    display: flex;
-    flex-direction: column;
-    gap: gap(2);
-  }
-}
-
-.tags_box {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: gap(2);
-
-  padding: gap(2);
 }
 
 .active {
@@ -44,8 +22,11 @@
   width: 100%;
 }
 
-.button_box {
+.tags_box {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: gap(2);
+
+  padding: gap(2);
 }

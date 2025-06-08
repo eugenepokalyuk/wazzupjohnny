@@ -8,15 +8,15 @@ import classes from './NavigationMobile.module.scss';
 import clsx from 'clsx';
 
 interface Props {
-  RouteLinks: RouteLink[];
+  routeLinks:RouteLink[];
 }
 
-export const NavigationMobile: FC<Props> = ({ RouteLinks }) => {
+export const NavigationMobile:FC<Props> = ({ routeLinks }) => {
   const location = useLocation();
 
   return (
     <div className={classes.mobile_menu}>
-      {RouteLinks.map((link) => (
+      {routeLinks.map((link) => (
         <Link
           key={link.key}
           to={link.url}
