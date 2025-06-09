@@ -21,9 +21,7 @@ export const CollectionCard:FC<Props> = ({ playlist, index, image }) => (
     <img src={image} alt={`Daily legends #${index + 1}`} className={classes.image} />
 
     <div className={classes.overlay}>
-      <div className={classes.text}>
-        <Text tag={Tags.Heading}>{`Daily legends #${index + 1}`}</Text>
-      </div>
+      <Text tag={Tags.Heading}>{`Daily legends #${index + 1}`}</Text>
     </div>
   </Link>
 );
