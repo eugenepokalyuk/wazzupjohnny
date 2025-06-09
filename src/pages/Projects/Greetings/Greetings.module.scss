@@ -1,0 +1,32 @@
+@import 'src/styles/index';
+
+.greetings_box {
+  display: flex;
+  flex-direction: column;
+  gap: gap(4);
+
+  margin-bottom: gap(4);
+}
+
+.card_list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: gap(4);
+}
+
+.active {
+  background: $yellow;
+}
+
+.iframe_box {
+  width: 100%;
+}
+
+.tags_box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: gap(2);
+
+  padding: gap(2);
+}

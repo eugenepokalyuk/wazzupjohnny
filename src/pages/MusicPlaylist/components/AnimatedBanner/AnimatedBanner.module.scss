@@ -2,8 +2,10 @@
 
 .section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: gap(3);
 
   padding: gap(4);
   background: transparent;

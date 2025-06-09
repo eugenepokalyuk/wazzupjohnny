@@ -8,6 +8,7 @@ import { articlesMock } from '@services/Api';
 import classes from './ArticlePage.module.scss';
 import { ContentBlock } from '../ContentBlock/ContentBlock';
 import { ReadingProgressBar } from '../ReadingProgressBar/ReadingProgressBar';
+import { formatDate } from '@/utils';
 
 export const ArticlePage:FC = () => {
   const { slug } = useParams<{ slug:string }>();
@@ -37,7 +38,7 @@ export const ArticlePage:FC = () => {
         </Text>
 
         <Text tag={Tags.Paragraph} size={Size.SM}>
-          {`Автор: ${article.author} • ${article.date}`}
+          {`Автор: ${article.author} • ${formatDate(article.date)}`}
         </Text>
 
         <div className={classes.content}>
