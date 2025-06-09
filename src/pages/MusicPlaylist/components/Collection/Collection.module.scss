@@ -3,7 +3,9 @@
 .box {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: gap(3);
+  gap: gap(4);
+
+  padding: gap(4);
 
   @include lg_down {
     grid-template-columns: repeat(3, 1fr);
@@ -12,6 +14,4 @@
   @include md_down {
     grid-template-columns: 1fr;
   }
-
-  padding: gap(4)
 }

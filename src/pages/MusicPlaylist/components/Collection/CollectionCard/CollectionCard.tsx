@@ -13,7 +13,7 @@ interface Props {
 export const CollectionCard:FC<Props> = ({ playlist, index, image }) => (
   <Link
     to={`https://music.yandex.ru/iframe/playlist/mackspavlov/${playlist}`}
-    className={classes.box}
+    className={classes.link}
     //@ts-ignore
     target="_blank"
     rel="noopener noreferrer"
