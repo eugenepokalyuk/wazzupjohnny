@@ -26,14 +26,14 @@
 }
 
 .open {
-  transition: transform 0.3s ease;
-  transform: translateX(0);
+  opacity: 1;
+  transition: opacity 0.3s ease;
   pointer-events: auto;
 }
 
 .close {
-  transform: translateX(100%);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.3s ease;
   pointer-events: none;
 }
 
