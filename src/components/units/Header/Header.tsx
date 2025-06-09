@@ -44,7 +44,7 @@ export const Header:FC<Props> = ({ routeLinks }) => {
           {isMenuOpen ? <MenuCloseIcon /> : <MenuOpenIcon />}
         </div>
 
-        <NavigationMobile routeLinks={routeLinks} className={isMenuOpen ? classes.open : ''} />
+        <NavigationMobile routeLinks={routeLinks} className={isMenuOpen ? classes.open : classes.close} />
       </div>
     </header>
   );
