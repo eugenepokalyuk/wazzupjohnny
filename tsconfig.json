@@ -58,6 +58,12 @@
             ],
             "@utils/constants/*": [
                 "src/utils/constants/*"
+            ],
+            "@utils/hooks/*": [
+                "src/utils/hooks/*"
+            ],
+            "@utils/string/*": [
+                "src/utils/string/*"
             ]
         }
     },

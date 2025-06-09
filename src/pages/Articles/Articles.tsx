@@ -1,8 +1,9 @@
 import { FC } from 'react';
 
 import { Layout } from '@components/units';
-import { Button, Card, Link, Size, Tags, Text } from '@components/ui';
+import { Button, Card, Color, Link, Size, Tags, Text } from '@components/ui';
 import { articlesMock } from '@services/Api';
+import { formatDate } from '@utils/string';
 
 import classes from './Articles.module.scss';
 
@@ -25,6 +26,10 @@ export const Articles:FC = () => (
         <Card key={article.id} className={classes.article}>
           <Text tag={Tags.Heading} size={Size.LG}>
             {article.title}
+          </Text>
+
+          <Text tag={Tags.Paragraph} color={Color.Secondary}>
+            {formatDate(article.date)}
           </Text>
 
           <Link to={`/articles/${article.slug}`} className={classes.link}>

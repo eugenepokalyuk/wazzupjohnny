@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { Button, Card, Link, Size, Tags, Text, Variant } from '@components/ui';
 import { ProjectItemProps } from '@services/Api';
 
-import classes from './ProjectCard.module.scss';
+import classes from './CardItem.module.scss';
 
 interface Props {
   project:ProjectItemProps;
@@ -14,7 +14,7 @@ interface Props {
   active:boolean;
 }
 
-export const ProjectCard:FC<Props> = ({ project, onVisible, index, active }) => {
+export const CardItem:FC<Props> = ({ project, onVisible, index, active }) => {
   const { ref, inView } = useInView({
     threshold: 1,
     triggerOnce: false,

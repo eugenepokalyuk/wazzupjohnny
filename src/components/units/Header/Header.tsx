@@ -4,9 +4,9 @@ import { Link, MenuCloseIcon, MenuOpenIcon } from '@components/ui';
 import { RouteLink } from '@components/units';
 import { Urls } from '@services/Route';
 
+import classes from './Header.module.scss';
 import { NavigationDesktop } from './components/NavigationDesktop/NavigationDesktop';
 import { NavigationMobile } from './components/NavigationMobile/NavigationMobile';
-import classes from './Header.module.scss';
 
 interface Props {
   routeLinks:RouteLink[];
@@ -44,7 +44,7 @@ export const Header:FC<Props> = ({ routeLinks }) => {
           {isMenuOpen ? <MenuCloseIcon /> : <MenuOpenIcon />}
         </div>
 
-        {isMenuOpen && <NavigationMobile routeLinks={routeLinks} />}
+        <NavigationMobile routeLinks={routeLinks} className={isMenuOpen ? classes.open : ''} />
       </div>
     </header>
   );

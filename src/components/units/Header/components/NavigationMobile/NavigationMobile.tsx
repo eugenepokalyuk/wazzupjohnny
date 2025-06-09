@@ -1,21 +1,22 @@
 import { FC } from 'react';
 import { useLocation } from 'react-router';
+import clsx from 'clsx';
 
 import { RouteLink } from '@components/units';
 import { Link, Size, Tags, Text } from '@components/ui';
 
 import classes from './NavigationMobile.module.scss';
-import clsx from 'clsx';
 
 interface Props {
   routeLinks:RouteLink[];
+  className?:string;
 }
 
-export const NavigationMobile:FC<Props> = ({ routeLinks }) => {
+export const NavigationMobile:FC<Props> = ({ routeLinks, className }) => {
   const location = useLocation();
 
   return (
-    <div className={classes.mobile_menu}>
+    <div className={clsx(classes.mobile_menu, className)}>
       {routeLinks.map((link) => (
         <Link
           key={link.key}
