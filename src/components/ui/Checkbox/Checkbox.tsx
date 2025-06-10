@@ -6,21 +6,21 @@ import { Size, Variant } from '@components/ui/enums';
 import classes from './Checkbox.module.scss';
 
 interface Props {
-  label:string;
-  checked:boolean;
-  onChange:() => void;
-  size?:Size;
-  variant?:Variant;
+  label: string;
+  checked: boolean;
+  onChange: () => void;
+  size?: Size;
+  variant?: Variant;
 }
 
-export const Checkbox:FC<Props> = ({
-                                     label,
-                                     checked,
-                                     onChange,
-                                     size = Size.MD,
-                                     variant = Variant.Default,
-                                     ...props
-                                   }) => (
+export const Checkbox: FC<Props> = ({
+  label,
+  checked,
+  onChange,
+  size = Size.MD,
+  variant = Variant.Default,
+  ...props
+}) => (
   <div
     className={clsx(
       classes.checkbox_container,

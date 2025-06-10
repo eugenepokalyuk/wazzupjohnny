@@ -5,28 +5,28 @@ import { Size, Variant } from '@components/ui/enums.ts';
 import classes from './CodeInput.module.scss';
 
 interface Props {
-  length:number;
-  value:string;
-  onChange:(value:string) => void;
-  error?:string;
-  size?:Size;
-  variant?:Variant;
-  className?:string;
+  length: number;
+  value: string;
+  onChange: (value: string) => void;
+  error?: string;
+  size?: Size;
+  variant?: Variant;
+  className?: string;
 }
 
-export const CodeInput:FC<Props> = ({
-                                      length,
-                                      value,
-                                      onChange,
-                                      error,
-                                      size = Size.MD,
-                                      variant = Variant.Default,
-                                      className,
-                                      ...props
-                                    }) => {
-  const inputsRef = useRef<Array<HTMLInputElement|null>>([]);
+export const CodeInput: FC<Props> = ({
+  length,
+  value,
+  onChange,
+  error,
+  size = Size.MD,
+  variant = Variant.Default,
+  className,
+  ...props
+}) => {
+  const inputsRef = useRef<Array<HTMLInputElement | null>>([]);
 
-  const handleChange = (index:number, e:ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (index: number, e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value.replace(/\D/, '');
 
     if (newValue) {
@@ -40,7 +40,7 @@ export const CodeInput:FC<Props> = ({
     }
   };
 
-  const handleKeyDown = (index:number, e:KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (index: number, e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Backspace' && !value[index] && index > 0) {
       inputsRef.current[index - 1]?.focus();
     }

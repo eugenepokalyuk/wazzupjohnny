@@ -1,7 +1,7 @@
-export function formatDate(value:string):string {
+export function formatDate(value: string): string {
   const date = new Date(value);
 
-  const options:Intl.DateTimeFormatOptions = {
+  const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'long',
     day: 'numeric',

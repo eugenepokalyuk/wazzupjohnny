@@ -7,14 +7,14 @@ import classes from './Input.module.scss';
 
 // @ts-expect-error
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-  error?:string;
-  label?:string;
-  size?:Size;
-  variant?:Variant;
-  wide?:boolean;
+  error?: string;
+  label?: string;
+  size?: Size;
+  variant?: Variant;
+  wide?: boolean;
 }
 
-export const Input:FC<Props> = forwardRef<HTMLInputElement, Props>(
+export const Input: FC<Props> = forwardRef<HTMLInputElement, Props>(
   (
     {
       error,

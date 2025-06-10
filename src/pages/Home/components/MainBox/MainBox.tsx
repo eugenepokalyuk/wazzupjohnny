@@ -5,7 +5,7 @@ import { Interview } from '../Interview/Interview';
 import { Contact } from '../Contact/Contact';
 import { Board } from '../Board/Board';
 
-export const MainBox:FC = () => (
+export const MainBox: FC = () => (
   <div className={classes.box}>
     <Contact />
 

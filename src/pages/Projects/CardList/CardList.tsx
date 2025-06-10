@@ -7,13 +7,17 @@ import classes from './CardList.module.scss';
 import { CardItem } from './CardItem/CardItem';
 
 interface Props {
-  projects:ProjectItemProps[];
-  projectIndex:number;
-  setProjectIndex:(value:number) => void;
+  projects: ProjectItemProps[];
+  projectIndex: number;
+  setProjectIndex: (value: number) => void;
 }
 
-export const CardList:FC<Props> = ({ projects, projectIndex, setProjectIndex }) => {
-  const handleVisible = (index:number) => {
+export const CardList: FC<Props> = ({
+  projects,
+  projectIndex,
+  setProjectIndex,
+}) => {
+  const handleVisible = (index: number) => {
     setProjectIndex(index);
   };
 

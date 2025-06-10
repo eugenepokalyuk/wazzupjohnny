@@ -8,13 +8,13 @@ import { ProjectItemProps } from '@services/Api';
 import classes from './CardItem.module.scss';
 
 interface Props {
-  project:ProjectItemProps;
-  onVisible:(index:number) => void;
-  index:number;
-  active:boolean;
+  project: ProjectItemProps;
+  onVisible: (index: number) => void;
+  index: number;
+  active: boolean;
 }
 
-export const CardItem:FC<Props> = ({ project, onVisible, index, active }) => {
+export const CardItem: FC<Props> = ({ project, onVisible, index, active }) => {
   const { ref, inView } = useInView({
     threshold: 1,
     triggerOnce: false,
@@ -28,9 +28,11 @@ export const CardItem:FC<Props> = ({ project, onVisible, index, active }) => {
 
   return (
     <div ref={ref}>
-      <Card className={clsx(classes.box, {
-        [classes.active]: active,
-      })}>
+      <Card
+        className={clsx(classes.box, {
+          [classes.active]: active,
+        })}
+      >
         <div className={classes.card}>
           <Text tag={Tags.Heading_3} size={Size.LG}>
             {project.title}
@@ -40,12 +42,7 @@ export const CardItem:FC<Props> = ({ project, onVisible, index, active }) => {
 
           <div className={classes.tags_box}>
             {project.badges.map((badge, idx) => (
-              <Button
-                key={idx}
-                variant={Variant.Accent}
-                size={Size.SM}
-                tilt
-              >
+              <Button key={idx} variant={Variant.Accent} size={Size.SM} tilt>
                 {badge}
               </Button>
             ))}
@@ -53,16 +50,18 @@ export const CardItem:FC<Props> = ({ project, onVisible, index, active }) => {
         </div>
 
         <div className={classes.button_box}>
-          {project.url && <Link
-            to={project.url}
-            // @ts-ignore
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button variant={Variant.Secondary} wide>
-              {'Посмотреть сайт'}
-            </Button>
-          </Link>}
+          {project.url && (
+            <Link
+              to={project.url}
+              // @ts-ignore
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant={Variant.Secondary} wide>
+                {'Посмотреть сайт'}
+              </Button>
+            </Link>
+          )}
 
           <Link
             to={project.urlGitHub}

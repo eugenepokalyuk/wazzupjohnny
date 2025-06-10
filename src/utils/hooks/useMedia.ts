@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 
 export interface MediaState {
-  mdUp:boolean;
-  lgUp:boolean;
-  mdDown:boolean;
-  lgDown:boolean;
-  mdOnly:boolean;
+  mdUp: boolean;
+  lgUp: boolean;
+  mdDown: boolean;
+  lgDown: boolean;
+  mdOnly: boolean;
 }
 
-const getInitialState = ():MediaState => {
+const getInitialState = (): MediaState => {
   if (typeof window !== 'undefined') {
     const mdUp = window.matchMedia('(min-width: 640px)').matches;
     const lgUp = window.matchMedia('(min-width: 1024px)').matches;
@@ -31,7 +31,7 @@ const getInitialState = ():MediaState => {
   };
 };
 
-export const useMedia = ():MediaState => {
+export const useMedia = (): MediaState => {
   const [state, setState] = useState<MediaState>(getInitialState);
 
   useEffect(() => {

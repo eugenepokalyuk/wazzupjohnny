@@ -6,13 +6,13 @@ import { ModalProps } from './types.ts';
 
 const MODAL_BREAKPOINT = 768;
 
-export const Modal:FC<ModalProps> = ({
-                                       isOpen,
-                                       onClose,
-                                       label,
-                                       children,
-                                       ...props
-                                     }) => {
+export const Modal: FC<ModalProps> = ({
+  isOpen,
+  onClose,
+  label,
+  children,
+  ...props
+}) => {
   const [isLargeScreen, setIsLargeScreen] = useState(
     window.innerWidth > MODAL_BREAKPOINT,
   );

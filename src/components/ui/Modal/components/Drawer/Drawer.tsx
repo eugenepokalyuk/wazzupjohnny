@@ -7,13 +7,13 @@ import { CardContent, CardHeader } from '@components/ui';
 import classes from './Drawer.module.scss';
 import { ModalProps } from '../../types.ts';
 
-export const Drawer:FC<ModalProps> = ({
-                                        isOpen,
-                                        onClose,
-                                        label,
-                                        children,
-                                        ...props
-                                      }) => {
+export const Drawer: FC<ModalProps> = ({
+  isOpen,
+  onClose,
+  label,
+  children,
+  ...props
+}) => {
   const [drawerHeight, setDrawerHeight] = useState<string>('30vh');
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
@@ -31,7 +31,7 @@ export const Drawer:FC<ModalProps> = ({
   }, [isOpen]);
 
   useEffect(() => {
-    const handleTouchMove = (e:TouchEvent) => {
+    const handleTouchMove = (e: TouchEvent) => {
       if (!isDragging.current) return;
 
       currentY.current = e.touches[0].clientY;
@@ -75,7 +75,7 @@ export const Drawer:FC<ModalProps> = ({
     }
   }, [isOpen]);
 
-  const handleTouchStart = (e:React.TouchEvent) => {
+  const handleTouchStart = (e: React.TouchEvent) => {
     isDragging.current = true;
     startY.current = e.touches[0].clientY;
   };
@@ -90,7 +90,7 @@ export const Drawer:FC<ModalProps> = ({
     }
   };
 
-  const handleOverlayClick = (e:TouchEvent|MouseEvent) => {
+  const handleOverlayClick = (e: TouchEvent | MouseEvent) => {
     if (e.target === e.currentTarget) {
       setDrawerHeight('0vh');
       setTimeout(() => onClose(), 300);

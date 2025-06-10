@@ -7,13 +7,13 @@ import { Card, CardContent, CardHeader, CloseIcon } from '@components/ui';
 import classes from './Dialog.module.scss';
 import { ModalProps } from '../../types.ts';
 
-export const Dialog:FC<ModalProps> = ({
-                                        isOpen,
-                                        onClose,
-                                        label,
-                                        children,
-                                        ...props
-                                      }) => {
+export const Dialog: FC<ModalProps> = ({
+  isOpen,
+  onClose,
+  label,
+  children,
+  ...props
+}) => {
   if (!isOpen) return null;
 
   return createPortal(

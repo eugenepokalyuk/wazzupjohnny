@@ -6,14 +6,14 @@ import { Size, Variant } from '@components/ui';
 import classes from './CardContent.module.scss';
 import { BaseCardProps as Props } from '../types.ts';
 
-export const CardContent:FC<Props> = ({
-                                        className,
-                                        onClick,
-                                        size = Size.MD,
-                                        variant = Variant.Default,
-                                        children,
-                                        ...props
-                                      }) => (
+export const CardContent: FC<Props> = ({
+  className,
+  onClick,
+  size = Size.MD,
+  variant = Variant.Default,
+  children,
+  ...props
+}) => (
   <div
     className={clsx(
       classes.cardContent,

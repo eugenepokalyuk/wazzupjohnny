@@ -8,16 +8,15 @@ import { Greetings } from './Greetings/Greetings';
 import { Filter } from './Filter/Filter';
 import { CardList } from './CardList/CardList';
 
-export const Projects:FC = () => {
+export const Projects: FC = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [activeProjectIndex, setActiveProjectIndex] = useState<number>(0);
 
   const filteredProjects = selectedTags.length
     ? projectArray.filter((project) =>
-      selectedTags.every((tag) => project.badges.includes(tag)),
-    )
+        selectedTags.every((tag) => project.badges.includes(tag)),
+      )
     : projectArray;
-
 
   useEffect(() => {
     setActiveProjectIndex(0);
@@ -25,7 +24,7 @@ export const Projects:FC = () => {
 
   const activeHint = filteredProjects[activeProjectIndex]?.hint || null;
 
-  const toggleTag = (tag:string) => {
+  const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
       prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
     );

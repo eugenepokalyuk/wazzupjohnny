@@ -7,15 +7,15 @@ import classes from './ShapeWidget.module.scss';
 import clsx from 'clsx';
 
 interface Props {
-  visible:boolean;
-  message?:string|null;
+  visible: boolean;
+  message?: string | null;
 }
 
-export const ShapeWidget:FC<Props> = ({ visible, message }) => {
+export const ShapeWidget: FC<Props> = ({ visible, message }) => {
   const [showMessage, setShowMessage] = useState<boolean>(false);
 
   useEffect(() => {
-    let timeoutId:ReturnType<typeof setTimeout>;
+    let timeoutId: ReturnType<typeof setTimeout>;
 
     if (showMessage) {
       timeoutId = setTimeout(() => {

@@ -5,7 +5,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { AppRoutes } from '../AppRoutes';
 import classes from './AnimatedRoutes.module.scss';
 
-export const AnimatedRoutes:FC = () => {
+export const AnimatedRoutes: FC = () => {
   const location = useLocation();
 
   return (

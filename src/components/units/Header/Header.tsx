@@ -9,10 +9,10 @@ import { NavigationDesktop } from './components/NavigationDesktop/NavigationDesk
 import { NavigationMobile } from './components/NavigationMobile/NavigationMobile';
 
 interface Props {
-  routeLinks:RouteLink[];
+  routeLinks: RouteLink[];
 }
 
-export const Header:FC<Props> = ({ routeLinks }) => {
+export const Header: FC<Props> = ({ routeLinks }) => {
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
 
   const handleMenuToggle = () => {
@@ -44,7 +44,10 @@ export const Header:FC<Props> = ({ routeLinks }) => {
           {isMenuOpen ? <MenuCloseIcon /> : <MenuOpenIcon />}
         </div>
 
-        <NavigationMobile routeLinks={routeLinks} className={isMenuOpen ? classes.open : classes.close} />
+        <NavigationMobile
+          routeLinks={routeLinks}
+          className={isMenuOpen ? classes.open : classes.close}
+        />
       </div>
     </header>
   );

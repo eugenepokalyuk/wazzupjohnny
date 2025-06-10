@@ -4,12 +4,12 @@ import clsx from 'clsx';
 import classes from './Avatar.module.scss';
 
 interface Props {
-  src?:string;
-  fallback:string;
-  className?:string;
+  src?: string;
+  fallback: string;
+  className?: string;
 }
 
-export const Avatar:FC<Props> = ({ src, fallback, className, ...props }) => (
+export const Avatar: FC<Props> = ({ src, fallback, className, ...props }) => (
   <div className={clsx(classes.avatar, className)} {...props}>
     {src ? (
       <img

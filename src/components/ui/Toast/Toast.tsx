@@ -7,23 +7,23 @@ import { Tags, Text } from '@components/ui';
 import classes from './Toast.module.scss';
 
 interface Props {
-  title:string;
-  description:string;
-  icon?:ReactNode;
-  variant:ToastVariants;
-  onClose:() => void;
-  children?:ReactNode;
+  title: string;
+  description: string;
+  icon?: ReactNode;
+  variant: ToastVariants;
+  onClose: () => void;
+  children?: ReactNode;
 }
 
-export const Toast:FC<Props> = ({
-                                  title,
-                                  description,
-                                  icon,
-                                  variant,
-                                  onClose,
-                                  children,
-                                  ...props
-                                }) => (
+export const Toast: FC<Props> = ({
+  title,
+  description,
+  icon,
+  variant,
+  onClose,
+  children,
+  ...props
+}) => (
   <div className={clsx(classes.toast, classes[variant])} {...props}>
     {icon && <div className={classes.icon}>{icon}</div>}
 

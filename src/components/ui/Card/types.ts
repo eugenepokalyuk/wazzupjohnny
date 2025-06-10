@@ -4,15 +4,15 @@ import { FormProps } from 'react-hook-form';
 import { Size, Variant } from '@components/ui';
 
 export interface BaseCardProps {
-  className?:string;
-  onClick?:MouseEventHandler<HTMLDivElement>;
-  children:ReactNode;
-  size?:Size;
-  variant?:Variant;
+  className?: string;
+  onClick?: MouseEventHandler<HTMLDivElement>;
+  children: ReactNode;
+  size?: Size;
+  variant?: Variant;
 }
 
 export interface MainCardProps extends BaseCardProps {
-  isForm?:boolean;
+  isForm?: boolean;
   //@ts-ignore
-  formProps?:FormProps;
+  formProps?: FormProps;
 }
