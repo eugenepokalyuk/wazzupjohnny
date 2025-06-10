@@ -6,7 +6,7 @@ import { wishListMock } from '@services/Api';
 
 import classes from './WishList.module.scss';
 
-export const WishList:FC = () => {
+export const WishList: FC = () => {
   const sortedList = [...wishListMock].sort((a, b) => {
     return Number(a.gifted) - Number(b.gifted);
   });
@@ -34,7 +34,11 @@ export const WishList:FC = () => {
             <div className={classes.imageBox}>
               {item.gifted && <Button>{`🎁 Уже подарено!`}</Button>}
 
-              <img src={item.imageUrl} alt={item.title} className={classes.image} />
+              <img
+                src={item.imageUrl}
+                alt={item.title}
+                className={classes.image}
+              />
             </div>
 
             <div className={classes.text}>

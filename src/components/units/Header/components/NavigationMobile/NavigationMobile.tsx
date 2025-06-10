@@ -8,11 +8,11 @@ import { Link, Size, Tags, Text } from '@components/ui';
 import classes from './NavigationMobile.module.scss';
 
 interface Props {
-  routeLinks:RouteLink[];
-  className?:string;
+  routeLinks: RouteLink[];
+  className?: string;
 }
 
-export const NavigationMobile:FC<Props> = ({ routeLinks, className }) => {
+export const NavigationMobile: FC<Props> = ({ routeLinks, className }) => {
   const location = useLocation();
 
   return (

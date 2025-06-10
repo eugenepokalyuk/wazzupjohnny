@@ -6,11 +6,11 @@ import { projectArray } from '@services/Api';
 import classes from './Filter.module.scss';
 
 interface Props {
-  tags:string[];
-  onClick:(value:string) => void;
+  tags: string[];
+  onClick: (value: string) => void;
 }
 
-export const Filter:FC<Props> = ({ tags, onClick }) => {
+export const Filter: FC<Props> = ({ tags, onClick }) => {
   const uniqueTags = Array.from(
     new Set(projectArray.flatMap((project) => project.badges)),
   );

@@ -6,40 +6,40 @@ import { Toast, ToastVariants } from '@components/ui';
 import classes from './Toast.module.scss';
 
 interface ToastType {
-  id:string;
-  title:string;
-  description:string;
-  variant:ToastVariants;
-  icon?:ReactNode;
-  children?:ReactNode;
+  id: string;
+  title: string;
+  description: string;
+  variant: ToastVariants;
+  icon?: ReactNode;
+  children?: ReactNode;
 }
 
 interface ToastContextProps {
-  addToast:(
-    title:string,
-    description:string,
-    variant:ToastVariants,
-    icon?:ReactNode,
-    children?:ReactNode,
+  addToast: (
+    title: string,
+    description: string,
+    variant: ToastVariants,
+    icon?: ReactNode,
+    children?: ReactNode,
   ) => void;
 }
 
-export const ToastContext = createContext<ToastContextProps|undefined>(
+export const ToastContext = createContext<ToastContextProps | undefined>(
   undefined,
 );
 
-export const ToastProvider:FC<{ children:ReactNode }> = ({ children }) => {
+export const ToastProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [toasts, setToasts] = useState<ToastType[]>([]);
 
   const addToast = useCallback(
     (
-      title:string,
-      description:string,
-      variant:ToastVariants,
-      icon?:ReactNode,
-      children?:ReactNode,
+      title: string,
+      description: string,
+      variant: ToastVariants,
+      icon?: ReactNode,
+      children?: ReactNode,
     ) => {
-      const newToast:ToastType = {
+      const newToast: ToastType = {
         title,
         description,
         variant,
@@ -57,7 +57,7 @@ export const ToastProvider:FC<{ children:ReactNode }> = ({ children }) => {
     [],
   );
 
-  const removeToast = (id:string) => {
+  const removeToast = (id: string) => {
     setToasts((prev) => prev.filter((toast) => toast.id !== id));
   };
 

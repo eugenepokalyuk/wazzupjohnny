@@ -5,7 +5,7 @@ import { Urls } from '@services/Route';
 
 import { BoardCard } from '../BoardCard/BoardCard';
 
-export const Navigation:FC = () => {
+export const Navigation: FC = () => {
   const NavigationLinksMock = [
     { label: 'Проекты', url: Urls.Projects },
     { label: 'Самопрезентация', url: Urls.About },

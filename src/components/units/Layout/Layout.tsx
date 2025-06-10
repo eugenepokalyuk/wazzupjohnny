@@ -9,20 +9,20 @@ import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 
 interface Props {
-  children?:ReactNode;
-  header?:ReactNode;
-  footer?:ReactNode;
-  wide?:boolean;
+  children?: ReactNode;
+  header?: ReactNode;
+  footer?: ReactNode;
+  wide?: boolean;
 }
 
 export interface RouteLink {
-  key:string;
-  url:string;
-  label:string;
+  key: string;
+  url: string;
+  label: string;
 }
 
-export const Layout:FC<Props> = ({ header, footer, wide, children }) => {
-  const RouteLinks:RouteLink[] = [
+export const Layout: FC<Props> = ({ header, footer, wide, children }) => {
+  const RouteLinks: RouteLink[] = [
     {
       key: Urls.Projects,
       url: Urls.Projects,
@@ -54,9 +54,13 @@ export const Layout:FC<Props> = ({ header, footer, wide, children }) => {
     <div className={classes.box}>
       {header === null ? null : <Header routeLinks={RouteLinks} />}
 
-      <main className={clsx(classes.main, {
-        [classes.wide]: wide,
-      })}>{children || <Outlet />}</main>
+      <main
+        className={clsx(classes.main, {
+          [classes.wide]: wide,
+        })}
+      >
+        {children || <Outlet />}
+      </main>
 
       {footer === null ? null : <Footer routeLinks={RouteLinks} />}
     </div>

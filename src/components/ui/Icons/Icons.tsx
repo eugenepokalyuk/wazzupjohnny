@@ -6,22 +6,21 @@ const defaultProps = {
   fill: 'currentColor',
 };
 
-interface Props extends SVGProps<SVGSVGElement> {
-}
+interface Props extends SVGProps<SVGSVGElement> {}
 
-export const CloseIcon:FC<Props> = (props) => (
+export const CloseIcon: FC<Props> = (props) => (
   <svg viewBox="0 -960 960 960" {...defaultProps} {...props}>
     <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
   </svg>
 );
 
-export const MenuOpenIcon:FC<Props> = (props) => (
+export const MenuOpenIcon: FC<Props> = (props) => (
   <svg viewBox="0 -960 960 960" {...defaultProps} {...props}>
     <path d="M120-520v-320h320v320H120Zm0 400v-320h320v320H120Zm400-400v-320h320v320H520Zm0 400v-320h320v320H520Z" />
   </svg>
 );
 
-export const MenuCloseIcon:FC<Props> = (props) => (
+export const MenuCloseIcon: FC<Props> = (props) => (
   <svg viewBox="0 -960 960 960" {...defaultProps} {...props}>
     <path d="M666-440 440-666l226-226 226 226-226 226Zm-546-80v-320h320v320H120Zm400 400v-320h320v320H520Zm-400 0v-320h320v320H120Z" />
   </svg>
@@ -33,7 +32,7 @@ export const ArrowIcon: FC<Props> = (props) => (
   </svg>
 );
 
-export const GitHubIcon:FC<Props> = (props) => (
+export const GitHubIcon: FC<Props> = (props) => (
   <svg viewBox="0 0 80 80" {...defaultProps} {...props}>
     <g clipPath="url(#clip0_127_2)">
       <circle cx="40" cy="40" r="39" stroke="white" strokeWidth="2" />
@@ -50,7 +49,7 @@ export const GitHubIcon:FC<Props> = (props) => (
   </svg>
 );
 
-export const TelegramIcon:FC<Props> = (props) => (
+export const TelegramIcon: FC<Props> = (props) => (
   <svg viewBox="0 0 80 80" {...defaultProps} {...props}>
     <g clipPath="url(#clip0_127_5)">
       <circle cx="40" cy="40" r="39" stroke="white" strokeWidth="2" />

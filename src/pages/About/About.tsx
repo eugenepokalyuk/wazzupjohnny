@@ -6,7 +6,7 @@ import { aboutMock } from '@services/Api';
 
 import classes from './About.module.scss';
 
-export const About:FC = () => (
+export const About: FC = () => (
   <Layout>
     <div className={classes.greetings_box}>
       <Text tag={Tags.Heading} size={Size.XL}>

@@ -1,4 +1,8 @@
-export function truncateMiddle(str: string, frontChars: number, backChars: number): string {
+export function truncateMiddle(
+  str: string,
+  frontChars: number,
+  backChars: number,
+): string {
   if (str.length <= frontChars + backChars) {
     return str;
   }

@@ -10,8 +10,8 @@ import { ContentBlock } from '../ContentBlock/ContentBlock';
 import { ReadingProgressBar } from '../ReadingProgressBar/ReadingProgressBar';
 import { formatDate } from '@/utils';
 
-export const ArticlePage:FC = () => {
-  const { slug } = useParams<{ slug:string }>();
+export const ArticlePage: FC = () => {
+  const { slug } = useParams<{ slug: string }>();
   const article = articlesMock.find((a) => a.slug === slug);
 
   if (!article) {

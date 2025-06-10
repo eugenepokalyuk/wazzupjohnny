@@ -7,7 +7,7 @@ import { formatDate } from '@utils/string';
 
 import classes from './Articles.module.scss';
 
-export const Articles:FC = () => (
+export const Articles: FC = () => (
   <Layout>
     <div className={classes.title_box}>
       <Text tag={Tags.Heading} size={Size.XL}>

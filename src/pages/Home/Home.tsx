@@ -6,7 +6,7 @@ import { Skills } from '@services/Api';
 import classes from './Home.module.scss';
 import { MainBox } from './components/MainBox/MainBox';
 
-export const Home:FC = () => (
+export const Home: FC = () => (
   <section className={classes.section}>
     <MainBox />
 

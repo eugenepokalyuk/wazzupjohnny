@@ -10,10 +10,10 @@ import { useLocation } from 'react-router';
 import clsx from 'clsx';
 
 interface Props {
-  routeLinks:RouteLink[];
+  routeLinks: RouteLink[];
 }
 
-export const Footer:FC<Props> = ({ routeLinks }) => {
+export const Footer: FC<Props> = ({ routeLinks }) => {
   const location = useLocation();
 
   const year = new Date().getFullYear();
@@ -26,7 +26,7 @@ export const Footer:FC<Props> = ({ routeLinks }) => {
         </div>
 
         <nav className={classes.nav_links}>
-          {routeLinks.map(link => (
+          {routeLinks.map((link) => (
             <Link
               key={link.key}
               to={link.url}
@@ -42,7 +42,9 @@ export const Footer:FC<Props> = ({ routeLinks }) => {
           ))}
         </nav>
 
-        <Text color={Color.Secondary}>{`©2023-${year} wazzupjohnny. Все права защищены`}</Text>
+        <Text
+          color={Color.Secondary}
+        >{`©2023-${year} wazzupjohnny. Все права защищены`}</Text>
       </div>
     </footer>
   );

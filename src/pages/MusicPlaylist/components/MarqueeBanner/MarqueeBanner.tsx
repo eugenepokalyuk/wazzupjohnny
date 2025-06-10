@@ -2,23 +2,24 @@ import { FC } from 'react';
 
 import classes from './MarqueeBanner.module.scss';
 
-export const MarqueeBanner:FC = () => (
+export const MarqueeBanner: FC = () => (
   <section className={classes.section}>
     {texts.map((text, idx) => (
       <div
         key={idx}
         className={classes.marquee + (idx === 0 ? ' ' + classes.first : '')}
       >
-          <span
-            className={
-              idx % 2 === 0
-                ? classes.marquee_content
-                : classes.marquee_content_reverse
-            }
-            data-text={text}
-          >
-            {text}{text}
-          </span>
+        <span
+          className={
+            idx % 2 === 0
+              ? classes.marquee_content
+              : classes.marquee_content_reverse
+          }
+          data-text={text}
+        >
+          {text}
+          {text}
+        </span>
       </div>
     ))}
   </section>

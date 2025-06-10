@@ -1,7 +1,7 @@
 export interface KeyPayload {
-  key:string;
+  key: string;
 }
 
 export interface ErrorPayload {
-  error:unknown;
+  error: unknown;
 }

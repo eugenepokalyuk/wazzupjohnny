@@ -26,15 +26,32 @@ import classes from './Collection.module.scss';
 import { CollectionCard } from './CollectionCard/CollectionCard';
 
 interface Props {
-  playlists:number[];
+  playlists: number[];
 }
 
-export const Collection:FC<Props> = ({ playlists }) => {
+export const Collection: FC<Props> = ({ playlists }) => {
   const images = [
-    image1Src, image2Src, image3Src, image4Src, image5Src,
-    image6Src, image7Src, image8Src, image9Src, image10Src,
-    image11Src, image12Src, image13Src, image14Src, image15Src,
-    image16Src, image17Src, image18Src, image19Src, image20Src, image21Src,
+    image1Src,
+    image2Src,
+    image3Src,
+    image4Src,
+    image5Src,
+    image6Src,
+    image7Src,
+    image8Src,
+    image9Src,
+    image10Src,
+    image11Src,
+    image12Src,
+    image13Src,
+    image14Src,
+    image15Src,
+    image16Src,
+    image17Src,
+    image18Src,
+    image19Src,
+    image20Src,
+    image21Src,
   ].reverse();
 
   return (
@@ -50,4 +67,3 @@ export const Collection:FC<Props> = ({ playlists }) => {
     </div>
   );
 };
-

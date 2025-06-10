@@ -5,12 +5,12 @@ import ImageSmart from '/public/images/smart.jpg';
 import ImageSnowboarding from '/public/images/snowboarding.jpg';
 
 export interface AboutItem {
-  title:string;
-  description:string;
-  image:string;
+  title: string;
+  description: string;
+  image: string;
 }
 
-export const aboutMock:AboutItem[] = [
+export const aboutMock: AboutItem[] = [
   {
     title: 'Меня зовут Женя',
     description:
