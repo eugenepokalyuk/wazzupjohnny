@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from 'react';
+import clsx from 'clsx';
 
 import { Text } from '@components/ui';
 import { Shape } from '@components/modules';
 
 import classes from './ShapeWidget.module.scss';
-import clsx from 'clsx';
 
 interface Props {
   visible: boolean;
@@ -60,6 +60,8 @@ export const ShapeWidget: FC<Props> = ({ visible, message }) => {
     return () => clearInterval(interval);
   }, [message]);
 
+  const isTyping = displayedText.length < (message?.length ?? 0);
+
   return (
     <div
       className={clsx(classes.box, {
@@ -73,7 +75,7 @@ export const ShapeWidget: FC<Props> = ({ visible, message }) => {
         </div>
       )}
 
-      <Shape />
+      <Shape isTyping={isTyping} />
     </div>
   );
 };
