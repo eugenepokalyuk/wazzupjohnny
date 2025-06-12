@@ -1,19 +1,19 @@
 @import 'src/styles/index';
 
-.shape {
+.box {
+  position: relative;
+
+  width: 12em;
+  height: 12em;
+
   background-color: $accent;
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-
-  overflow: visible;
-
-  width: 128px;
-  height: 128px;
   animation: liquidShape 20s ease-in-out infinite;
+}
 
-  @media (min-width: 640px) {
-    width: 12rem;
-    height: 12rem;
-  }
+.shape {
+  width: 12em;
+  height: 12em;
 }
 
 @keyframes liquidShape {
