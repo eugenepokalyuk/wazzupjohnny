@@ -60,7 +60,7 @@ export const ShapeWidget: FC<Props> = ({ visible, message }) => {
     return () => clearInterval(interval);
   }, [message]);
 
-  const isTyping = displayedText.length < (message?.length ?? 0);
+  // const isTyping = displayedText.length < (message?.length ?? 0);
 
   return (
     <div
@@ -75,7 +75,7 @@ export const ShapeWidget: FC<Props> = ({ visible, message }) => {
         </div>
       )}
 
-      <Shape isTyping={isTyping} />
+      <Shape />
     </div>
   );
 };
