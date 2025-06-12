@@ -38,18 +38,22 @@ export const CardItem: FC<Props> = ({ project, onVisible, index, active }) => {
             {project.title}
           </Text>
 
-          <Text>{project.description}</Text>
-
           <div className={classes.tags_box}>
             {project.badges.map((badge, idx) => (
-              <Button key={idx} variant={Variant.Accent} size={Size.SM} tilt>
+              <Button key={idx} variant={Variant.Accent} size={Size.XS} tilt>
                 {badge}
               </Button>
             ))}
           </div>
+
+          <Text>{project.description}</Text>
         </div>
 
-        <div className={classes.button_box}>
+        <div
+          className={clsx(classes.button_box, {
+            [classes.two]: project.url,
+          })}
+        >
           {project.url && (
             <Link
               to={project.url}

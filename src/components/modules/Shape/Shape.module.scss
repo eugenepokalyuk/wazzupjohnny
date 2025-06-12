@@ -4,9 +4,11 @@
   background-color: $accent;
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
 
-  width: 6rem;
-  height: 6rem;
-  animation: liquidShape 6s ease-in-out infinite;
+  overflow: visible;
+
+  width: 128px;
+  height: 128px;
+  animation: liquidShape 20s ease-in-out infinite;
 
   @media (min-width: 640px) {
     width: 12rem;
@@ -17,14 +19,46 @@
 @keyframes liquidShape {
   0% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    background-color: $accent;
+    background-color: #6C0289; /* насыщенный фиолетовый */
+  }
+  10% {
+    border-radius: 50% 60% 40% 60% / 55% 65% 35% 65%;
+    background-color: #F7B801; /* яркий золотистый */
+  }
+  20% {
+    border-radius: 55% 45% 65% 35% / 60% 30% 60% 40%;
+    background-color: #3F7CAC; /* глубокий синий */
+  }
+  30% {
+    border-radius: 65% 35% 50% 50% / 50% 60% 40% 60%;
+    background-color: #EF233C; /* насыщенный красный */
+  }
+  40% {
+    border-radius: 40% 60% 70% 30% / 60% 40% 60% 30%;
+    background-color: #8AC926; /* свежий зеленый */
   }
   50% {
-    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-    background-color: $primary;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background-color: #F2E9E4; /* светлый кремовый */
+  }
+  60% {
+    border-radius: 45% 55% 55% 45% / 55% 45% 45% 55%;
+    background-color: #FF6F61; /* теплый коралловый */
+  }
+  70% {
+    border-radius: 55% 45% 45% 55% / 45% 55% 55% 45%;
+    background-color: #4A90E2; /* яркий голубой */
+  }
+  80% {
+    border-radius: 50% 50% 60% 40% / 50% 50% 40% 60%;
+    background-color: #D72631; /* насыщенный красный */
+  }
+  90% {
+    border-radius: 60% 40% 40% 60% / 60% 40% 40% 60%;
+    background-color: #F4D35E; /* теплый желтый */
   }
   100% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    background-color: $accent;
+    background-color: #6C0289; /* возвращаемся к насыщенному фиолетовому */
   }
 }
