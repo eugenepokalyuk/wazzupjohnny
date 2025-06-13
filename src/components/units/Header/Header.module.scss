@@ -1,11 +1,17 @@
 @import 'src/styles/index';
 
 .header {
+  position: fixed;
+  z-index: 2000;
+
   width: 100%;
 
-  padding: gap(4);
-
   background: $background_1;
+  padding: gap(3);
+
+  @include md_down {
+    padding: gap(2);
+  }
 }
 
 .box {
@@ -15,7 +21,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: gap(6);
+  gap: gap(3);
 
   @include lg_down {
     flex-direction: row;
@@ -40,10 +46,25 @@
 .logo {
   z-index: 2;
 
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  place-items: center;
+  gap: gap(3);
+
   font-family: 'Unbounded', sans-serif;
   font-size: 24px;
   font-weight: $bold;
   color: $yellow;
+
+  .logo_box {
+    width: 64px;
+    height: 64px;
+
+    img {
+      width: 64px;
+      height: 64px;
+    }
+  }
 }
 
 .burger_menu {
@@ -55,7 +76,47 @@
     height: 32px;
   }
 
-  @media (max-width: $width_md) {
+  @include lg_down {
     display: block;
   }
+}
+
+@keyframes textColorAnimation {
+  0% {
+    color: #6C0289;
+  }
+  10% {
+    color: #F7B801;
+  }
+  20% {
+    color: #3F7CAC;
+  }
+  30% {
+    color: #EF233C;
+  }
+  40% {
+    color: #8AC926;
+  }
+  50% {
+    color: #F2E9E4;
+  }
+  60% {
+    color: #FF6F61;
+  }
+  70% {
+    color: #4A90E2;
+  }
+  80% {
+    color: #D72631;
+  }
+  90% {
+    color: #F4D35E;
+  }
+  100% {
+    color: #6C0289;
+  }
+}
+
+.color_animation {
+  animation: textColorAnimation 8s ease-in-out infinite;
 }

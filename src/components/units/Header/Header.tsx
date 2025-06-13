@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 
-import { Link, MenuCloseIcon, MenuOpenIcon } from '@components/ui';
+import imageLogoSrc from '@public/images/shape/logo.png';
+import { CloseIcon, Link, MenuOpenIcon } from '@components/ui';
 import { RouteLink } from '@components/units';
 import { Urls } from '@services/Route';
 
@@ -35,13 +36,21 @@ export const Header: FC<Props> = ({ routeLinks }) => {
     <header className={classes.header}>
       <div className={classes.box}>
         <div className={classes.logo}>
-          <Link to={Urls.Home}>{'wazzupjohnny'}</Link>
+          <div className={classes.logo_box}>
+            <img src={imageLogoSrc} alt="" />
+          </div>
+
+          {/*<Link to={Urls.Home}>{'wazzupjohnny'}</Link>*/}
+          <Link to={Urls.Home}>
+            <span className={classes.color_animation}>{'wazzup'}</span>
+            {'johnny'}
+          </Link>
         </div>
 
         <NavigationDesktop routeLinks={routeLinks} />
 
         <div className={classes.burger_menu} onClick={handleMenuToggle}>
-          {isMenuOpen ? <MenuCloseIcon /> : <MenuOpenIcon />}
+          {isMenuOpen ? <CloseIcon /> : <MenuOpenIcon />}
         </div>
 
         <NavigationMobile
