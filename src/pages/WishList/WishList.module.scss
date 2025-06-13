@@ -61,6 +61,12 @@
   width: 50%;
 }
 
+.text_box {
+  display: flex;
+  flex-direction: column;
+  gap: gap(2);
+}
+
 .links {
   margin-top: gap(2);
   display: flex;

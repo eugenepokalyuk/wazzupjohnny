@@ -42,7 +42,7 @@ export const WishList: FC = () => {
             </div>
 
             <div className={classes.text}>
-              <div>
+              <div className={classes.text_box}>
                 <Text tag={Tags.Heading} size={Size.LG}>
                   {item.title}
                 </Text>
@@ -62,7 +62,7 @@ export const WishList: FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Button outline tilt>{`Сслыка ${linkIndex + 1}`}</Button>
+                      <Button outline tilt>{`Сслыка`}</Button>
                     </Link>
                   ))}
                 </div>
