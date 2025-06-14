@@ -27,4 +27,16 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  css: {
+    preprocessorOptions: {
+      sass: {
+        silenceDeprecations: ['import', 'slash-div', 'global-builtin'], // список предупреждений для скрытия
+        quietDeps: true,
+      },
+      scss: {
+        silenceDeprecations: ['import', 'slash-div', 'global-builtin'],
+        quietDeps: true,
+      },
+    },
+  },
 });
