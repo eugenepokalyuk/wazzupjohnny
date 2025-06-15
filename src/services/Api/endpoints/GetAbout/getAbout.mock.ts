@@ -1,44 +1,62 @@
-import ImageAstra from '/public/images/Astra.jpg';
-import ImageBoardgames from '/public/images/boardgames.jpg';
-import ImageSelfPresentation2 from '/public/images/selfPresentation2.jpg';
-import ImageSmart from '/public/images/smart.jpg';
-import ImageSnowboarding from '/public/images/snowboarding.jpg';
+import ImgCat from '/public/images/facts/cat.png';
+import ImgBlog from '/public/images/facts/laptop.png';
+import ImgArticles from '/public/images/facts/comic.png';
+import ImgMusic from '/public/images/facts/headphones_white.png';
+import ImgSnowboard from '/public/images/facts/snowboard.png';
+import ImgCoffee from '/public/images/facts/coffee.png';
+import ImgSketchbook from '/public/images/facts/sketchbook.png';
 
-export interface AboutItem {
-  title: string;
-  description: string;
-  image: string;
-}
-
-export const aboutMock: AboutItem[] = [
+export const factsMock = [
   {
-    title: 'Меня зовут Женя',
+    imgSrc: ImgCat,
+    imgAlt: 'Абиссинская кошка Астры',
+    title: 'Канал о моей кошке Астры',
     description:
-      'Я frontend-разработчик с более трехлетним опытом создания интерактивных и удобных пользовательских интерфейсов. Моя специализация — React и TypeScript, а для управления состоянием я использую Redux (Thunk/Saga/Observable), а также MobX. Использую современные инструменты разработки, сборщики Webpack и Vite',
-    image: ImageSelfPresentation2,
+      'Веду Telegram-канал, где делюсь забавными моментами и фото из жизни Астры — она настоящая звезда!',
+    link: 'https://t.me/astralovers',
   },
   {
-    title: 'Я стремлюсь',
+    imgSrc: ImgBlog,
+    imgAlt: 'Блог о разработке',
+    title: 'Блог о разработке и кодинге',
     description:
-      'Создавать удобные, интуитивно понятные и отзывчивые интерфейсы, придерживаясь современных стандартов и лучших практик в веб-разработке. Мне важно не просто писать код, а находить решения, которые делают жизнь пользователей проще. Буду рад обсудить, как мой опыт и подход к работе могут помочь вашей компании достичь новых высот',
-    image: ImageSmart,
+      'Пишу в Telegram о своих проектах, делюсь мыслями, которые вдохновляют меня в свободное время',
+    link: 'https://t.me/wazzupjohnny_channel',
   },
   {
-    title: 'Адреналин и приключения',
+    imgSrc: ImgArticles,
+    imgAlt: 'Статьи на сайте',
+    title: 'Автор статей на сайте',
     description:
-      'Увлекаюсь сноубордингом и скейтбордингом, наслаждаясь скоростью и адреналином. Еще одна моя страсть — тяжелая музыка. Mick Gordon, Powerglove, Warmen и другие инструментальные треки сопровождают меня каждый день, заряжая энергией и вдохновением',
-    image: ImageSnowboarding,
+      'Создаю материалы, которых мне не хватало в своё время, чтобы помочь другим разработчикам',
+    link: 'https://wazzupjohnny.ru/articles/',
   },
   {
-    title: 'Моя подруга',
-    description:
-      'У меня есть абиссинская кошка по имени Астра, которая всегда поднимает мне настроение своими проделками. Она — мой источник радости и тепла в повседневной жизни',
-    image: ImageAstra,
+    imgSrc: ImgMusic,
+    imgAlt: 'Музыкальные плейлисты',
+    title: 'Собираю музыкальные плейлисты',
+    description: 'У меня уже около 20 плейлистов, чтобы делиться своим вайбом',
+    link: 'https://wazzupjohnny.ru/playlist/',
   },
   {
-    title: 'Стратегия и веселье',
+    imgSrc: ImgSnowboard,
+    imgAlt: 'Сноуборд',
+    title: 'Максимальная скорость на сноуборде',
     description:
-      'Люблю настольные игры, которые не только захватывают, но и помогают развивать стратегическое мышление и работать в команде. Каждый раз это новый вызов и отличная возможность весело провести время',
-    image: ImageBoardgames,
+      '40.9 км/ч — скорость, с которой я люблю мчаться по склонам, ощущая свободу и адреналин',
+  },
+  {
+    imgSrc: ImgSketchbook,
+    imgAlt: 'Скетчбук',
+    title: 'Скетчбук всегда на столе',
+    description:
+      'Постоянно рисую и записываю важные детали карандашом — это помогает мне структурировать мысли и вдохновляет',
+  },
+  {
+    imgSrc: ImgCoffee,
+    imgAlt: 'Чай и кофе',
+    title: 'Люблю чайные церемонии и кофе',
+    description:
+      'Обожаю китайский чай и домашние чайные церемонии, но не отказываюсь и от воронки v60',
   },
 ];

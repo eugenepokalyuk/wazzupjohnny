@@ -2,6 +2,7 @@ export const config = {
   gravity: 1,
   thickness: 50,
   mouseStiffness: 0.2,
+  mobileFontSizeRatio: 0.1,
   defaultFontSizeRatio: 0.08,
   largeFontSizeRatio: 0.12,
   smallFontSizeRatio: 0.05,

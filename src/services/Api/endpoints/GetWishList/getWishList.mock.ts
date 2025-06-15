@@ -1,9 +1,9 @@
-import ImageAutoSrc from '/public/images/autoschool.jpg';
-import ImageInstaxSrc from '/public/images/instax.jpg';
-import ImageMacSrc from '/public/images/mac.webp';
-import ImagePS5ProSrc from '/public/images/playstation.jpeg';
-import ImageCoffeeSrc from '/public/images/coffee.webp';
-import ImageCrocsSrc from '/public/images/crocs.jpeg';
+import ImageAutoSrc from '/public/images/wishlist/autoschool.jpg';
+import ImageInstaxSrc from '/public/images/wishlist/instax.jpg';
+import ImageMacSrc from '/public/images/wishlist/mac.webp';
+import ImagePS5ProSrc from '/public/images/wishlist/playstation.jpeg';
+import ImageCoffeeSrc from '/public/images/wishlist/coffee.webp';
+import ImageCrocsSrc from '/public/images/wishlist/crocs.jpeg';
 
 export const wishListMock = [
   {
@@ -50,9 +50,9 @@ export const wishListMock = [
     title: 'Обучение в автошколе',
     description:
       'Хочу получить права, чтобы быть свободным в перемещениях и путешествовать за рулем ну и как в NSF гонять',
-    links: [
-      'https://2gis.ru/novosibirsk/search/%D0%90%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D1%8B%20%2F%20%D0%A8%D0%BA%D0%BE%D0%BB%D1%8B%20%D0%B2%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F/rubricId/233',
-    ],
+    // links: [
+    //   'https://2gis.ru/novosibirsk/search/%D0%90%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D1%8B%20%2F%20%D0%A8%D0%BA%D0%BE%D0%BB%D1%8B%20%D0%B2%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F/rubricId/233',
+    // ],
     gifted: false,
   },
 ];
