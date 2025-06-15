@@ -5,7 +5,6 @@ import { useRoutes } from 'react-router-dom';
 import { Home } from '@pages/Home/Home';
 import { Projects } from '@pages/Projects/Projects';
 import { About } from '@pages/About/About';
-// import { AboutV2 } from '@pages/AboutV2/AboutV2';
 import { WishList } from '@pages/WishList/WishList';
 import { Articles } from '@pages/Articles/Articles';
 import { MusicPlaylist } from '@pages/MusicPlaylist/MusicPlaylist';

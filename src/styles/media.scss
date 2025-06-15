@@ -48,7 +48,7 @@ $breakpoints: (
   }
 
   $media: str-join(
-                  if($bpMin, '(min-width: #{$bpMin})', null),
+                  if($bpMin, '(: #{$bpMin})', null),
                   if($bpMax, '(max-width: calc(#{$bpMax} - 1px))', null),
                   ' and '
   );

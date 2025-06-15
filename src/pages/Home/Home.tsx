@@ -1,15 +1,28 @@
 import { FC } from 'react';
 
-import { MatterBox } from '@components/modules';
+import { MatterBoxV2 } from '@components/modules';
+import { ArrowUpIcon, Button } from '@components/ui';
 import { Skills } from '@services/Api';
 
 import classes from './Home.module.scss';
 import { MainBox } from './components/MainBox/MainBox';
 
-export const Home: FC = () => (
-  <section className={classes.section}>
-    <MainBox />
+export const Home: FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
-    <MatterBox skills={Skills} />
-  </section>
-);
+  return (
+    <section className={classes.section}>
+      <MainBox />
+
+      <div className={classes.matter_box}>
+        <Button className={classes.button_up} onClick={scrollToTop}>
+          <ArrowUpIcon />
+        </Button>
+
+        <MatterBoxV2 content={Skills} trigger="hover" />
+      </div>
+    </section>
+  );
+};

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { GitHubIcon, Link, TelegramIcon } from '@components/ui';
-import Avatar from '@public/images/avatar.png';
+import imageLogoSrc from '@public/images/shape/logo.png';
 import { Links } from '@utils/constants';
 
 import classes from './Contact.module.scss';
@@ -9,7 +9,7 @@ import classes from './Contact.module.scss';
 export const Contact: FC = () => (
   <div className={classes.box}>
     <div className={classes.image_box}>
-      <img src={Avatar} alt="" className={classes.image} />
+      <img src={imageLogoSrc} alt="" className={classes.image} />
     </div>
 
     <div className={classes.icon_box}>

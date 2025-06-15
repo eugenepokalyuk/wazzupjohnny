@@ -1,0 +1,75 @@
+.falling-text-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    @media (max-width: 1024px) {
+        position: relative;
+    }
+
+    width: 100%;
+    height: 100dvh;
+
+    cursor: pointer;
+    text-align: center;
+    padding-top: 2em;
+}
+
+.falling-text-target {
+    display: inline-block;
+    line-height: 1.4;
+}
+
+.word {
+    display: inline-block;
+    margin: 0 2px;
+    user-select: none;
+}
+
+.highlighted {
+    color: cyan;
+    font-weight: bold;
+}
+
+.falling-text-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.falling-text-button-up {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 50px;
+    height: 50px;
+
+    background-color: #262626;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    border-radius: 99999px;
+    text-align: center;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    @media (min-width: 500px) {
+        display: none;
+    }
+}
+
+.falling-text-button-up-icon {
+    font-size: 24px;
+
+    transition: all 1s ease-in-out;
+
+    &.hidden {
+        transform: rotate(180deg);
+    }
+}

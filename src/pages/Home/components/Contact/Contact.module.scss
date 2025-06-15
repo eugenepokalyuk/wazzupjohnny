@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: gap(4);
+  padding: gap(2);
 
   @include md_down() {
     display: flex;
@@ -25,9 +25,9 @@
   .image_box {
     .image {
       width: 80px;
-      height: 120px;
+      height: 80px;
 
-      border-radius: $br_full;
+      //border-radius: $br_full;
       object-fit: cover;
     }
   }
@@ -35,13 +35,22 @@
   .icon_box {
     display: flex;
     flex-direction: column;
+    gap: gap(2);
 
     @include md_down() {
+      display: flex;
       flex-direction: row;
+      align-items: center;
+      justify-content: center;
       gap: gap(4);
     }
 
     .link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
       font-size: 72px;
 
       .icon {
