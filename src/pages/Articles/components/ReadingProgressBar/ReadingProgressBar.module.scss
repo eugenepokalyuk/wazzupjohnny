@@ -2,19 +2,11 @@
 
 .box {
   position: fixed;
-
-  @include md_up {
-    top: 0;
-  }
-
-  @include md_down {
-    bottom: 0;
-  }
-
   left: 0;
-
   height: 4px;
   background: $accent;
-  z-index: 1000;
-  transition: width 200ms ease-out
+  z-index: 2100;
+  transition: width 400ms ease-out;
+
+  bottom: 0;
 }

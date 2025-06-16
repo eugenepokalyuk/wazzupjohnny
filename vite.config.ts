@@ -36,7 +36,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       sass: {
-        silenceDeprecations: ['import', 'slash-div', 'global-builtin'], // список предупреждений для скрытия
+        silenceDeprecations: ['import', 'slash-div', 'global-builtin'],
         quietDeps: true,
       },
       scss: {
