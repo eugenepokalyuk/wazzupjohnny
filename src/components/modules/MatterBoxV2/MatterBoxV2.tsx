@@ -107,7 +107,7 @@ export const MatterBoxV2: FC<Props> = ({
 
     const boundaryOptions = {
       isStatic: true,
-      render: { fillStyle: 'transparent' },
+      render: { fillStyle: backgroundColor },
     };
 
     const floor = Bodies.rectangle(
@@ -152,7 +152,7 @@ export const MatterBoxV2: FC<Props> = ({
       const y = rect.top - containerRect.top + rect.height / 2;
 
       const body = Bodies.rectangle(x, y, rect.width, rect.height, {
-        render: { fillStyle: 'transparent' },
+        render: { fillStyle: backgroundColor },
         restitution: 0.8,
         frictionAir: 0.01,
         friction: 0.2,
@@ -221,6 +221,7 @@ export const MatterBoxV2: FC<Props> = ({
       Runner.stop(runner);
 
       if (render.canvas && canvasContainerRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         canvasContainerRef.current.removeChild(render.canvas);
       }
 

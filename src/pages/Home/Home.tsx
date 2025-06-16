@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { MatterBoxV2 } from '@components/modules';
 import { ArrowUpIcon, Button } from '@components/ui';
-import { Skills } from '@services/Api';
+import { skillsMock } from '@services/Api';
 
 import classes from './Home.module.scss';
 import { MainBox } from './components/MainBox/MainBox';
@@ -21,7 +21,7 @@ export const Home: FC = () => {
           <ArrowUpIcon />
         </Button>
 
-        <MatterBoxV2 content={Skills} trigger="hover" />
+        <MatterBoxV2 content={skillsMock} trigger="auto" />
       </div>
     </section>
   );

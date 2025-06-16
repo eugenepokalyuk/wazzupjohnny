@@ -85,7 +85,7 @@ const misc = [
   { name: 'Astro', color: '#FFFFFF', backgroundColor: '#b845ed' },
 ];
 
-export const Skills = [
+export const skillsMock = [
   ...technologies,
   ...libraries,
   ...stateManagers,

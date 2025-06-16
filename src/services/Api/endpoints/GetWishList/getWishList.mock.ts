@@ -22,15 +22,6 @@ export const wishListMock = [
     gifted: false,
   },
   {
-    imageUrl: ImageCoffeeSrc,
-    title: 'Varia VS3 Grinder',
-    description: 'Люблю кофе',
-    links: [
-      'https://www.variabrewing.com/products/varia-vs3-grinder?variant=39935807389795',
-    ],
-    gifted: false,
-  },
-  {
     imageUrl: ImageMacSrc,
     title: 'MacBook M4 Pro 14-inch',
     description:
@@ -50,9 +41,6 @@ export const wishListMock = [
     title: 'Обучение в автошколе',
     description:
       'Хочу получить права, чтобы быть свободным в перемещениях и путешествовать за рулем ну и как в NSF гонять',
-    // links: [
-    //   'https://2gis.ru/novosibirsk/search/%D0%90%D0%B2%D1%82%D0%BE%D1%88%D0%BA%D0%BE%D0%BB%D1%8B%20%2F%20%D0%A8%D0%BA%D0%BE%D0%BB%D1%8B%20%D0%B2%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F/rubricId/233',
-    // ],
     gifted: false,
   },
 ];
