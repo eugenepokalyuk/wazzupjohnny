@@ -5,7 +5,7 @@ export const matterArticle = {
   slug: 'matter-js-detailed-react-physics',
   title: 'Matter JS: Подробный разбор интерактивной физики React-компонента',
   author: 'Евгений Покалюк',
-  date: '2025-06-18',
+  date: '2025-06-21',
   content: [
     {
       type: ContentType.Heading,
