@@ -2,7 +2,7 @@ import { ContentType } from '@pages/Articles/Articles.types.ts';
 
 export const matterArticle = {
   id: 'matter-js-detailed-001',
-  slug: 'matter-js-detailed-react-physics',
+  slug: 'matter-js-detailed',
   title: 'Matter JS: Подробный разбор интерактивной физики React-компонента',
   author: 'Евгений Покалюк',
   date: '2025-06-21',
