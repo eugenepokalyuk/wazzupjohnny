@@ -2,7 +2,6 @@ import ImageAutoSrc from '/public/images/wishlist/autoschool.jpg';
 import ImageInstaxSrc from '/public/images/wishlist/instax.jpg';
 import ImageMacSrc from '/public/images/wishlist/mac.webp';
 import ImagePS5ProSrc from '/public/images/wishlist/playstation.jpeg';
-import ImageCoffeeSrc from '/public/images/wishlist/coffee.webp';
 import ImageCrocsSrc from '/public/images/wishlist/crocs.jpeg';
 
 export const wishListMock = [
