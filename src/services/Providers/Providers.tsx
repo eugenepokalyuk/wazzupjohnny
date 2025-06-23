@@ -4,13 +4,12 @@ import { Analytics } from '@vercel/analytics/react';
 
 import { ToastProvider } from '@components/ui';
 
-export const Providers: FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <>
-      <ToastProvider>{children}</ToastProvider>
+export const Providers: FC<PropsWithChildren> = ({ children }) => (
+  <>
+    <ToastProvider>{children}</ToastProvider>
 
-      <Analytics />
-      <SpeedInsights />
-    </>
-  );
-};
+    {/* Vercel Analytics & SpeedInsights */}
+    <Analytics />
+    <SpeedInsights />
+  </>
+);
