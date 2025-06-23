@@ -9,7 +9,3 @@ export enum Urls {
   MusicPlaylist = '/playlist/',
   Error = '*',
 }
-
-export const UrlSearch = {
-  Next: 'next',
-};
