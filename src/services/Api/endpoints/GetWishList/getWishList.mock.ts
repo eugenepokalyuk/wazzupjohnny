@@ -4,7 +4,22 @@ import ImageMacSrc from '/public/images/wishlist/mac.webp';
 import ImagePS5ProSrc from '/public/images/wishlist/playstation.jpeg';
 import ImageCrocsSrc from '/public/images/wishlist/crocs.jpeg';
 
-export const wishListMock = [
+export interface WishListItem {
+  imageUrl: string;
+  title: string;
+  description?: string;
+  links?: string[];
+  gifted?: boolean;
+}
+
+export const wishListMock: WishListItem[] = [
+  {
+    imageUrl: ImageAutoSrc,
+    title: 'Обучение в автошколе',
+    description:
+      'Хочу получить права, чтобы быть свободным в перемещениях и путешествовать за рулем ну и как в NSF гонять',
+    gifted: false,
+  },
   {
     imageUrl: ImageInstaxSrc,
     title: 'Instax mini Evo™ BROWN',
@@ -33,13 +48,6 @@ export const wishListMock = [
     title: 'PlayStation 5 Pro',
     description: 'Для чилла и игр — идеальный способ расслабиться)',
     links: ['https://www.playstation.com/en-us/ps5/ps5-pro/'],
-    gifted: false,
-  },
-  {
-    imageUrl: ImageAutoSrc,
-    title: 'Обучение в автошколе',
-    description:
-      'Хочу получить права, чтобы быть свободным в перемещениях и путешествовать за рулем ну и как в NSF гонять',
     gifted: false,
   },
 ];

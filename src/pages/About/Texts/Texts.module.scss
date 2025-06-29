@@ -1,0 +1,16 @@
+@import 'src/styles/index';
+
+.box {
+  grid-area: texts;
+  display: flex;
+  flex-wrap: wrap;
+  gap: gap(3);
+
+  padding: gap(4);
+  border-radius: $br_3;
+  background: #333;
+
+  & > * {
+    flex: 1 1 100%;
+  }
+}

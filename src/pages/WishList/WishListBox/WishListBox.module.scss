@@ -1,0 +1,7 @@
+@import 'src/styles/index';
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: gap(3);
+}

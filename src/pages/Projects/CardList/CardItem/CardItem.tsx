@@ -55,24 +55,14 @@ export const CardItem: FC<Props> = ({ project, onVisible, index, active }) => {
           })}
         >
           {project.url && (
-            <Link
-              to={project.url}
-              // @ts-ignore
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link to={project.url} newTab>
               <Button variant={Variant.Secondary} wide>
                 {'Посмотреть сайт'}
               </Button>
             </Link>
           )}
 
-          <Link
-            to={project.urlGitHub}
-            // @ts-ignore
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link to={project.urlGitHub} newTab>
             <Button variant={Variant.Secondary} wide>
               {'Посмотреть код'}
             </Button>

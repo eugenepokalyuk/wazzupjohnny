@@ -1,0 +1,25 @@
+@import 'src/styles/index';
+
+.box {
+  grid-area: facts;
+  margin-top: gap(2);
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: gap(6);
+  }
+
+  @include lg_down {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include md_down {
+    .grid {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
