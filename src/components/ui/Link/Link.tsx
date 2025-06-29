@@ -1,10 +1,10 @@
-import { FC, ReactNode } from 'react';
+import { AnchorHTMLAttributes, FC, ReactNode } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 
 import classes from './Link.module.scss';
 
-interface Props {
+interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   to: string;
   className?: string;
   icon?: ReactNode;

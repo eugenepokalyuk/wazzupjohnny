@@ -1,0 +1,7 @@
+@import 'src/styles/index';
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: gap(4);
+}

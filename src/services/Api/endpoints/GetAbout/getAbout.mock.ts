@@ -6,7 +6,15 @@ import ImgSnowboard from '/public/images/facts/snowboard.png';
 import ImgCoffee from '/public/images/facts/coffee.png';
 import ImgSketchbook from '/public/images/facts/sketchbook.png';
 
-export const factsMock = [
+export interface Fact {
+  imgSrc: string;
+  imgAlt: string;
+  title: string;
+  description: string;
+  link?: string;
+}
+
+export const factsMock: Fact[] = [
   {
     imgSrc: ImgCat,
     imgAlt: 'Абиссинская кошка Астры',
@@ -42,8 +50,7 @@ export const factsMock = [
     imgSrc: ImgSnowboard,
     imgAlt: 'Сноуборд',
     title: 'Максимальная скорость на сноуборде',
-    description:
-      '40.9 км/ч — скорость, с которой я люблю мчаться по склонам, ощущая свободу и адреналин',
+    description: '40.9 км/ч — скорость, с которой я люблю мчаться по склонам, ощущая свободу и адреналин',
   },
   {
     imgSrc: ImgSketchbook,

@@ -14,9 +14,7 @@ export const CollectionCard: FC<Props> = ({ playlist, index, image }) => (
   <Link
     to={`https://music.yandex.ru/iframe/playlist/mackspavlov/${playlist}`}
     className={classes.link}
-    //@ts-ignore
-    target="_blank"
-    rel="noopener noreferrer"
+    newTab
   >
     <img
       src={image}

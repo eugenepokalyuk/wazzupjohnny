@@ -1,18 +1,5 @@
 @import 'src/styles/index';
 
-.title_box {
-  display: flex;
-  flex-direction: column;
-  gap: gap(4);
-  margin-bottom: gap(4);
-}
-
-.articles {
-  display: flex;
-  flex-direction: column;
-  gap: gap(4);
-}
-
 .article {
   display: flex;
   flex-direction: column;
