@@ -23,17 +23,11 @@
   height: 50px;
 
   text-align: center;
-
   cursor: pointer;
-
   padding: 0;
 
   &:hover {
     background-color: color.scale($background-1, $lightness: 10%);
-  }
-
-  @include md_up() {
-    display: none;
   }
 
   svg {

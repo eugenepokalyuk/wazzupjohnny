@@ -1,16 +1,14 @@
 import { FC } from 'react';
 
 import { GitHubIcon, Link, TelegramIcon } from '@components/ui';
-import imageLogoSrc from '@public/images/shape/logo.png';
 import { Links } from '@utils/constants';
 
 import classes from './Contact.module.scss';
+import { FlipAvatar } from './FlipAvatar/FlipAvatar';
 
 export const Contact: FC = () => (
   <div className={classes.box}>
-    <div className={classes.image_box}>
-      <img src={imageLogoSrc} alt="" className={classes.image} />
-    </div>
+    <FlipAvatar />
 
     <div className={classes.icon_box}>
       <Link to={Links.Telegram} className={classes.link}>
