@@ -22,16 +22,6 @@
     order: 1;
   }
 
-  .image_box {
-    .image {
-      width: 80px;
-      height: 80px;
-
-      //border-radius: $br_full;
-      object-fit: cover;
-    }
-  }
-
   .icon_box {
     display: flex;
     flex-direction: column;
