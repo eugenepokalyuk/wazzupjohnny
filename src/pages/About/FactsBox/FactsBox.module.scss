@@ -1,7 +1,10 @@
 @import 'src/styles/index';
 
 .box {
+  display: grid;
   grid-area: facts;
+  gap: gap(6);
+
   margin-top: gap(2);
 
   .grid {

@@ -2,7 +2,7 @@ import { FC, useEffect, useRef, useState } from 'react';
 import Matter from 'matter-js';
 
 import { Skill } from '@services/Api';
-import { useMedia } from '@utils/hooks';
+import { Breakpoints, useMedia } from '@utils/hooks';
 
 import './MatterBoxV2.css';
 
@@ -21,7 +21,7 @@ export const MatterBoxV2: FC<Props> = ({
   const textRef = useRef<HTMLDivElement | null>(null);
   const canvasContainerRef = useRef<HTMLDivElement | null>(null);
 
-  const media = useMedia();
+  const isDesktop = useMedia(Breakpoints.Desktop);
 
   const [effectStarted, setEffectStarted] = useState(false);
 
@@ -253,7 +253,7 @@ export const MatterBoxV2: FC<Props> = ({
         ref={textRef}
         className="falling-text-target"
         style={{
-          fontSize: media.lgDown ? '1.2rem' : '2rem',
+          fontSize: isDesktop ? '2rem' : '1.2rem',
         }}
       />
 

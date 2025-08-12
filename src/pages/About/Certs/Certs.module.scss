@@ -1,0 +1,9 @@
+@import 'src/styles/index';
+
+.box {
+  display: grid;
+  grid-area: certs;
+  gap: gap(6);
+
+  margin-top: gap(2);
+}
