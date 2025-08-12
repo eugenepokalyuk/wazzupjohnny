@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { fileURLToPath } from 'url';
+// import { visualizer } from 'rollup-plugin-visualizer';
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -32,8 +33,14 @@ export default defineConfig({
       '@utils/string': path.resolve(__dirname, './src/utils/string'),
     },
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    // visualizer({ open: true }),
+  ],
   css: {
+    modules: {
+      generateScopedName: '[hash:base64:6]',
+    },
     preprocessorOptions: {
       sass: {
         silenceDeprecations: ['import', 'slash-div', 'global-builtin'],
@@ -42,6 +49,19 @@ export default defineConfig({
       scss: {
         silenceDeprecations: ['import', 'slash-div', 'global-builtin'],
         quietDeps: true,
+      },
+    },
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: true,
+    minify: 'terser',
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]',
       },
     },
   },
