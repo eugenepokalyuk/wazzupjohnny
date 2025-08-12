@@ -91,3 +91,19 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+// swiper slider
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  color: $accent;
+}
+
+.swiper-pagination-bullet {
+  background: $accent;
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: $accent;
+  opacity: 1;
+}

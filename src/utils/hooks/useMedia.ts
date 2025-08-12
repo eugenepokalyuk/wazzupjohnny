@@ -1,64 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'usehooks-ts';
 
-export interface MediaState {
-  mdUp: boolean;
-  lgUp: boolean;
-  mdDown: boolean;
-  lgDown: boolean;
-  mdOnly: boolean;
+export enum Breakpoints {
+  Mobile = 'mobile',
+  Tablet = 'tablet',
+  Desktop = 'desktop',
 }
 
-const getInitialState = (): MediaState => {
-  if (typeof window !== 'undefined') {
-    const mdUp = window.matchMedia('(min-width: 640px)').matches;
-    const lgUp = window.matchMedia('(min-width: 1024px)').matches;
-
-    return {
-      mdUp,
-      lgUp,
-      mdDown: !mdUp,
-      lgDown: !lgUp,
-      mdOnly: mdUp && !lgUp,
-    };
-  }
-
-  return {
-    mdUp: false,
-    lgUp: false,
-    mdDown: true,
-    lgDown: true,
-    mdOnly: false,
-  };
+// Можно расширять список брейкпоинтов
+const breakpoints: Record<Breakpoints, string> = {
+  mobile: '(max-width: 767px)', // до 767px — mobile
+  tablet: '(min-width: 768px) and (max-width: 1023px)', // 768–1023 — tablet
+  desktop: '(min-width: 1024px)', // от 1024 и выше — desktop
 };
 
-export const useMedia = (): MediaState => {
-  const [state, setState] = useState<MediaState>(getInitialState);
+/**
+ * Хук useMedia.
+ * Принимает брейкпоинт и возвращает булево — совпадает ли текущий viewport с ним.
+ * Можно вызвать для нескольких и комбинировать.
+ */
+export function useMedia(breakpoint: Breakpoints): boolean {
+  const query = breakpoints[breakpoint];
 
-  useEffect(() => {
-    const mdQuery = window.matchMedia('(min-width: 640px)');
-    const lgQuery = window.matchMedia('(min-width: 1024px)');
-
-    const updateState = () => {
-      const mdUp = mdQuery.matches;
-      const lgUp = lgQuery.matches;
-
-      setState({
-        mdUp,
-        lgUp,
-        mdDown: !mdUp,
-        lgDown: !lgUp,
-        mdOnly: mdUp && !lgUp,
-      });
-    };
-
-    mdQuery.addEventListener('change', updateState);
-    lgQuery.addEventListener('change', updateState);
-
-    return () => {
-      mdQuery.removeEventListener('change', updateState);
-      lgQuery.removeEventListener('change', updateState);
-    };
-  }, []);
-
-  return state;
-};
+  return useMediaQuery(query);
+}

@@ -3,13 +3,13 @@ import { FC } from 'react';
 import { MatterBoxV2 } from '@components/modules';
 import { ArrowUpIcon, Button } from '@components/ui';
 import { skillsMock } from '@services/Api';
-import { useMedia } from '@utils/hooks';
+import { Breakpoints, useMedia } from '@utils/hooks';
 
 import classes from './Home.module.scss';
 import { MainBox } from './components/MainBox/MainBox';
 
 export const Home: FC = () => {
-  const media = useMedia();
+  const isMobile = useMedia(Breakpoints.Mobile);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -20,7 +20,7 @@ export const Home: FC = () => {
       <MainBox />
 
       <div className={classes.matter_box}>
-        {media.mdDown && (
+        {isMobile && (
           <Button className={classes.button_up} onClick={scrollToTop}>
             <ArrowUpIcon />
           </Button>
