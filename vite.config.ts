@@ -43,11 +43,25 @@ export default defineConfig({
     },
     preprocessorOptions: {
       sass: {
-        silenceDeprecations: ['import', 'slash-div', 'global-builtin'],
+        silenceDeprecations: [
+          'import',
+          'slash-div',
+          'global-builtin',
+          'legacy-js-api',
+          'mixed-decls',
+          'color-functions',
+        ],
         quietDeps: true,
       },
       scss: {
-        silenceDeprecations: ['import', 'slash-div', 'global-builtin'],
+        silenceDeprecations: [
+          'import',
+          'slash-div',
+          'global-builtin',
+          'legacy-js-api',
+          'mixed-decls',
+          'color-functions',
+        ],
         quietDeps: true,
       },
     },
