@@ -16,7 +16,6 @@ interface Props {
 export const WishItem: FC<Props> = ({ item, index }) => {
   const isArray = Array.isArray(item.imageUrl);
 
-  // Для слайдера преобразуем строки в объекты { src, url? }
   const sliderImages = isArray
     ? (item.imageUrl as string[]).map((src) => ({ src }))
     : [];
