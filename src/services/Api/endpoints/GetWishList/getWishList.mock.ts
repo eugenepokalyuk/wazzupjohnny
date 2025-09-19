@@ -1,4 +1,3 @@
-import ImageAutoSrc from '/public/images/wishlist/autoschool.jpg';
 import ImageInstaxSrc from '/public/images/wishlist/instax.jpg';
 import ImageMacSrc from '/public/images/wishlist/mac.webp';
 import ImagePS5ProSrc from '/public/images/wishlist/playstation.jpeg';
@@ -9,6 +8,12 @@ import ImageIPadSrc from '/public/images/wishlist/ipad.jpg';
 import ImageZenitsuHoodieOne from '/public/images/wishlist/zenitsuHoodieOne.webp';
 import ImageZenitsuHoodieTwo from '/public/images/wishlist/zenitsuHoodieTwo.webp';
 import ImageZenitsuHoodieThree from '/public/images/wishlist/zenitsuHoodieThree.webp';
+import ImageEasyFeedPro from '/public/images/wishlist/easy_feed_pro.jpg';
+import ImageMagicSpin from '/public/images/wishlist/magic_spin.jpg';
+import ImageMagicBounce from '/public/images/wishlist/magic_bounce.jpg';
+import ImagePetKitToilet1 from '/public/images/wishlist/petkit_1.png';
+import ImagePetKitToilet2 from '/public/images/wishlist/petkit_2.png';
+import ImagePetKitToilet3 from '/public/images/wishlist/petkit_3.webp';
 
 export interface WishListItem {
   imageUrl: string | string[];
@@ -18,12 +23,6 @@ export interface WishListItem {
 }
 
 export const wishListMock: WishListItem[] = [
-  {
-    imageUrl: ImageAutoSrc,
-    title: 'Обучение в автошколе',
-    description:
-      'Хочу получить права, чтобы быть свободным в перемещениях и путешествовать за рулем ну и как в NSF гонять',
-  },
   {
     imageUrl: ImageInstaxSrc,
     title: 'Instax mini Evo™ BROWN',
@@ -56,6 +55,29 @@ export const wishListMock: WishListItem[] = [
     links: ['https://www.lamoda.ru/p/rtlaed367101/shoes-crocs-sabo/'],
   },
   {
+    imageUrl: ImageEasyFeedPro,
+    title: 'Автоматическая кормушка для Астры',
+    description:
+      '• Задать расписание кормлений\n' +
+      '• Настроить объём порций\n' +
+      '• Общаться с питомцем благодаря двусторонней аудиосвязи\n' +
+      '• Получать уведомления о кормлении и уровне корма\n' +
+      '• Вы видите и контролируете всё — где бы ни находились',
+    links: ['https://ozon.ru/t/l7ig4kg'],
+  },
+  {
+    imageUrl: ImageMagicSpin,
+    title: 'Игрушка Magic Spin для Астры',
+    description: 'Прятки и охота код ковриком',
+    links: ['https://ozon.ru/t/39wZqyN'],
+  },
+  {
+    imageUrl: ImageMagicBounce,
+    title: 'Игрушка Magic Bounce для Астры',
+    description: 'Прыгающая мышка, которой не ускользнуть',
+    links: ['https://ozon.ru/t/1Gvmd1q'],
+  },
+  {
     imageUrl: ImageMacSrc,
     title: 'MacBook Pro',
     description:
@@ -68,5 +90,15 @@ export const wishListMock: WishListItem[] = [
     description:
       'Для чилла и игр — идеальный способ расслабиться, и в нфс погонять, если будет прошка куплю руль))',
     links: ['https://www.playstation.com/en-us/ps5/ps5-pro/'],
+  },
+  {
+    imageUrl: [ImagePetKitToilet1, ImagePetKitToilet2, ImagePetKitToilet3],
+    title: 'Автоматический лоток PETKIT',
+    description: 'ВАЩЕ ЛЮБОЙ, ПУСКАЙ ХОТЬ У КОШКИ БУДЕТ КОСМОЛЕТ!!1',
+    links: [
+      'https://petkit.com.ru/product/avtomaticheskiy-lotok-s-ai-kameroy-purobot-ultra-petkit',
+      'https://petkit.com.ru/product/avtomaticheskiy-lotok-s-ai-kameroy-purobot-max-pro-petkit',
+      'https://petkit.com.ru/product/avtomaticheskiy-lotok-pura-max',
+    ],
   },
 ];
