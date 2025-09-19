@@ -71,7 +71,7 @@
 
   @include md_down() {
     width: 100%;
-    aspect-ratio: 0.9;
+    aspect-ratio: 0.8;
   }
 
   img {
@@ -96,7 +96,7 @@
     aspect-ratio: 1 / 1;
 
     @include md_down() {
-      aspect-ratio: 0.9;
+      aspect-ratio: 0.8;
     }
 
     object-fit: cover;
