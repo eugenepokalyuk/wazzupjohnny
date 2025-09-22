@@ -25,6 +25,10 @@ import ImageGuardianofFaithStraps1 from '/public/images/wishlist/guardian_of_fai
 import ImageGuardianofFaithStraps2 from '/public/images/wishlist/guardian_of_faith_straps_2.webp';
 import ImageGuardianofFaithStraps3 from '/public/images/wishlist/guardian_of_faith_straps_3.webp';
 import ImageGuardianofFaithStraps4 from '/public/images/wishlist/guardian_of_faith_straps_4.webp';
+import ImageFunkoPopDemonSlayerAkaza1 from '/public/images/wishlist/akaza_image_1.png';
+import ImageFunkoPopDemonSlayerAkaza2 from '/public/images/wishlist/akaza_image_2.png';
+import ImageFunkoPopDemonSlayerTomioka1 from '/public/images/wishlist/tomioka_image_1.jpg';
+import ImageFunkoPopDemonSlayerTomioka2 from '/public/images/wishlist/tomioka_image_2.jpg';
 
 export interface WishListItem {
   imageUrl: string | string[];
@@ -36,20 +40,6 @@ export interface WishListItem {
 export const wishListMock: WishListItem[] = [
   {
     imageUrl: [
-      ImageInstax1Src,
-      ImageInstax2Src,
-      ImageInstax3Src,
-      ImageInstax4Src,
-      ImageInstax5Src,
-      ImageInstax6Src,
-    ],
-    title: 'Instax mini Evo™ BROWN',
-    description:
-      'Хочу Instax для моментальных фотографий — это как вернуть пленочную магию, но в современном стиле!',
-    links: ['https://instax.com/mini_evo/en/'],
-  },
-  {
-    imageUrl: [
       ImageZenitsuHoodieOne,
       ImageZenitsuHoodieTwo,
       ImageZenitsuHoodieThree,
@@ -58,13 +48,6 @@ export const wishListMock: WishListItem[] = [
     description:
       'Один из двух тритагонистов (наряду с Иноске Хашибирой) аниме и манги 2016 года Истребитель демонов, но любимый конечно Кёджуро Ренгоку, но худака красивого с ним нет >.<',
     links: ['https://nikifilini.com/product/hudi-demon-slayer-sr/'],
-  },
-  {
-    imageUrl: ImageIPadSrc,
-    title: 'Какой-нибудь iPad',
-    description:
-      'Смотреть кино/аниме, играть в hearthstone, может код-ревью смотреть',
-    links: ['https://www.apple.com/ipad-11/'],
   },
   {
     imageUrl: [ImageCrocsSrc, ImageCrocsTomiokaSrc, ImageCrocsTanjiroSrc],
@@ -99,6 +82,47 @@ export const wishListMock: WishListItem[] = [
     ],
   },
   {
+    imageUrl: [ImageFunkoPopDemonSlayerAkaza2, ImageFunkoPopDemonSlayerAkaza1],
+    title: 'Funko Pop! Demon Slayer Akaza',
+    description:
+      'Ко мне как раз едет фигурка Premium Kyojuro Rengoku (9th Form), и я думаю те кто смотрел КРД понимают почему эти фигурки точно будут сочитаться. Также в ссылочке показал красивого Кеджуро который вот вот у меня будет))',
+    links: [
+      'https://funko.com/pop-akaza/86505.html',
+      'https://funko.com/pop-premium-kyojuro-rengoku-9th-form/85001.html',
+    ],
+  },
+  {
+    imageUrl: [
+      ImageFunkoPopDemonSlayerTomioka1,
+      ImageFunkoPopDemonSlayerTomioka2,
+    ],
+    title: 'Funko Pop! Demon Slayer Giyu Tomioka',
+    description:
+      'Кеджуро и Тамиока самые любимые хаширо =)\n\nТолько достать будет трудно, лимитка(',
+    links: ['https://www.ebay.com/itm/314117106114'],
+  },
+  {
+    imageUrl: ImageIPadSrc,
+    title: 'Какой-нибудь iPad',
+    description:
+      'Смотреть кино/аниме, играть в hearthstone, может код-ревью смотреть',
+    links: ['https://www.apple.com/ipad-11/'],
+  },
+  {
+    imageUrl: [
+      ImageInstax1Src,
+      ImageInstax2Src,
+      ImageInstax3Src,
+      ImageInstax4Src,
+      ImageInstax5Src,
+      ImageInstax6Src,
+    ],
+    title: 'Instax mini Evo™ BROWN',
+    description:
+      'Хочу Instax для моментальных фотографий — это как вернуть пленочную магию, но в современном стиле!',
+    links: ['https://instax.com/mini_evo/en/'],
+  },
+  {
     imageUrl: ImageEasyFeedPro,
     title: 'Автоматическая кормушка для Астры',
     description:
@@ -113,13 +137,13 @@ export const wishListMock: WishListItem[] = [
     imageUrl: ImageMagicSpin,
     title: 'Игрушка Magic Spin для Астры',
     description: 'Прятки и охота код ковриком',
-    links: ['https://ozon.ru/t/39wZqyN'],
+    links: ['https://ozon.ru/t/1Gvmd1q'],
   },
   {
     imageUrl: ImageMagicBounce,
     title: 'Игрушка Magic Bounce для Астры',
     description: 'Прыгающая мышка, которой не ускользнуть',
-    links: ['https://ozon.ru/t/1Gvmd1q'],
+    links: ['https://ozon.ru/t/fAFPYJ4', 'https://ozon.ru/t/39wZqyN'],
   },
   {
     imageUrl: [ImagePetKitToilet1, ImagePetKitToilet2, ImagePetKitToilet3],
