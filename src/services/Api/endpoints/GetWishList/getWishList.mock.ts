@@ -48,7 +48,7 @@ export const wishListMock: WishListItem[] = [
     links: ['https://nikifilini.com/product/hudi-demon-slayer-sr/'],
   },
   {
-    imageUrl: [ImageCrocsTomiokaSrc],
+    imageUrl: ImageCrocsTomiokaSrc,
     title: 'Crocs Сабо с Томиокой',
     description: 'Удобные тапки, особенно с Гию Томиока',
     links: ['https://www.lamoda.ru/p/rtlaed367101/shoes-crocs-sabo/'],
