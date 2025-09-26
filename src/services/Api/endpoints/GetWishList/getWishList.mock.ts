@@ -4,7 +4,6 @@ import ImageInstax3Src from '/public/images/wishlist/instax_3.webp';
 import ImageInstax4Src from '/public/images/wishlist/instax_4.png';
 import ImageInstax5Src from '/public/images/wishlist/instax_5.webp';
 import ImageInstax6Src from '/public/images/wishlist/instax_6.webp';
-import ImageCrocsSrc from '/public/images/wishlist/crocs.jpeg';
 import ImageCrocsTomiokaSrc from '/public/images/wishlist/crocsTomioka.jpg';
 import ImageIPadSrc from '/public/images/wishlist/ipad.jpg';
 import ImageZenitsuHoodieOne from '/public/images/wishlist/zenitsuHoodieOne.webp';
@@ -49,8 +48,8 @@ export const wishListMock: WishListItem[] = [
     links: ['https://nikifilini.com/product/hudi-demon-slayer-sr/'],
   },
   {
-    imageUrl: [ImageCrocsSrc, ImageCrocsTomiokaSrc],
-    title: 'Crocs Сабо Бежевые или с Томиокой',
+    imageUrl: [ImageCrocsTomiokaSrc],
+    title: 'Crocs Сабо с Томиокой',
     description: 'Удобные тапки, особенно с Гию Томиока',
     links: ['https://www.lamoda.ru/p/rtlaed367101/shoes-crocs-sabo/'],
   },
