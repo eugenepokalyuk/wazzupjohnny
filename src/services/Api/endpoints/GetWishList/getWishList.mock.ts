@@ -4,7 +4,6 @@ import ImageInstax3Src from '/public/images/wishlist/instax_3.webp';
 import ImageInstax4Src from '/public/images/wishlist/instax_4.png';
 import ImageInstax5Src from '/public/images/wishlist/instax_5.webp';
 import ImageInstax6Src from '/public/images/wishlist/instax_6.webp';
-import ImageCrocsTomiokaSrc from '/public/images/wishlist/crocsTomioka.jpg';
 import ImageIPadSrc from '/public/images/wishlist/ipad.jpg';
 import ImageZenitsuHoodieOne from '/public/images/wishlist/zenitsuHoodieOne.webp';
 import ImageZenitsuHoodieTwo from '/public/images/wishlist/zenitsuHoodieTwo.webp';
@@ -44,15 +43,15 @@ export const wishListMock: WishListItem[] = [
     ],
     title: 'Худи с Зеницу Агацума',
     description:
-      'Один из двух тритагонистов (наряду с Иноске Хашибирой) аниме и манги 2016 года Истребитель демонов, но любимый конечно Кёджуро Ренгоку, но худака красивого с ним нет >.<',
+      'Один из двух тритагонистов (наряду с Иноске Хашибирой) аниме и манги 2016 года Истребитель демонов, но любимый конечно Кёджуро Ренгоку, но худака красивого с ним нет >.<\n\nСейчас на него скидон нормальный',
     links: ['https://nikifilini.com/product/hudi-demon-slayer-sr/'],
   },
-  {
-    imageUrl: ImageCrocsTomiokaSrc,
-    title: 'Crocs Сабо с Томиокой',
-    description: 'Удобные тапки, особенно с Гию Томиока',
-    links: ['https://www.lamoda.ru/p/rtlaed367101/shoes-crocs-sabo/'],
-  },
+  // {
+  //   imageUrl: ImageCrocsTomiokaSrc,
+  //   title: 'Crocs Сабо с Томиокой',
+  //   description: 'Удобные тапки, особенно с Гию Томиока',
+  //   links: ['https://www.lamoda.ru/p/rtlaed367101/shoes-crocs-sabo/'],
+  // },
   {
     imageUrl: [
       ImageGuardianofFaithBelt1,
