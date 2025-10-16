@@ -5,6 +5,8 @@ import ImageInstax4Src from '/public/images/wishlist/instax_4.png';
 import ImageInstax5Src from '/public/images/wishlist/instax_5.webp';
 import ImageInstax6Src from '/public/images/wishlist/instax_6.webp';
 import ImageIPadSrc from '/public/images/wishlist/ipad.jpg';
+import ImageJotaroHoodie from '/public/images/wishlist/jotaroHoodie.webp';
+import ImageJotaroTShort from '/public/images/wishlist/jotaroTShort.webp';
 import ImageZenitsuHoodieOne from '/public/images/wishlist/zenitsuHoodieOne.webp';
 import ImageZenitsuHoodieTwo from '/public/images/wishlist/zenitsuHoodieTwo.webp';
 import ImageZenitsuHoodieThree from '/public/images/wishlist/zenitsuHoodieThree.webp';
@@ -35,6 +37,15 @@ export const wishListMock: WishListItem[] = [
     description:
       'Один из двух тритагонистов (наряду с Иноске Хашибирой) аниме и манги 2016 года Истребитель демонов, но любимый конечно Кёджуро Ренгоку, но худака красивого с ним нет >.<\n\nСейчас на него скидон нормальный',
     links: ['https://nikifilini.com/product/hudi-demon-slayer-sr/'],
+  },
+  {
+    imageUrl: [ImageJotaroHoodie, ImageJotaroTShort],
+    title: 'Приму в дар любой мерч с Джо Джо',
+    description: 'В особенности селедующие три позиции:',
+    links: [
+      'https://nikifilini.com/product/futbolka-jotaro-himself/',
+      'https://nikifilini.com/product/hoodie-jotaro/',
+    ],
   },
   {
     imageUrl: [
