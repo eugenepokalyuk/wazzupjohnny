@@ -7,9 +7,9 @@ import { BoardCard } from '../BoardCard/BoardCard';
 
 export const Navigation: FC = () => {
   const NavigationLinksMock = [
-    { label: 'Проекты', url: Urls.Projects },
-    { label: 'Самопрезентация', url: Urls.About },
-    { label: 'Список желаний', url: Urls.WishList },
+    { label: 'Мои проекты', url: Urls.Projects },
+    { label: 'Немного о себе', url: Urls.About },
+    { label: 'Wish list', url: Urls.WishList },
     { label: 'Пишу статьи', url: Urls.Articles },
     { label: 'Мой плейлист', url: Urls.MusicPlaylist },
   ];

@@ -31,12 +31,12 @@ export const Layout: FC<Props> = ({ header, footer, wide, children }) => {
     {
       key: Urls.About,
       url: Urls.About,
-      label: 'Самопрезентация',
+      label: 'Немного о себе',
     },
     {
       key: Urls.WishList,
       url: Urls.WishList,
-      label: 'Список желаний',
+      label: 'Wish list',
     },
     {
       key: Urls.Articles,
@@ -46,7 +46,7 @@ export const Layout: FC<Props> = ({ header, footer, wide, children }) => {
     {
       key: Urls.MusicPlaylist,
       url: Urls.MusicPlaylist,
-      label: 'Мой плейлист',
+      label: 'Плейлист',
     },
   ];
 
