@@ -40,11 +40,11 @@ export const wishListMock: WishListItem[] = [
   },
   {
     imageUrl: [ImageJotaroHoodie, ImageJotaroTShort],
-    title: 'Приму в дар любой мерч с Джо Джо',
-    description: 'В особенности селедующие три позиции:',
+    title: 'Любой мерч с Джо Джо',
+    description: 'В особенности селедующие две позиции худи и футболка',
     links: [
-      'https://nikifilini.com/product/futbolka-jotaro-himself/',
       'https://nikifilini.com/product/hoodie-jotaro/',
+      'https://nikifilini.com/product/futbolka-jotaro-himself/',
     ],
   },
   {
