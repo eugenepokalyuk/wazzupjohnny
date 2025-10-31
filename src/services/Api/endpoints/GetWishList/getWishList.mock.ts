@@ -10,14 +10,6 @@ import ImageJotaroTShort from '/public/images/wishlist/jotaroTShort.webp';
 import ImageZenitsuHoodieOne from '/public/images/wishlist/zenitsuHoodieOne.webp';
 import ImageZenitsuHoodieTwo from '/public/images/wishlist/zenitsuHoodieTwo.webp';
 import ImageZenitsuHoodieThree from '/public/images/wishlist/zenitsuHoodieThree.webp';
-import ImageGuardianofFaithBelt1 from '/public/images/wishlist/guardian_of_faith_belt_1.webp';
-import ImageGuardianofFaithBelt2 from '/public/images/wishlist/guardian_of_faith_belt_2.webp';
-import ImageGuardianofFaithBelt3 from '/public/images/wishlist/guardian_of_faith_belt_3.webp';
-import ImageGuardianofFaithBelt4 from '/public/images/wishlist/guardian_of_faith_belt_4.webp';
-import ImageGuardianofFaithStraps1 from '/public/images/wishlist/guardian_of_faith_straps_1.webp';
-import ImageGuardianofFaithStraps2 from '/public/images/wishlist/guardian_of_faith_straps_2.webp';
-import ImageGuardianofFaithStraps3 from '/public/images/wishlist/guardian_of_faith_straps_3.webp';
-import ImageGuardianofFaithStraps4 from '/public/images/wishlist/guardian_of_faith_straps_4.webp';
 
 export interface WishListItem {
   imageUrl: string | string[];
@@ -35,7 +27,7 @@ export const wishListMock: WishListItem[] = [
     ],
     title: 'Худи с Зеницу Агацума',
     description:
-      'Один из двух тритагонистов (наряду с Иноске Хашибирой) аниме и манги 2016 года Истребитель демонов, но любимый конечно Кёджуро Ренгоку, но худака красивого с ним нет >.<\n\nСейчас на него скидон нормальный',
+      'Один из двух тритагонистов (наряду с Иноске Хашибирой) аниме и манги 2016 года Истребитель демонов',
     links: ['https://nikifilini.com/product/hudi-demon-slayer-sr/'],
   },
   {
@@ -49,21 +41,23 @@ export const wishListMock: WishListItem[] = [
   },
   {
     imageUrl: [
-      ImageGuardianofFaithBelt1,
-      ImageGuardianofFaithBelt2,
-      ImageGuardianofFaithBelt3,
-      ImageGuardianofFaithBelt4,
-      ImageGuardianofFaithStraps1,
-      ImageGuardianofFaithStraps2,
-      ImageGuardianofFaithStraps3,
-      ImageGuardianofFaithStraps4,
+      'https://nikifilini.com/wp-content/uploads/2025/09/benzopila-hudak-scaled.jpg',
+      'https://nikifilini.com/wp-content/uploads/2025/09/benzopila-hudak-z-scaled.jpg',
     ],
-    title: 'Страж Веры Пояс или Лямки для становой',
+    title: 'Худи с Дэнджи',
+    description: 'Главный герой аниме Тацуки Фудзимото «Chainsaw Man»',
+    links: ['https://nikifilini.com/product/hudi-denji-r/'],
+  },
+  {
+    imageUrl:
+      'https://avatars.mds.yandex.net/get-mpic/5031495/2a00000199e26e1425775a3e3ffc57feb18e/optimize',
+    title: 'Рожковая кофемашинка',
     description:
-      'Для качалки, я ж теперь качаюсь!\n\nСтановую тягу приседания таааам и всякое другое другое, думаю вот пояс нужен, к зиме уже буду нормальные веса брать, а лямки нужны чтобы изолировать руки там где другие группы мыщц не должно работать! У пояса голубой цвет кайф) Мой текущий обхват талии 89 см.\n\nНа момент покупки лучше уточнить не бросил ли я заниматься в зале =)',
+      'Думаю о рожковой кофемашинке которая умеет молоть кофе и работать с молоком и подогрев чашек сверху. Не знаю есть ли недорогие варианты, но пока приглядел кофемашинки от компании Tuvio, но тут молки нет остальное вроде есть\n\nЕсть ценители кофе?',
     links: [
-      'https://www.ozon.ru/product/lyamki-sportivnye-dlya-stanovoy-tyagi-2608747560/?_bctx=CAQQ9takAQ&at=GRt2kLqYxujr3P91SApK1BvCX3vlRKirg2rXXcv3n1J7&hs=1',
-      'https://ozon.ru/t/39wZqyN',
+      'https://market.yandex.ru/cc/7uE3XS',
+      'https://market.yandex.ru/cc/7uE3hE',
+      'https://market.yandex.ru/cc/7uE3uE',
     ],
   },
   {
