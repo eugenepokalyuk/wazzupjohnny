@@ -24,6 +24,11 @@ export interface RouteLink {
 export const Layout: FC<Props> = ({ header, footer, wide, children }) => {
   const RouteLinks: RouteLink[] = [
     {
+      key: Urls.Home,
+      url: Urls.Home,
+      label: 'Главная',
+    },
+    {
       key: Urls.Projects,
       url: Urls.Projects,
       label: 'Проекты',
