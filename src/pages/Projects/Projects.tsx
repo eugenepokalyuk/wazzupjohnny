@@ -18,6 +18,8 @@ export const Projects: FC = () => {
       )
     : projectArray;
 
+  const sortedProjects = filteredProjects.sort((a, b) => b.created - a.created);
+
   useEffect(() => {
     setActiveProjectIndex(0);
   }, []);
@@ -37,7 +39,7 @@ export const Projects: FC = () => {
       <Filter tags={selectedTags} onClick={toggleTag} />
 
       <CardList
-        projects={filteredProjects}
+        projects={sortedProjects}
         projectIndex={activeProjectIndex}
         setProjectIndex={setActiveProjectIndex}
       />
