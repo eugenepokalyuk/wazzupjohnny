@@ -49,18 +49,6 @@ export const wishListMock: WishListItem[] = [
     links: ['https://nikifilini.com/product/hudi-denji-r/'],
   },
   {
-    imageUrl:
-      'https://avatars.mds.yandex.net/get-mpic/5031495/2a00000199e26e1425775a3e3ffc57feb18e/optimize',
-    title: 'Рожковая кофемашинка',
-    description:
-      'Думаю о рожковой кофемашинке которая умеет молоть кофе и работать с молоком и подогрев чашек сверху. Не знаю есть ли недорогие варианты, но пока приглядел кофемашинки от компании Tuvio, но тут молки нет остальное вроде есть\n\nЕсть ценители кофе?',
-    links: [
-      'https://market.yandex.ru/cc/7uE3XS',
-      'https://market.yandex.ru/cc/7uE3hE',
-      'https://market.yandex.ru/cc/7uE3uE',
-    ],
-  },
-  {
     imageUrl: ImageIPadSrc,
     title: 'Какой-нибудь iPad',
     description:
