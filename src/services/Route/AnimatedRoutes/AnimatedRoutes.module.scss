@@ -1,21 +1,23 @@
+// bad practice
+
 .page_enter {
-  opacity: 0;
-  transform: translateY(10px);
+  // opacity: 0.5;
+  // transform: translateY(10px);
 }
 
 .page_enter_active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 400ms ease, transform 400ms ease;
+  // opacity: 1;
+  // transform: translateY(0);
+  // transition: opacity 225ms ease;
 }
 
 .page_exit {
-  opacity: 1;
-  transform: translateY(0);
+  // opacity: 1;
+  // transform: translateY(0);
 }
 
 .page_exit_active {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 400ms ease, transform 400ms ease;
+  // opacity: 0.5;
+  // transform: translateY(-10px);
+  // transition: opacity 225ms ease;
 }
