@@ -4,11 +4,6 @@ import ImageInstax3Src from '/public/images/wishlist/instax_3.webp';
 import ImageInstax4Src from '/public/images/wishlist/instax_4.png';
 import ImageInstax5Src from '/public/images/wishlist/instax_5.webp';
 import ImageInstax6Src from '/public/images/wishlist/instax_6.webp';
-import ImageJotaroHoodie from '/public/images/wishlist/jotaroHoodie.webp';
-import ImageJotaroTShort from '/public/images/wishlist/jotaroTShort.webp';
-import ImageZenitsuHoodieOne from '/public/images/wishlist/zenitsuHoodieOne.webp';
-import ImageZenitsuHoodieTwo from '/public/images/wishlist/zenitsuHoodieTwo.webp';
-import ImageZenitsuHoodieThree from '/public/images/wishlist/zenitsuHoodieThree.webp';
 import ImageSurpriseMazafaka from '/public/images/wishlist/surpriseMazafaka.jpg';
 
 export interface WishListItem {
@@ -21,35 +16,6 @@ export interface WishListItem {
 export const wishListMock: WishListItem[] = [
   {
     imageUrl: [
-      ImageZenitsuHoodieOne,
-      ImageZenitsuHoodieTwo,
-      ImageZenitsuHoodieThree,
-    ],
-    title: 'Худи с Зеницу Агацума',
-    description:
-      'Один из двух тритагонистов (наряду с Иноске Хашибирой) аниме и манги 2016 года Истребитель демонов',
-    links: ['https://nikifilini.com/product/hudi-demon-slayer-sr/'],
-  },
-  {
-    imageUrl: [ImageJotaroHoodie, ImageJotaroTShort],
-    title: 'Любой мерч с Джо Джо',
-    description: 'В особенности селедующие две позиции худи и футболка',
-    links: [
-      'https://nikifilini.com/product/hoodie-jotaro/',
-      'https://nikifilini.com/product/futbolka-jotaro-himself/',
-    ],
-  },
-  {
-    imageUrl: [
-      'https://nikifilini.com/wp-content/uploads/2025/09/benzopila-hudak-scaled.jpg',
-      'https://nikifilini.com/wp-content/uploads/2025/09/benzopila-hudak-z-scaled.jpg',
-    ],
-    title: 'Худи с Дэнджи',
-    description: 'Главный герой аниме Тацуки Фудзимото «Chainsaw Man»',
-    links: ['https://nikifilini.com/product/hudi-denji-r/'],
-  },
-  {
-    imageUrl: [
       ImageInstax1Src,
       ImageInstax2Src,
       ImageInstax3Src,
@@ -58,14 +24,12 @@ export const wishListMock: WishListItem[] = [
       ImageInstax6Src,
     ],
     title: 'Instax mini Evo™ BROWN',
-    description:
-      'Хочу Instax для моментальных фотографий — это как вернуть пленочную магию, но в современном стиле!',
+    description: 'Хочу Instax для моментальных фотографий - это как вернуть пленочную магию, но в современном стиле!',
     links: ['https://instax.com/mini_evo/en/'],
   },
   {
     imageUrl: ImageSurpriseMazafaka,
-    title: 'Денежка на весенний эпик 💸✨',
-    description:
-      'Секретное весеннее событие! Деньги уйдут на эпик, обещаю челюсти на полу)',
+    title: 'Денежка на весенний эпик ✨',
+    description: 'Секретное весеннее событие! Деньги уйдут на эпик, обещаю челюсти на полу)',
   },
 ];
