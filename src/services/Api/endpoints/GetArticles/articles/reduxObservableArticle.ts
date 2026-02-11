@@ -1,10 +1,12 @@
 import { ContentType } from '@pages/Articles/Articles.types.ts';
 
+import { Article } from './enums';
+
 export const reduxObservableArticle = {
   id: 'redux-observable-001',
   slug: 'redux-observable-vs-redux-saga',
   title: 'Как работает Redux Observable с RxJS и почему он круче Redux Saga',
-  author: 'Евгений Покалюк',
+  author: Article.Author,
   date: '2025-05-24',
   content: [
     {

@@ -1,12 +1,14 @@
 import { ContentType } from '@pages/Articles/Articles.types.ts';
 
+import { Article } from './enums';
+
 export const reduxSagaArticle = {
   id: 'redux-saga-001',
   slug: 'redux-saga-intro',
   title:
     'Введение в Redux-Saga: простой и мощный способ управления сайд-эффектами',
-  date: '2025-05-24',
-  author: 'Евгений Покалюк',
+  date: '2025-03-20',
+  author: Article.Author,
   content: [
     {
       type: ContentType.Heading,

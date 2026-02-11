@@ -1,5 +1,3 @@
-import ImageSurpriseMazafaka from '/public/images/wishlist/surpriseMazafaka.jpg';
-
 export interface WishListItem {
   imageUrl: string | string[];
   title: string;
@@ -8,13 +6,6 @@ export interface WishListItem {
 }
 
 export const wishListMock: WishListItem[] = [
-  {
-    imageUrl:
-      'https://storage.yandexcloud.net/anki.team/iblock/3c2/3c2034a1bac0765febd998dc40c3f4f7/e8c5bdac1f1bb2bd17ff8648cbf09550.jpg',
-    title: '#Кроссы Adidas Originals Puffylette✨',
-    description:
-      'Красивые зимние кроссы, мне нравятся) У меня длина ноги 28.4см - 28.5см, это где-то 44, 44.5, 45 размер. Нужно смотреть по размерной сетке',
-  },
   {
     imageUrl: [
       'https://nikifilini.com/wp-content/uploads/2025/09/benzopila-hudak-scaled.jpg',
@@ -63,7 +54,6 @@ export const wishListMock: WishListItem[] = [
     imageUrl: [
       'https://optim.tildacdn.com/stor3532-3362-4461-a366-326366386635/-/format/webp/29307006.jpg.webp',
       'https://optim.tildacdn.com/stor3462-3931-4966-b639-396532363134/-/format/webp/24635095.jpg.webp',
-      'https://ricewear.com/shop/pants/tproduct/1215976646-354627392171-very-oversize-cargo-pants',
     ],
     title: '#Одежда Штаны от Rice Wear',
     description:
@@ -71,16 +61,6 @@ export const wishListMock: WishListItem[] = [
     links: [
       'https://ricewear.com/shop/pants/tproduct/1215976646-458778662612-oversize-wool-rip-stop-pants',
       'https://ricewear.com/shop/pants/tproduct/1215976646-542257036772-kinomo-oversize-pants',
-      'https://ricewear.com/shop/pants/tproduct/1215976646-354627392171-very-oversize-cargo-pants',
-    ],
-  },
-  {
-    imageUrl: 'https://ir-5.ozone.ru/s3/multimedia-1-k/wc1000/7669940924.jpg',
-    title: '#Лего Властелин колец: Книжный уголок Балрога',
-    description:
-      'Лего какое-нибудь, типа властелин колец, звездные войны, икс мэны, человек паук или что-то что я люблю',
-    links: [
-      'https://www.ozon.ru/product/konstruktor-lego-icons-vlastelin-kolets-knizhnyy-ugolok-balroga-1201-detaley-vozrast-18-10367-2268049364/?_bctx=CAYQpopi&at=Vvtzo570Otxj6XOkTnLk7PVUGXJOlpcwwvozjunEM98N',
     ],
   },
   {
@@ -91,16 +71,9 @@ export const wishListMock: WishListItem[] = [
       'Если кто не в курсе, я тут в автошколе учусь и коплю денежку на машину)',
   },
   {
-    imageUrl: ImageSurpriseMazafaka,
-    title: '#Денежка на весенний эпик✨',
-    description:
-      'Секретное весеннее событие! Деньги уйдут на эпик, обещаю челюсти на полу)',
-  },
-  {
     imageUrl: 'https://i.ebayimg.com/images/g/I4QAAOSwcm1kMgqd/s-l1200.jpg',
     title: 'Что дарить точно не нужно?',
-    description:
-      '- Набор для настоек или что-то с этим связанное\n- Спортивное питание или что-то для зала\n- Что-то для компа (наушники, мышку, клаву)\n- Колонку, в моем доме насчитывается уже 5 колонок)',
+    description: '- Набор для настоек или что-то с этим связанное\n- Спортивное питание или что-то для зала\n- Что-то для компа (наушники, мышку, клаву)\n- Колонку, в моем доме насчитывается уже 5 колонок)',
   },
   {
     imageUrl:

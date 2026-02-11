@@ -7,6 +7,14 @@
 
   width: 100%;
 
+  .link {
+    width: fit-content;
+
+    p:hover {
+      color: $accent;
+    }
+  }
+
   .article_title {
     font-weight: $semi_bold;
   }

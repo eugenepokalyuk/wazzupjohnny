@@ -5,12 +5,14 @@ export interface Skill {
 }
 
 const technologies = [
-  { name: 'HTML5', color: '#FFF', backgroundColor: '#FF7A00' },
-  { name: 'CSS3', color: '#FFF', backgroundColor: '#0038FF' },
+  { name: 'HTML5', color: '#FFFFFF', backgroundColor: '#FF7A00' },
+  { name: 'CSS3', color: '#FFFFFF', backgroundColor: '#0038FF' },
+  { name: 'SCSS', color: '#BF3F80', backgroundColor: '#FFFFFF' },
   { name: 'JavaScript', color: '#333', backgroundColor: '#FFD600' },
   { name: 'TypeScript', color: '#FFFFFF', backgroundColor: '#007ACC' },
   { name: 'WebSocket', color: '#FFFFFF', backgroundColor: '#800000' },
   { name: 'SQL', color: '#FFFFFF', backgroundColor: '#E38D13' },
+  { name: 'Next', color: '#FFFFFF', backgroundColor: '#000000' },
 ];
 
 const libraries = [
@@ -25,6 +27,12 @@ const libraries = [
 const stateManagers = [
   { name: 'Redux', color: '#FFFFFF', backgroundColor: '#764ABC' },
   { name: 'Redux-thunk', color: '#FFFFFF', backgroundColor: '#764ABC' },
+  { name: 'Redux-Saga', color: '#86d46b', backgroundColor: '#FFFFFF' },
+  {
+    name: 'Redux observable',
+    color: '#582c87',
+    backgroundColor: '#dd188f',
+  },
   { name: 'MobX', color: '#FFFFFF', backgroundColor: '#ff9955' },
 ];
 
