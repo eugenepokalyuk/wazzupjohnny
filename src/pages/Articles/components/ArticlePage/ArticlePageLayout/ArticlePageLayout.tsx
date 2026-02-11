@@ -1,11 +1,12 @@
 import { FC } from 'react';
 
-import { Link, Size, Tags, Text } from '@components/ui';
+import { Color, Link, Size, Tags, Text } from '@components/ui';
 import { formatDate } from '@utils/string';
 
 import classes from './ArticlePageLayout.module.scss';
 import { ContentBlock } from '../../ContentBlock/ContentBlock';
 import { Article } from '../../../Articles.types.ts';
+import { Urls } from '@services/Route';
 
 interface Props {
   article: Article;
@@ -13,6 +14,12 @@ interface Props {
 
 export const ArticlePageLayout: FC<Props> = ({ article }) => (
   <div className={classes.article}>
+    <Link to={Urls.Articles} className={classes.link}>
+      <Text tag={Tags.Paragraph} size={Size.MD} color={Color.Secondary}>
+        {'← Назад'}
+      </Text>
+    </Link>
+
     <Text tag={Tags.Heading} size={Size.XL} className={classes.article_title}>
       {article.title}
     </Text>
@@ -30,7 +37,7 @@ export const ArticlePageLayout: FC<Props> = ({ article }) => (
     {article.externalLinks && (
       <div className={classes.external_links}>
         <Text tag={Tags.Heading} size={Size.MD}>
-          {'Ссылки на другие ресурсы:'}
+          {'Источники:'}
         </Text>
 
         <div className={classes.links_grid}>

@@ -29,7 +29,7 @@ $breakpoints: (
   $bpIndex: index($bpsList, $breakpoint);
   $bp: map-get($breakpoints, $breakpoint);
 
-  $bpNextIndex: nth($bpsList, $bpIndex + 1);
+  $bpNextIndex: if($bpIndex < length($bpsList), nth($bpsList, $bpIndex + 1), null);
   $bpNext: map-get($breakpoints, $bpNextIndex);
 
   $bpMin: null;

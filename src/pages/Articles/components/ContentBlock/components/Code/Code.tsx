@@ -1,6 +1,8 @@
-import { FC, useState } from 'react';
+import React, { FC } from 'react';
+import clsx from 'clsx';
 
-import { Button, Size, Variant } from '@components/ui';
+import { Button, CopyIcon, DoneIcon, Size, Variant } from '@components/ui';
+import { Breakpoints, useMedia } from '@/utils';
 
 import classes from './Code.module.scss';
 
@@ -9,7 +11,9 @@ interface Props {
 }
 
 export const Code: FC<Props> = ({ content }) => {
-  const [copied, setCopied] = useState(false);
+  const isMobile = useMedia(Breakpoints.Mobile);
+
+  const [copied, setCopied] = React.useState<boolean>(false);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(content).then(() => {
@@ -20,15 +24,26 @@ export const Code: FC<Props> = ({ content }) => {
 
   return (
     <div className={classes.box}>
-      <Button
-        size={Size.SM}
-        variant={Variant.Secondary}
-        className={classes.btn}
-        onClick={handleCopy}
-        tilt
-      >
-        {copied ? 'Скопировано!' : 'Копировать'}
-      </Button>
+      {!isMobile ? (
+        <div
+          onClick={handleCopy}
+          className={clsx(classes.button_icon, {
+            [classes.copied]: copied,
+          })}
+        >
+          {copied ? <DoneIcon /> : <CopyIcon />}
+        </div>
+      ) : (
+        <Button
+          size={Size.SM}
+          variant={Variant.Accent}
+          className={classes.button}
+          onClick={handleCopy}
+          outline
+        >
+          {copied ? 'Скопировано!' : 'Копировать'}
+        </Button>
+      )}
 
       <pre className={classes.code}>
         <code>{content}</code>

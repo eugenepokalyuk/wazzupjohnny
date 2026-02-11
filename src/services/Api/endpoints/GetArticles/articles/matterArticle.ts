@@ -1,10 +1,12 @@
 import { ContentType } from '@pages/Articles/Articles.types.ts';
 
+import { Article } from './enums';
+
 export const matterArticle = {
   id: 'matter-js-detailed-001',
   slug: 'matter-js-detailed',
   title: 'Matter JS: Подробный разбор интерактивной физики React-компонента',
-  author: 'Евгений Покалюк',
+  author: Article.Author,
   date: '2025-06-21',
   content: [
     {

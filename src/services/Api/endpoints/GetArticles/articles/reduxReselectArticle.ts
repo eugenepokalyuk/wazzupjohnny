@@ -1,11 +1,13 @@
 import { ContentType } from '@pages/Articles/Articles.types.ts';
 
+import { Article } from './enums';
+
 export const reduxReselectArticle = {
   id: 'redux-reselect-001',
   slug: 'redux-reselect',
   title:
     'Управление состоянием в React с помощью Redux Toolkit и Reselect: Оптимизация производительности и упрощение селекторов',
-  author: 'Евгений Покалюк',
+  author: Article.Author,
   date: '2024-11-21',
   content: [
     {
