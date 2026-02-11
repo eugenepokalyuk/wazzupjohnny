@@ -16,22 +16,37 @@ export const reduxSagaArticle = {
     },
     {
       type: ContentType.Paragraph,
-      content:
-        'Redux-Saga — это библиотека для управления сайд-эффектами (асинхронными операциями и побочными действиями) в приложениях на Redux. Она использует генераторы ES6 для удобного и декларативного описания асинхронной логики',
+      content: `Привет! Redux-Saga — это библиотека для управления сайд-эффектами (асинхронными операциями) в Redux. Можно немного ззабыть про колбэки и промисы!`,
+    },
+    {
+      type: ContentType.Paragraph,
+      content: `Помните те времена, когда в редьюсере писали?`,
+    },
+    {
+      type: ContentType.Code,
+      content: `if (action.type === API_CALL_SUCCESS) { ... }`,
+    },
+    {
+      type: ContentType.Paragraph,
+      content: `Или когда thunk возвращал промисы, а вы пытались их поймать? Saga решает всю эту головную боль`,
     },
     {
       type: ContentType.Heading,
-      content: 'Основные концепции Redux-Saga',
+      content: 'Основные концепции саги',
     },
     {
       type: ContentType.List,
       listTitle: 'Ключевые понятия:',
       listItems: [
-        'Сага — генераторная функция, описывающая побочные эффекты',
-        'Watcher Saga — слушает экшены и запускает worker-саги',
-        'Worker Saga — выполняет асинхронную логику, например, запросы к API',
-        'Эффекты — специальные объекты, описывающие действия для middleware',
+        'Saga - генераторная функция, описывающая побочные эффекты',
+        'Watcher Saga - слушает экшены и запускает worker-саги',
+        'Worker Saga - выполняет асинхронную логику (Api, WebSocket)',
+        'Эффекты - специальные объекты для middleware (call, put, take)',
       ],
+    },
+    {
+      type: ContentType.Paragraph,
+      content: `Почему генераторы, спросите вы? Потому что Saga описывает логику, а не выполняет. Middleware сам решает, когда запустить \`yield call(api)\` или \`yield put(action)\`. Это как писать сценарий для асинк операций`,
     },
     {
       type: ContentType.Heading,
@@ -49,7 +64,6 @@ import {
 
 async function getUsersFromApi() {
   const response = await fetch('https://jsonplaceholder.typicode.com/users');
-
   if (!response.ok) throw new Error('Ошибка загрузки пользователей');
 
   return response.json();
@@ -70,6 +84,10 @@ export function* usersSaga() {
 }`,
     },
     {
+      type: ContentType.Paragraph,
+      content: `Видите? Код читается сверху вниз, как обычная функция. Но под капотом мидлвера саги: ловит \`getUsersRequest.type\`, запускает Api, диспатчит success/failure. Никаких then/catch в компонентах 🎉`,
+    },
+    {
       type: ContentType.Heading,
       content: 'Почему стоит использовать?',
     },
@@ -77,11 +95,31 @@ export function* usersSaga() {
       type: ContentType.List,
       listTitle: 'Преимущества:',
       listItems: [
-        'Удобное и последовательное описание асинхронной логики',
-        'Простота отмены, повторного запуска и параллельного выполнения задач',
-        'Хорошая тестируемость благодаря декларативному стилю',
-        'Легко интегрировать redux как middleware',
+        'Последовательное описание асинхронной логики (как async/await)',
+        'Простая отмена задач (`cancel`), параллельность (`fork`), повтор (`retry`)',
+        'Тестируемость: проверяем yield эффекты, не мокая API',
+        'Интеграция как middleware — не ломает Redux принципы',
       ],
+    },
+    {
+      type: ContentType.Paragraph,
+      content: `Вот пример из реального проекта: нужно загрузить профиль пользователя + его аватар + права параллельно. С сагой это выглядит так:`,
+    },
+    {
+      type: ContentType.Code,
+      content: `function* loadUserProfile() {
+  const [user, avatar, permissions] = yield all([
+    call(api.getUser),
+    call(api.getAvatar),
+    call(api.getPermissions)
+  ]);
+  
+  yield put(profileLoaded({ user, avatar, permissions }));
+}`,
+    },
+    {
+      type: ContentType.Paragraph,
+      content: `Вместо 3 секунд - 1.2с. А \`cancel\` при unmount компонента останавливает все 3 запроса одной командой`,
     },
     {
       type: ContentType.Paragraph,
