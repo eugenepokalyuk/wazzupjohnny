@@ -5,6 +5,7 @@ import { reduxObservableArticle } from './articles/reduxObservableArticle';
 import { matterArticle } from './articles/matterArticle';
 import { reduxSagaArticle } from './articles/reduxSagaArticle';
 import { reduxStoreInterfaceArticle } from './articles/reduxStoreInterfaceArticle';
+import { compoundKeysArticle } from './articles/compoundKeysArticle';
 
 export const articlesMock: Article[] = [
   matterArticle,
@@ -12,4 +13,5 @@ export const articlesMock: Article[] = [
   reduxReselectArticle,
   reduxSagaArticle,
   reduxStoreInterfaceArticle,
+  compoundKeysArticle,
 ];
