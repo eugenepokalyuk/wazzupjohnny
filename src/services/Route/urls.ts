@@ -3,7 +3,6 @@ export enum Urls {
 
   Projects = '/projects/',
   About = '/about/',
-  WishList = '/wish-list/',
   Articles = '/articles/',
   ArticlePage = '/articles/:slug/',
   MusicPlaylist = '/playlist/',

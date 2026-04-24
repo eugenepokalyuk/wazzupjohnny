@@ -39,11 +39,6 @@ export const Layout: FC<Props> = ({ header, footer, wide, children }) => {
       label: 'Немного о себе',
     },
     {
-      key: Urls.WishList,
-      url: Urls.WishList,
-      label: 'Wish list',
-    },
-    {
       key: Urls.Articles,
       url: Urls.Articles,
       label: 'Статьи',
