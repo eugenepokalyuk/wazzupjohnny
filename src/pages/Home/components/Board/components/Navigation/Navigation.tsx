@@ -9,7 +9,6 @@ export const Navigation: FC = () => {
   const NavigationLinksMock = [
     { label: 'Мои проекты', url: Urls.Projects },
     { label: 'Немного о себе', url: Urls.About },
-    { label: 'Wish list', url: Urls.WishList },
     { label: 'Пишу статьи', url: Urls.Articles },
     { label: 'Мой плейлист', url: Urls.MusicPlaylist },
   ];

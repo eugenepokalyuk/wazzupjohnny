@@ -5,7 +5,6 @@ import { useRoutes } from 'react-router-dom';
 import { Home } from '@pages/Home/Home';
 import { Projects } from '@pages/Projects/Projects';
 import { About } from '@pages/About/About';
-import { WishList } from '@pages/WishList/WishList';
 import { Articles } from '@pages/Articles/Articles';
 import { MusicPlaylist } from '@pages/MusicPlaylist/MusicPlaylist';
 import { ArticlePage } from '@pages/Articles/components/ArticlePage/ArticlePage';
@@ -25,10 +24,6 @@ export const appRoutes: RouteObject[] = [
   {
     path: Urls.About,
     element: <About />,
-  },
-  {
-    path: Urls.WishList,
-    element: <WishList />,
   },
   {
     path: Urls.Articles,
