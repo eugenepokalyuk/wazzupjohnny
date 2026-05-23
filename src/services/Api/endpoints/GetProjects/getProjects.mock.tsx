@@ -89,8 +89,6 @@ export const projectArray: ProjectItemProps[] = [
     created: 2026,
   },
   {
-    url: 'https://askymo.com/',
-    urlGitHub: 'https://github.com/askymocom/askymo_front',
     badges: [
       Tag.React,
       Tag.TypeScript,
