@@ -1,34 +1,26 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
-import {
-  Button,
-  Card,
-  CardFooter,
-  CardHeader,
-  Link,
-  Size,
-  Tags,
-  Text,
-  Variant,
-} from '@components/ui';
-import { Urls } from '@services/Route';
-
-import classes from './Error.module.scss';
+import { SegaShell } from '@components/sega';
+import classes from '@components/sega/sega.module.scss';
+import { PlayIcon } from '@components/ui';
+import { Urls } from '@services/Route/urls';
 
 export const Error: FC = () => (
-  <div className={classes.box}>
-    <Card variant={Variant.Secondary} className={classes.card}>
-      <CardHeader>
-        <Text tag={Tags.Heading} size={Size.XL}>
-          {'Ууупс! Что-то пошло не так!'}
-        </Text>
-      </CardHeader>
+  <SegaShell>
+    <section className={`${classes.sec} ${classes.coin}`}>
+      <div className={classes.wrap}>
+        <div className={classes.coinHead}>GAME OVER</div>
+        <p className={classes.coinSub}>
+          CONTINUE? — такой страницы нет, но игра ещё не окончена
+        </p>
 
-      <CardFooter className={classes.card_footer}>
-        <Link to={Urls.Home} className={classes.back_home_button}>
-          <Button wide>{'На главную страницу'}</Button>
+        <div className={classes.errorCode}>ERROR 404</div>
+
+        <Link to={Urls.Home} className={classes.allProjects}>
+          <PlayIcon className={classes.txtIcon} /> НА ГЛАВНУЮ
         </Link>
-      </CardFooter>
-    </Card>
-  </div>
+      </div>
+    </section>
+  </SegaShell>
 );

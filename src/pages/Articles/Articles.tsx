@@ -1,15 +1,45 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
-import { Layout } from '@components/units';
+import { SegaShell } from '@components/sega';
+import classes from '@components/sega/sega.module.scss';
+import { PlayIcon } from '@components/ui';
 import { articlesMock } from '@services/Api';
+import { formatDate } from '@utils/string';
 
-import { TitleBox } from './components/TitleBox/TitleBox';
-import { ArticleList } from './components/ArticleList/ArticleList';
+export const Articles: FC = () => {
+  const sorted = [...articlesMock].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
 
-export const Articles: FC = () => (
-  <Layout>
-    <TitleBox />
+  return (
+    <SegaShell>
+      <section className={`${classes.sec} ${classes.achievements}`}>
+        <div className={classes.wrap}>
+          <div className={classes.banner}>
+            <span>📜 DEVLOG WORLD</span>
+          </div>
 
-    <ArticleList list={articlesMock} />
-  </Layout>
-);
+          <p className={classes.pageLead}>
+            {'Здесь я пишу о разработке, фреймворках и инструментах. Выбирай запись и читай'}
+          </p>
+
+          <div className={classes.projGrid}>
+            {sorted.map((article) => (
+              <Link key={article.id} className={classes.proj} to={`/articles/${article.slug}/`}>
+                <div className={classes.projHead}>
+                  <span className={classes.projYear}>{formatDate(article.date)}</span>
+                  <span className={classes.projGo}>
+                    READ <PlayIcon className={classes.txtIcon} />
+                  </span>
+                </div>
+                <div className={classes.projTitle}>{article.title}</div>
+                <p className={classes.projDesc}>АВТОР · {article.author}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    </SegaShell>
+  );
+};

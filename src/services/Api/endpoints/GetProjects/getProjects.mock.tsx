@@ -1,4 +1,3 @@
-import { Urls } from '@services/Route/urls';
 
 export interface ProjectItemProps {
   created: number;
@@ -199,7 +198,6 @@ export const projectArray: ProjectItemProps[] = [
     created: 2024,
   },
   {
-    url: Urls.MusicPlaylist,
     urlGitHub: 'https://github.com/eugenepokalyuk/react-music-collection',
     badges: [Tag.React, Tag.TypeScript, Tag.Vite, Tag.Tailwind],
     title: 'Music collection',
