@@ -29,6 +29,7 @@ export const ProjectsSelect: FC = () => (
             >
               <div className={classes.projHead}>
                 <span className={classes.projYear}>{project.created}</span>
+
                 <span className={classes.projGo}>
                   PLAY <PlayIcon className={classes.txtIcon} />
                 </span>

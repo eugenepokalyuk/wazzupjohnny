@@ -22,9 +22,11 @@ export const Achievements: FC = () => (
         <div key={world.title} className={classes.world}>
           <div className={classes.worldBar}>
             <span className={classes.wn}>WORLD {wi + 1}-1</span>
+
             <span className={classes.wt}>{world.title}</span>
+
             <span className={classes.wp}>
-              {world.lessons.length}/{world.lessons.length} ★
+              {world.lessons.length}/{world.lessons.length}
             </span>
           </div>
 
@@ -33,7 +35,7 @@ export const Achievements: FC = () => (
               const medal = MEDALS[li % MEDALS.length];
               const hasLink = Boolean(lesson.link) && lesson.link !== '#';
               const body = (
-                <>
+                <p>
                   <span className={classes.medal}>{medal}</span>
 
                   <span>
@@ -42,14 +44,15 @@ export const Achievements: FC = () => (
                     <span className={classes.au}>
                       {hasLink ? (
                         <>
-                          VIEW CERT <LinkIcon className={classes.txtIcon} />
+                          VIEW CERT
+                          <LinkIcon className={classes.txtIcon} />
                         </>
                       ) : (
                         'COMPLETE'
                       )}
                     </span>
                   </span>
-                </>
+                </p>
               );
 
               return hasLink ? (

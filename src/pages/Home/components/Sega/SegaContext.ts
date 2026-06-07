@@ -2,7 +2,6 @@ import { createContext, useContext } from 'react';
 
 export interface SegaContextValue {
   showToast: (msg: string) => void;
-  addCredit: () => void;
 }
 
 export const SegaContext = createContext<SegaContextValue | null>(null);

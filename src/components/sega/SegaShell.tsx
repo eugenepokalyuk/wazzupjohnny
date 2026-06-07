@@ -26,11 +26,7 @@ export const SegaShell: FC<Props> = ({ children }) => {
     >
       <div className={classes.crt} />
 
-      <SegaTopBar
-        palette={palette}
-        setPalette={setPalette}
-        onOpenTweaks={() => setTweaksOpen((v) => !v)}
-      />
+      <SegaTopBar onOpenTweaks={() => setTweaksOpen((v) => !v)} />
 
       <main className={classes.pageMain}>{children}</main>
 

@@ -13,13 +13,12 @@ interface Props {
 }
 
 export const InsertCoin: FC<Props> = ({ cheat, onCheat }) => {
-  const { showToast, addCredit } = useSega();
+  const { showToast } = useSega();
   const [progress, setProgress] = useState(0);
   const [wrong, setWrong] = useState(false);
 
   const handleCoin = (contact: ContactCard) => {
-    addCredit();
-    showToast('🪙 ' + contact.label.toUpperCase() + ' — +1 CREDIT');
+    showToast('🪙 ' + contact.label.toUpperCase() + ' — НОВАЯ ИГРА!');
   };
 
   // Tap the keycaps left-to-right to enter the code (mobile-friendly path).
