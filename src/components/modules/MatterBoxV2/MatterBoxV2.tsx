@@ -10,12 +10,18 @@ interface Props {
   content: Skill[];
   trigger?: 'auto' | 'scroll' | 'click' | 'hover';
   wireframes?: boolean;
+  /** Render skill cards in the pixel/Sega chip style instead of brand colors. */
+  pixel?: boolean;
+  /** Names highlighted as "core" chips (only used with `pixel`). */
+  coreSkills?: string[];
 }
 
 export const MatterBoxV2: FC<Props> = ({
   content = [],
   trigger = 'auto',
   wireframes = false,
+  pixel = false,
+  coreSkills = [],
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const textRef = useRef<HTMLDivElement | null>(null);
@@ -24,6 +30,9 @@ export const MatterBoxV2: FC<Props> = ({
   const isDesktop = useMedia(Breakpoints.Desktop);
 
   const [effectStarted, setEffectStarted] = useState(false);
+  // Bumped (debounced) on container resize so the physics world rebuilds for
+  // the new dimensions instead of leaving a stale/blank canvas.
+  const [resizeKey, setResizeKey] = useState(0);
 
   // Configs
   const gravity = 0.6; // Base: 1
@@ -33,18 +42,25 @@ export const MatterBoxV2: FC<Props> = ({
   useEffect(() => {
     if (!textRef.current) return;
 
+    const coreSet = new Set(coreSkills);
+
     const newHTML = content
-      .map(
-        (skill) =>
-          `<span
+      .map((skill) => {
+        if (pixel) {
+          const cls = coreSet.has(skill.name) ? 'word word-pixel core' : 'word word-pixel';
+
+          return `<span class="${cls}" style="color: ${skill.color}; background: ${skill.backgroundColor};">${skill.name}</span>`;
+        }
+
+        return `<span
             class="word"
             style="color: ${skill.color}; background: ${skill.backgroundColor}; border-radius: 24px; padding: 0.15em 0.5em; margin: 0 0.2em;"
-          >${skill.name}</span>`,
-      )
+          >${skill.name}</span>`;
+      })
       .join(' ');
 
     textRef.current.innerHTML = newHTML;
-  }, [content]);
+  }, [content, pixel, coreSkills]);
 
   useEffect(() => {
     if (trigger === 'auto') {
@@ -69,6 +85,23 @@ export const MatterBoxV2: FC<Props> = ({
       return () => observer.disconnect();
     }
   }, [trigger]);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+
+    let timer: ReturnType<typeof setTimeout>;
+    const ro = new ResizeObserver(() => {
+      clearTimeout(timer);
+      timer = setTimeout(() => setResizeKey((k) => k + 1), 250);
+    });
+
+    ro.observe(el);
+    return () => {
+      clearTimeout(timer);
+      ro.disconnect();
+    };
+  }, []);
 
   useEffect(() => {
     if (!effectStarted) return;
@@ -187,6 +220,12 @@ export const MatterBoxV2: FC<Props> = ({
 
     render.mouse = mouse;
 
+    // Don't let the physics canvas swallow page scroll — drop Matter's wheel capture.
+    const wheelMouse = mouse as unknown as { element: HTMLElement; mousewheel: EventListener };
+    ['wheel', 'mousewheel', 'DOMMouseScroll'].forEach((evt) =>
+      wheelMouse.element.removeEventListener(evt, wheelMouse.mousewheel),
+    );
+
     World.add(engine.world, [
       floor,
       leftWall,
@@ -234,6 +273,7 @@ export const MatterBoxV2: FC<Props> = ({
     wireframes,
     backgroundColor,
     mouseConstraintStiffness,
+    resizeKey,
   ]);
 
   const handleTrigger = () => {

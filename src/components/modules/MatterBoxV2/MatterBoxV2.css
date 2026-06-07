@@ -33,6 +33,29 @@
     font-weight: bold;
 }
 
+/* Pixel / Sega chip variant — keeps brand colors (inline), pixel shape from here */
+.word-pixel {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    font-size: 0.6em;
+    border: 3px solid var(--ink, #03061a);
+    border-radius: 0;
+    padding: 0.45em 0.7em;
+    image-rendering: pixelated;
+    box-shadow:
+        inset 2px 2px 0 rgba(255, 255, 255, 0.18),
+        inset -2px -2px 0 rgba(0, 0, 0, 0.35),
+        3px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+.word-pixel.core {
+    box-shadow:
+        inset 2px 2px 0 rgba(255, 255, 255, 0.18),
+        inset -2px -2px 0 rgba(0, 0, 0, 0.35),
+        0 0 0 2px var(--gold, #ffce1a),
+        3px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
 .falling-text-canvas {
     position: absolute;
     top: 0;

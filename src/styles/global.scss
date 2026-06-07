@@ -18,6 +18,10 @@ body,
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-width: $width_xs;
 
