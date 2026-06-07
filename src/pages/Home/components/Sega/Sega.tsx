@@ -20,7 +20,6 @@ export const Sega: FC = () => {
   const { palette, setPalette, crt, setCrt, flicker, setFlicker, floor, setFloor } = useSegaTheme();
   const [unlocked, setUnlocked] = useSessionStorage<boolean>(SegaStorageKey.BonusUnlocked, false);
 
-  const [credits, setCredits] = useState<number>(0);
   const [tweaksOpen, setTweaksOpen] = useState<boolean>(false);
   const [cheat, setCheat] = useState<boolean>(false);
   const cheatTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -39,9 +38,7 @@ export const Sega: FC = () => {
     toastTimer.current = setTimeout(() => setToastShown(false), 1800);
   }, []);
 
-  const addCredit = useCallback(() => setCredits((c) => c + 1), []);
-
-  const ctx = useMemo(() => ({ showToast, addCredit }), [showToast, addCredit]);
+  const ctx = useMemo(() => ({ showToast }), [showToast]);
 
   // Fire the easter-egg reward (shared by the keyboard code and tap-to-enter).
   const activateCheat = useCallback(() => {
@@ -111,12 +108,7 @@ export const Sega: FC = () => {
       >
         <div className={classes.crt} />
 
-        <SegaTopBar
-          credits={credits}
-          palette={palette}
-          setPalette={setPalette}
-          onOpenTweaks={() => setTweaksOpen((v) => !v)}
-        />
+        <SegaTopBar onOpenTweaks={() => setTweaksOpen((v) => !v)} />
 
         <TitleScreen />
         <LevelSelect />

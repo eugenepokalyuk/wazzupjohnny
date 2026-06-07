@@ -41,11 +41,11 @@ export interface Stat {
 
 /** Character stat bars (illustrative, matches the Sega design). */
 export const STATS: Stat[] = [
-  { name: 'HTML', value: 96 },
-  { name: 'CSS', value: 94 },
-  { name: 'JS', value: 92 },
   { name: 'REACT', value: 90 },
   { name: 'TS', value: 85 },
+  { name: 'JS', value: 92 },
+  { name: 'HTML', value: 96 },
+  { name: 'CSS', value: 94 },
   { name: 'NODE', value: 72 },
   { name: 'COFFEE', value: 99 },
 ];

@@ -3,18 +3,12 @@ import { Link, NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 
 import { Urls } from '@services/Route/urls';
-
-import classes from './sega.module.scss';
-import { PaletteSwatches } from './PaletteSwatches';
-import { PaletteId } from './theme';
 import { SettingsIcon, StarIcon } from '@components/ui';
 
+import classes from './sega.module.scss';
+
 interface Props {
-  palette: PaletteId;
-  setPalette: (p: PaletteId) => void;
   onOpenTweaks: () => void;
-  /** When provided, shows the arcade CREDIT counter (home only). */
-  credits?: number;
 }
 
 const NAV = [
@@ -23,17 +17,11 @@ const NAV = [
   { to: Urls.Articles, label: 'ARTICLES' },
 ];
 
-export const SegaTopBar: FC<Props> = ({
-  palette,
-  setPalette,
-  onOpenTweaks,
-  credits,
-}) => (
+export const SegaTopBar: FC<Props> = ({ onOpenTweaks }) => (
   <header className={classes.topbar}>
     <Link to={Urls.Home} className={classes.tbLogo}>
-      <StarIcon />
-
-      {'WAZZUPJOHNNY'}
+      <StarIcon className={classes.tbIcon} />
+      <span className={classes.tbLogoText}>WAZZUPJOHNNY</span>
     </Link>
 
     <nav className={classes.tbNav}>
@@ -42,30 +30,21 @@ export const SegaTopBar: FC<Props> = ({
           key={item.to}
           to={item.to}
           end
-          className={({ isActive }) =>
-            clsx(classes.tbLink, { [classes.tbLinkActive]: isActive })
-          }
+          className={({ isActive }) => clsx(classes.tbLink, { [classes.tbLinkActive]: isActive })}
         >
           {item.label}
         </NavLink>
       ))}
     </nav>
 
-    <div className={classes.tbRight}>
-      <PaletteSwatches palette={palette} setPalette={setPalette} />
-
-      {credits !== undefined && (
-        <div className={classes.tbCoins}>CREDIT {credits}</div>
-      )}
-
-      <button
-        type="button"
-        className={classes.tbTweaks}
-        onClick={onOpenTweaks}
-        aria-label="Open tweaks"
-      >
-        <SettingsIcon className={classes.tbIcon} />
-      </button>
-    </div>
+    <button
+      type="button"
+      className={classes.tbTweaks}
+      onClick={onOpenTweaks}
+      aria-label="Темы и настройки"
+      title="Темы и настройки"
+    >
+      <SettingsIcon className={classes.tbIcon} />
+    </button>
   </header>
 );
