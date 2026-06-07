@@ -1,18 +1,6 @@
 import React, { Component, ReactNode } from 'react';
 
-import classes from './ErrorBoundary.module.scss';
-import {
-  Button,
-  Card,
-  CardFooter,
-  CardHeader,
-  Link,
-  Size,
-  Tags,
-  Text,
-  Variant,
-} from '@components/ui';
-import { Urls } from '@services/Route';
+import { SegaError } from '@components/sega';
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -31,7 +19,7 @@ export class ErrorBoundary extends Component<
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(_: Error): ErrorBoundaryState {
+  static getDerivedStateFromError(): ErrorBoundaryState {
     return { hasError: true };
   }
 
@@ -42,21 +30,12 @@ export class ErrorBoundary extends Component<
   render() {
     if (this.state.hasError) {
       return (
-        <div className={classes.box}>
-          <Card variant={Variant.Secondary} className={classes.card}>
-            <CardHeader>
-              <Text tag={Tags.Heading} size={Size.XL}>
-                {'!@#$#%, что-то пошло не так!'}
-              </Text>
-            </CardHeader>
-
-            <CardFooter className={classes.card_footer}>
-              <Link to={Urls.Home} className={classes.back_home_button}>
-                <Button wide>{'На главную страницу'}</Button>
-              </Link>
-            </CardFooter>
-          </Card>
-        </div>
+        <SegaError
+          title="GAME OVER"
+          subtitle="!@#$%, что-то пошло не так — перезапусти игру"
+          code="SYSTEM ERROR"
+          reload
+        />
       );
     }
 
