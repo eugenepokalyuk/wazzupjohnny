@@ -18,20 +18,26 @@ export const ContentBlock: FC<ContentBlockProps> = ({ block }) => {
   switch (block.type) {
     case ContentType.Heading:
       return <Heading content={block.content || ''} />;
+
     case ContentType.Subheading:
       return <Subheading content={block.content || ''} />;
+
     case ContentType.Paragraph:
       return <Paragraph content={block.content || ''} />;
+
     case ContentType.Code:
       return <Code content={block.content || ''} />;
+
     case ContentType.List:
       return (
         <List listTitle={block.listTitle} listItems={block.listItems || []} />
       );
+
     case ContentType.Link:
       return (
         <Link content={block.content || ''} linkUrl={block.linkUrl || '#'} />
       );
+
     case ContentType.Ad:
       return (
         <Ad
@@ -41,6 +47,7 @@ export const ContentBlock: FC<ContentBlockProps> = ({ block }) => {
           linkUrl={block.linkUrl || '#'}
         />
       );
+
     default:
       return null;
   }
