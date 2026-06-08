@@ -1,4 +1,3 @@
-
 export interface ProjectItemProps {
   created: number;
   url?: string;
@@ -153,7 +152,6 @@ export const projectArray: ProjectItemProps[] = [
     created: 2024,
   },
   {
-    url: 'https://eugenepokalyuk.github.io/react-burger',
     urlGitHub: 'https://github.com/eugenepokalyuk/react-burger',
     badges: [
       Tag.TypeScript,

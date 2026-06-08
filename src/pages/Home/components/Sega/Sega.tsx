@@ -2,7 +2,12 @@ import { FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useSessionStorage } from 'usehooks-ts';
 import clsx from 'clsx';
 
-import { SegaStorageKey, SegaTopBar, Tweaks, useSegaTheme } from '@components/sega';
+import {
+  SegaStorageKey,
+  SegaTopBar,
+  Tweaks,
+  useSegaTheme,
+} from '@components/sega';
 
 import classes from '@components/sega/sega.module.scss';
 
@@ -17,8 +22,20 @@ import { InsertCoin } from './InsertCoin';
 import { BonusStage } from './BonusStage';
 
 export const Sega: FC = () => {
-  const { palette, setPalette, crt, setCrt, flicker, setFlicker, floor, setFloor } = useSegaTheme();
-  const [unlocked, setUnlocked] = useSessionStorage<boolean>(SegaStorageKey.BonusUnlocked, false);
+  const {
+    palette,
+    setPalette,
+    crt,
+    setCrt,
+    flicker,
+    setFlicker,
+    floor,
+    setFloor,
+  } = useSegaTheme();
+  const [unlocked, setUnlocked] = useSessionStorage<boolean>(
+    SegaStorageKey.BonusUnlocked,
+    false,
+  );
 
   const [tweaksOpen, setTweaksOpen] = useState<boolean>(false);
   const [cheat, setCheat] = useState<boolean>(false);
@@ -48,7 +65,7 @@ export const Sega: FC = () => {
     }
     cheatTimer.current = setTimeout(() => setCheat(false), 1100);
     setUnlocked(true);
-    showToast('⚡ CHEAT ACCEPTED · BONUS STAGE UNLOCKED');
+    showToast('CHEAT ACCEPTED · BONUS STAGE UNLOCKED');
   }, [showToast, setUnlocked]);
 
   // Konami code easter egg via keyboard (layout-independent — uses e.code).
@@ -78,7 +95,9 @@ export const Sega: FC = () => {
     if (!cheat) return;
 
     const id = window.setTimeout(() => {
-      document.getElementById('bonus')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document
+        .getElementById('bonus')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 80);
 
     return () => window.clearTimeout(id);
@@ -120,7 +139,9 @@ export const Sega: FC = () => {
 
         {cheat && <div className={classes.cheatFlash} />}
 
-        <div className={clsx(classes.toast, { [classes.show]: toastShown })}>{toastMsg}</div>
+        <div className={clsx(classes.toast, { [classes.show]: toastShown })}>
+          {toastMsg}
+        </div>
 
         {tweaksOpen && (
           <Tweaks
