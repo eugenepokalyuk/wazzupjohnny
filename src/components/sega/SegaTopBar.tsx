@@ -21,6 +21,7 @@ export const SegaTopBar: FC<Props> = ({ onOpenTweaks }) => (
   <header className={classes.topbar}>
     <Link to={Urls.Home} className={classes.tbLogo}>
       <StarIcon className={classes.tbIcon} />
+
       <span className={classes.tbLogoText}>WAZZUPJOHNNY</span>
     </Link>
 

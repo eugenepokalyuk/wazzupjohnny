@@ -25,6 +25,7 @@ interface ToggleProps {
 const Toggle: FC<ToggleProps> = ({ label, value, onChange }) => (
   <div className={classes.tweaksToggleRow}>
     <span>{label}</span>
+
     <button
       type="button"
       className={clsx(classes.tweaksToggle, { [classes.on]: value })}
@@ -51,14 +52,15 @@ export const Tweaks: FC<Props> = ({
 }) => (
   <div className={classes.tweaks}>
     <div className={classes.tweaksHead}>
-      <b>TWEAKS</b>
+      <b>{'TWEAKS'}</b>
+
       <button
         type="button"
         className={classes.tweaksClose}
         onClick={onClose}
         aria-label="Close"
       >
-        ✕
+        {'✕'}
       </button>
     </div>
 
@@ -78,9 +80,12 @@ export const Tweaks: FC<Props> = ({
       ))}
     </div>
 
-    <div className={classes.tweaksLabel}>CRT-ТЕЛЕВИЗОР</div>
+    <div className={classes.tweaksLabel}>{'CRT-ТЕЛЕВИЗОР'}</div>
+
     <Toggle label="Скан-лайны" value={crt} onChange={setCrt} />
+
     <Toggle label="Мерцание" value={flicker} onChange={setFlicker} />
+
     <Toggle label="Сетка-пол" value={floor} onChange={setFloor} />
   </div>
 );

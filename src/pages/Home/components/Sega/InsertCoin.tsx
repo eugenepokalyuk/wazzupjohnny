@@ -44,7 +44,7 @@ export const InsertCoin: FC<Props> = ({ cheat, onCheat }) => {
   const isExternal = (href: string) => href.startsWith('http');
 
   return (
-    <section id="coin" className={`${classes.sec} ${classes.coin}`}>
+    <section id="coin" className={clsx(classes.sec, classes.coin)}>
       <div className={classes.wrap}>
         <div className={classes.coinHead}>INSERT COIN</div>
         <p className={classes.coinSub}>
