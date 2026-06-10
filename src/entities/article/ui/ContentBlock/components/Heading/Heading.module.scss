@@ -1,0 +1,9 @@
+@import 'src/shared/styles/index';
+
+.heading {
+  margin-bottom: gap(2);
+
+  font-weight: $semi_bold;
+  font-size: 1.4rem;
+  line-height: 1.3;
+}

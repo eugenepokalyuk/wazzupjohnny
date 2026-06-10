@@ -1,0 +1,29 @@
+.switcher {
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  border: 2px solid var(--line, #3a52b8);
+  background: var(--panel, #14245f);
+}
+
+.lang {
+  padding: 4px 8px;
+  border: 0;
+  background: transparent;
+  color: var(--grey, #8ea0d6);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+
+  &:hover {
+    color: var(--white, #f4f7ff);
+  }
+}
+
+.active {
+  background: var(--accent, #ffce1a);
+  color: var(--ink, #03061a);
+}

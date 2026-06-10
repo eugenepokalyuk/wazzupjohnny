@@ -1,0 +1,17 @@
+import { Article } from '@entities/article/model/types';
+
+import { reduxReselectArticle } from './articles/reduxReselectArticle';
+import { reduxObservableArticle } from './articles/reduxObservableArticle';
+import { matterArticle } from './articles/matterArticle';
+import { reduxSagaArticle } from './articles/reduxSagaArticle';
+import { reduxStoreInterfaceArticle } from './articles/reduxStoreInterfaceArticle';
+import { compoundKeysArticle } from './articles/compoundKeysArticle';
+
+export const articlesMock: Article[] = [
+  matterArticle,
+  reduxObservableArticle,
+  reduxReselectArticle,
+  reduxSagaArticle,
+  reduxStoreInterfaceArticle,
+  compoundKeysArticle,
+];

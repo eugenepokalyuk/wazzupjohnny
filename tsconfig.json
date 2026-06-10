@@ -23,47 +23,23 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
         "paths": {
-            "@/*": [
-                "src/*"
+            "@app/*": [
+                "src/app/*"
             ],
             "@pages/*": [
                 "src/pages/*"
             ],
-            "@assets/*": [
-                "src/assets/*"
+            "@widgets/*": [
+                "src/widgets/*"
             ],
-            "@assets/fonts/*": [
-                "src/assets/fonts/*"
+            "@features/*": [
+                "src/features/*"
             ],
-            "@assets/images/*": [
-                "src/assets/images/*"
+            "@entities/*": [
+                "src/entities/*"
             ],
-            "@components/*": [
-                "src/components/*"
-            ],
-            "@components/ui/*": [
-                "src/components/ui/*"
-            ],
-            "@services/*": [
-                "src/services/*"
-            ],
-            "@services/api/*": [
-                "src/services/api/*"
-            ],
-            "@services/route/*": [
-                "src/services/route/*"
-            ],
-            "@utils/*": [
-                "src/utils/*"
-            ],
-            "@utils/constants/*": [
-                "src/utils/constants/*"
-            ],
-            "@utils/hooks/*": [
-                "src/utils/hooks/*"
-            ],
-            "@utils/string/*": [
-                "src/utils/string/*"
+            "@shared/*": [
+                "src/shared/*"
             ]
         }
     },

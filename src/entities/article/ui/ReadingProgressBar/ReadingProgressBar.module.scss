@@ -1,0 +1,12 @@
+@import 'src/shared/styles/index';
+
+.box {
+  position: fixed;
+  left: 0;
+  height: 4px;
+  background: $accent;
+  z-index: 2100;
+  transition: width 400ms ease-out;
+
+  bottom: 0;
+}
