@@ -2,10 +2,11 @@ import { FC } from 'react';
 import clsx from 'clsx';
 
 import { ArrowUpIcon, PlayIcon } from '@components/ui';
-
 import classes from '@components/sega/sega.module.scss';
+
 import { PLAYER_NAME } from './sega.data';
 import { useSega } from './SegaContext';
+import { TvScreen } from './TvScreen';
 
 export const TitleScreen: FC = () => {
   const { showToast } = useSega();
@@ -19,13 +20,7 @@ export const TitleScreen: FC = () => {
     <section id="boot" className={classes.boot}>
       <div className={classes.floor} />
 
-      <div className={classes.tv}>
-        <img
-          className={classes.tvImg}
-          src="/images/shape/cat.png"
-          alt="Аватар-кот"
-        />
-      </div>
+      <TvScreen />
 
       <h1 className={classes.titleCart}>
         WAZZUP

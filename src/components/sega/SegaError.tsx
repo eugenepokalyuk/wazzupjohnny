@@ -19,7 +19,7 @@ interface Props {
 /** Shared Sega-styled error screen for both the 404 route and the ErrorBoundary. */
 export const SegaError: FC<Props> = ({ title, subtitle, code, reload }) => (
   <SegaShell>
-    <section className={clsx(classes.sec, classes.coin)}>
+    <section className={clsx(classes.sec, classes.coin, classes.errorScreen)}>
       <div className={classes.wrap}>
         <div className={classes.coinHead}>{title}</div>
         <p className={classes.coinSub}>{subtitle}</p>
