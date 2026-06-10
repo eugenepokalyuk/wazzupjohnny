@@ -47,7 +47,9 @@ export const MatterBoxV2: FC<Props> = ({
     const newHTML = content
       .map((skill) => {
         if (pixel) {
-          const cls = coreSet.has(skill.name) ? 'word word-pixel core' : 'word word-pixel';
+          const cls = coreSet.has(skill.name)
+            ? 'word word-pixel core'
+            : 'word word-pixel';
 
           return `<span class="${cls}" style="color: ${skill.color}; background: ${skill.backgroundColor};">${skill.name}</span>`;
         }
@@ -221,7 +223,10 @@ export const MatterBoxV2: FC<Props> = ({
     render.mouse = mouse;
 
     // Don't let the physics canvas swallow page scroll — drop Matter's wheel capture.
-    const wheelMouse = mouse as unknown as { element: HTMLElement; mousewheel: EventListener };
+    const wheelMouse = mouse as unknown as {
+      element: HTMLElement;
+      mousewheel: EventListener;
+    };
     ['wheel', 'mousewheel', 'DOMMouseScroll'].forEach((evt) =>
       wheelMouse.element.removeEventListener(evt, wheelMouse.mousewheel),
     );

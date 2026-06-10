@@ -2,7 +2,7 @@ import { FC } from 'react';
 import clsx from 'clsx';
 
 import classes from './sega.module.scss';
-import { PALETTES, PaletteId } from './theme';
+import { PaletteId, PALETTES } from './theme';
 
 interface Props {
   palette: PaletteId;
@@ -52,7 +52,12 @@ export const Tweaks: FC<Props> = ({
   <div className={classes.tweaks}>
     <div className={classes.tweaksHead}>
       <b>TWEAKS</b>
-      <button type="button" className={classes.tweaksClose} onClick={onClose} aria-label="Close">
+      <button
+        type="button"
+        className={classes.tweaksClose}
+        onClick={onClose}
+        aria-label="Close"
+      >
         ✕
       </button>
     </div>
@@ -63,7 +68,9 @@ export const Tweaks: FC<Props> = ({
         <button
           key={p.id}
           type="button"
-          className={clsx(classes.tweaksSegBtn, { [classes.on]: palette === p.id })}
+          className={clsx(classes.tweaksSegBtn, {
+            [classes.on]: palette === p.id,
+          })}
           onClick={() => setPalette(p.id)}
         >
           {p.label}

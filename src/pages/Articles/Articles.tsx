@@ -21,14 +21,22 @@ export const Articles: FC = () => {
           </div>
 
           <p className={classes.pageLead}>
-            {'Здесь я пишу о разработке, фреймворках и инструментах. Выбирай запись и читай'}
+            {
+              'Здесь я пишу о разработке, фреймворках и инструментах. Выбирай запись и читай'
+            }
           </p>
 
           <div className={classes.projGrid}>
             {sorted.map((article) => (
-              <Link key={article.id} className={classes.proj} to={`/articles/${article.slug}/`}>
+              <Link
+                key={article.id}
+                className={classes.proj}
+                to={`/articles/${article.slug}/`}
+              >
                 <div className={classes.projHead}>
-                  <span className={classes.projYear}>{formatDate(article.date)}</span>
+                  <span className={classes.projYear}>
+                    {formatDate(article.date)}
+                  </span>
                   <span className={classes.projGo}>
                     READ <PlayIcon className={classes.txtIcon} />
                   </span>

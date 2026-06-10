@@ -35,10 +35,28 @@ export interface SegaTheme {
  * palette on one page updates the others on navigation.
  */
 export const useSegaTheme = (): SegaTheme => {
-  const [palette, setPalette] = useSessionStorage<PaletteId>(SegaStorageKey.Palette, 'genesis');
+  const [palette, setPalette] = useSessionStorage<PaletteId>(
+    SegaStorageKey.Palette,
+    'genesis',
+  );
   const [crt, setCrt] = useSessionStorage<boolean>(SegaStorageKey.Crt, true);
-  const [flicker, setFlicker] = useSessionStorage<boolean>(SegaStorageKey.Flicker, true);
-  const [floor, setFloor] = useSessionStorage<boolean>(SegaStorageKey.Floor, true);
+  const [flicker, setFlicker] = useSessionStorage<boolean>(
+    SegaStorageKey.Flicker,
+    true,
+  );
+  const [floor, setFloor] = useSessionStorage<boolean>(
+    SegaStorageKey.Floor,
+    true,
+  );
 
-  return { palette, setPalette, crt, setCrt, flicker, setFlicker, floor, setFloor };
+  return {
+    palette,
+    setPalette,
+    crt,
+    setCrt,
+    flicker,
+    setFlicker,
+    floor,
+    setFloor,
+  };
 };

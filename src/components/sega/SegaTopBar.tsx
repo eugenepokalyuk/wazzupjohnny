@@ -30,7 +30,9 @@ export const SegaTopBar: FC<Props> = ({ onOpenTweaks }) => (
           key={item.to}
           to={item.to}
           end
-          className={({ isActive }) => clsx(classes.tbLink, { [classes.tbLinkActive]: isActive })}
+          className={({ isActive }) =>
+            clsx(classes.tbLink, { [classes.tbLinkActive]: isActive })
+          }
         >
           {item.label}
         </NavLink>

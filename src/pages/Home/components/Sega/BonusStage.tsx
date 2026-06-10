@@ -12,6 +12,11 @@ export const BonusStage: FC = () => (
       <span>🎮 BONUS STAGE · SKILL CLOUD</span>
     </div>
 
-    <MatterBoxV2 content={skillsMock} trigger="scroll" pixel coreSkills={CORE_SKILL_NAMES} />
+    <MatterBoxV2
+      content={skillsMock}
+      trigger="scroll"
+      pixel
+      coreSkills={CORE_SKILL_NAMES}
+    />
   </section>
 );

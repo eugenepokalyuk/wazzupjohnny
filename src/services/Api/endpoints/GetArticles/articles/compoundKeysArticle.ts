@@ -167,8 +167,7 @@ const notify = notificationFactory({ scope: 'user', role: 'admin', status: 'succ
     {
       type: ContentType.Ad,
       content: 'Хочешь больше React+TS триков?',
-      description:
-        'Реальные кейсы, perf хаки и TS. Все анонсы в тг',
+      description: 'Реальные кейсы, perf хаки и TS. Все анонсы в тг',
       linkUrl: 'https://t.me/wazzupjohnny_channel',
       imageUrl:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1280px-Telegram_logo.svg.png?20220101141644',

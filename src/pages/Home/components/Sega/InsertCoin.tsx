@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { ArrowUpIcon } from '@components/ui';
 
 import classes from '@components/sega/sega.module.scss';
-import { CONTACTS, ContactCard, KONAMI_KEYS } from './sega.data';
+import { ContactCard, CONTACTS, KONAMI_KEYS } from './sega.data';
 import { useSega } from './SegaContext';
 
 interface Props {
@@ -47,7 +47,9 @@ export const InsertCoin: FC<Props> = ({ cheat, onCheat }) => {
     <section id="coin" className={`${classes.sec} ${classes.coin}`}>
       <div className={classes.wrap}>
         <div className={classes.coinHead}>INSERT COIN</div>
-        <p className={classes.coinSub}>CONTINUE? — напиши мне, начнём новую игру вместе</p>
+        <p className={classes.coinSub}>
+          CONTINUE? — напиши мне, начнём новую игру вместе
+        </p>
 
         <div className={classes.coinRow}>
           {CONTACTS.map((contact) => (
@@ -68,7 +70,9 @@ export const InsertCoin: FC<Props> = ({ cheat, onCheat }) => {
           ))}
         </div>
 
-        <div className={classes.footerNote}>THANKS FOR PLAYING · WAZZUPJOHNNY.RU</div>
+        <div className={classes.footerNote}>
+          THANKS FOR PLAYING · WAZZUPJOHNNY.RU
+        </div>
 
         <div className={classes.secret}>
           <div className={classes.secretHint}>
@@ -85,18 +89,27 @@ export const InsertCoin: FC<Props> = ({ cheat, onCheat }) => {
               <button
                 key={i}
                 type="button"
-                className={clsx(classes.keycap, { [classes.keyDone]: i < progress })}
+                className={clsx(classes.keycap, {
+                  [classes.keyDone]: i < progress,
+                })}
                 onClick={() => handleKeyTap(i)}
                 aria-label={key.type === 'arrow' ? key.dir : key.label}
               >
                 {key.type === 'arrow' ? (
-                  <ArrowUpIcon className={clsx(classes.keyArrow, classes[`arrow_${key.dir}`])} />
+                  <ArrowUpIcon
+                    className={clsx(
+                      classes.keyArrow,
+                      classes[`arrow_${key.dir}`],
+                    )}
+                  />
                 ) : (
                   key.label
                 )}
               </button>
             ))}
-            <span className={clsx(classes.keycap, classes.keycapWide)}>START</span>
+            <span className={clsx(classes.keycap, classes.keycapWide)}>
+              START
+            </span>
           </div>
         </div>
       </div>

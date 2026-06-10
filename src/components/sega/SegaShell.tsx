@@ -12,7 +12,16 @@ interface Props {
 
 /** Shared Sega chrome (CRT, top bar, theme tweaks) for the inner pages. */
 export const SegaShell: FC<Props> = ({ children }) => {
-  const { palette, setPalette, crt, setCrt, flicker, setFlicker, floor, setFloor } = useSegaTheme();
+  const {
+    palette,
+    setPalette,
+    crt,
+    setCrt,
+    flicker,
+    setFlicker,
+    floor,
+    setFloor,
+  } = useSegaTheme();
   const [tweaksOpen, setTweaksOpen] = useState(false);
 
   return (

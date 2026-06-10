@@ -20,7 +20,11 @@ export const TitleScreen: FC = () => {
       <div className={classes.floor} />
 
       <div className={classes.tv}>
-        <img className={classes.tvImg} src="/images/shape/cat.png" alt="Аватар-кот" />
+        <img
+          className={classes.tvImg}
+          src="/images/shape/cat.png"
+          alt="Аватар-кот"
+        />
       </div>
 
       <h1 className={classes.titleCart}>
@@ -33,11 +37,17 @@ export const TitleScreen: FC = () => {
         PLAYER 1: <b>{PLAYER_NAME}</b> — фронтенд-разработчик
       </p>
 
-      <button type="button" className={classes.pressStart} onClick={handlePressStart}>
+      <button
+        type="button"
+        className={classes.pressStart}
+        onClick={handlePressStart}
+      >
         <PlayIcon className={classes.txtIcon} /> PRESS{' '}
         <span className={classes.blink}>START</span>
       </button>
-      <div className={classes.copyright}>© 1991 EUGENE SOFT · ALL RIGHTS RESERVED</div>
+      <div className={classes.copyright}>
+        © 1991 EUGENE SOFT · ALL RIGHTS RESERVED
+      </div>
 
       <a href="#levels" className={classes.scrolldown} aria-label="scroll">
         <ArrowUpIcon className={clsx(classes.txtIcon, classes.iconFlip)} />

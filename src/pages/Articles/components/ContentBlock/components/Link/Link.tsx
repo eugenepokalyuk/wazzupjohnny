@@ -10,11 +10,7 @@ interface Props {
 }
 
 export const Link: FC<Props> = ({ content, linkUrl }) => (
-  <LinkUI
-    to={linkUrl}
-    className={classes.link}
-    newTab
-  >
+  <LinkUI to={linkUrl} className={classes.link} newTab>
     {content}
   </LinkUI>
 );

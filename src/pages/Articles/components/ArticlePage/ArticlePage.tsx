@@ -21,7 +21,9 @@ export const ArticlePage: FC = () => {
       <SegaShell>
         <section className={`${classes.sec} ${classes.achievements}`}>
           <div className={classes.wrap}>
-            <div className={classes.notFound}>GAME OVER · СТАТЬЯ НЕ НАЙДЕНА</div>
+            <div className={classes.notFound}>
+              GAME OVER · СТАТЬЯ НЕ НАЙДЕНА
+            </div>
             <div style={{ textAlign: 'center' }}>
               <Link to={Urls.Articles} className={classes.backBtn}>
                 ◀ К СТАТЬЯМ
@@ -40,7 +42,8 @@ export const ArticlePage: FC = () => {
       <section className={`${classes.sec} ${classes.achievements}`}>
         <div className={classes.articleWrap}>
           <Link to={Urls.Articles} className={classes.backBtn}>
-            <PlayIcon className={clsx(classes.txtIcon, classes.iconFlip)} /> К СТАТЬЯМ
+            <PlayIcon className={clsx(classes.txtIcon, classes.iconFlip)} /> К
+            СТАТЬЯМ
           </Link>
 
           <h1 className={classes.articleTitle}>{article.title}</h1>

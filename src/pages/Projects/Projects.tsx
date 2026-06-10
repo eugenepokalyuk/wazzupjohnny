@@ -10,7 +10,9 @@ import { projectArray } from '@services/Api';
 const useTopTags = () =>
   useMemo(() => {
     const counts = new Map<string, number>();
-    projectArray.forEach((p) => p.badges.forEach((b) => counts.set(b, (counts.get(b) ?? 0) + 1)));
+    projectArray.forEach((p) =>
+      p.badges.forEach((b) => counts.set(b, (counts.get(b) ?? 0) + 1)),
+    );
 
     return [...counts.entries()]
       .filter(([, n]) => n >= 2)
@@ -29,7 +31,9 @@ export const Projects: FC = () => {
 
   const projects = useMemo(() => {
     const filtered = selectedTags.length
-      ? projectArray.filter((p) => selectedTags.every((t) => p.badges.includes(t)))
+      ? projectArray.filter((p) =>
+          selectedTags.every((t) => p.badges.includes(t)),
+        )
       : projectArray;
 
     return [...filtered].sort((a, b) => b.created - a.created);
@@ -44,8 +48,8 @@ export const Projects: FC = () => {
           </div>
 
           <p className={classes.pageLead}>
-            PORTFOLIO STAGE — выбери технологию-фильтр и пройди уровень. Всего {projectArray.length}{' '}
-            проектов в архиве
+            PORTFOLIO STAGE — выбери технологию-фильтр и пройди уровень. Всего{' '}
+            {projectArray.length} проектов в архиве
           </p>
 
           <div className={classes.filterRow}>
@@ -53,7 +57,9 @@ export const Projects: FC = () => {
               <button
                 key={tag}
                 type="button"
-                className={clsx(classes.chip, { [classes.chipOn]: selectedTags.includes(tag) })}
+                className={clsx(classes.chip, {
+                  [classes.chipOn]: selectedTags.includes(tag),
+                })}
                 onClick={() => toggleTag(tag)}
               >
                 {tag}
@@ -62,7 +68,9 @@ export const Projects: FC = () => {
           </div>
 
           {projects.length === 0 ? (
-            <div className={classes.emptyNote}>NO STAGE FOUND · сбрось фильтры</div>
+            <div className={classes.emptyNote}>
+              NO STAGE FOUND · сбрось фильтры
+            </div>
           ) : (
             <div className={classes.projGrid}>
               {projects.map((project) => {
@@ -70,10 +78,13 @@ export const Projects: FC = () => {
                 const inner = (
                   <>
                     <div className={classes.projHead}>
-                      <span className={classes.projYear}>{project.created}</span>
+                      <span className={classes.projYear}>
+                        {project.created}
+                      </span>
                       {href && (
                         <span className={classes.projGo}>
-                          {project.url ? 'PLAY' : 'CODE'} <PlayIcon className={classes.txtIcon} />
+                          {project.url ? 'PLAY' : 'CODE'}{' '}
+                          <PlayIcon className={classes.txtIcon} />
                         </span>
                       )}
                     </div>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { PlayIcon } from '@components/ui';
 
 import classes from '@components/sega/sega.module.scss';
-import { LEVELS, LevelCard } from './sega.data';
+import { LevelCard, LEVELS } from './sega.data';
 
 const LevelInner: FC<{ level: LevelCard }> = ({ level }) => (
   <>
@@ -26,16 +26,17 @@ export const LevelSelect: FC = () => (
       </div>
 
       <div className={classes.levelsGrid}>
-        {LEVELS.map((level): ReactNode =>
-          level.href.startsWith('/') ? (
-            <Link key={level.no} className={classes.level} to={level.href}>
-              <LevelInner level={level} />
-            </Link>
-          ) : (
-            <a key={level.no} className={classes.level} href={level.href}>
-              <LevelInner level={level} />
-            </a>
-          ),
+        {LEVELS.map(
+          (level): ReactNode =>
+            level.href.startsWith('/') ? (
+              <Link key={level.no} className={classes.level} to={level.href}>
+                <LevelInner level={level} />
+              </Link>
+            ) : (
+              <a key={level.no} className={classes.level} href={level.href}>
+                <LevelInner level={level} />
+              </a>
+            ),
         )}
       </div>
     </div>
