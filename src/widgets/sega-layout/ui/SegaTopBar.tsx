@@ -26,7 +26,7 @@ export const SegaTopBar: FC<Props> = ({ onOpenTweaks }) => {
     <header className={classes.topbar}>
       <Link to={paths.home} className={classes.tbLogo}>
         <StarIcon className={classes.tbIcon} />
-        <span className={classes.tbLogoText}>WAZZUPJOHNNY</span>
+        <span className={classes.tbLogoText}>{'WAZZUPJOHNNY'}</span>
       </Link>
 
       <nav className={classes.tbNav}>
@@ -44,14 +44,7 @@ export const SegaTopBar: FC<Props> = ({ onOpenTweaks }) => {
         ))}
       </nav>
 
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-          gap: 12,
-        }}
-      >
+      <div className={classes.tbRight}>
         <LanguageSwitcher />
 
         <button

@@ -45,11 +45,17 @@ export const HomePage: FC = () => {
     <SegaLayout fullBleed>
       <HomeContext.Provider value={ctx}>
         <TitleScreen />
+
         <LevelSelect />
+
         <ProjectsSelect />
+
         <CharacterStats />
+
         <Achievements />
+
         <InsertCoin cheat={cheat} onCheat={activate} />
+
         {unlocked && <BonusStage />}
 
         {cheat && <div className={classes.cheatFlash} />}

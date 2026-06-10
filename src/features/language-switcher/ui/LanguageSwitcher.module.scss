@@ -27,3 +27,11 @@
   background: var(--accent, #ffce1a);
   color: var(--ink, #03061a);
 }
+
+// Match the top bar's compact mobile layout so the switcher always fits.
+@media (max-width: 760px) {
+  .lang {
+    padding: 3px 5px;
+    font-size: 9px;
+  }
+}
