@@ -476,6 +476,8 @@
   8px 10px 0 rgba(0, 0, 0, 0.5);
   cursor: pointer;
   touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
   transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* back glow — color ramps via the hold-stage classes below */
@@ -503,6 +505,8 @@
     object-fit: cover;
     position: relative;
     z-index: 2;
+    pointer-events: none;
+    -webkit-user-drag: none;
   }
 }
 

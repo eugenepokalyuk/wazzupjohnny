@@ -23,11 +23,13 @@ export const TitleScreen: FC = () => {
       <TvScreen />
 
       <h1 className={classes.titleCart}>
-        WAZZUP
+        {'WAZZUP'}
         <br />
-        JOHNNY
+        {'JOHNNY'}
       </h1>
-      <div className={classes.titleSub}>16-BIT FRONTEND</div>
+
+      <div className={classes.titleSub}>{'16-BIT FRONTEND'}</div>
+
       <p className={classes.titleTag}>
         PLAYER 1: <b>{PLAYER_NAME}</b> — фронтенд-разработчик
       </p>

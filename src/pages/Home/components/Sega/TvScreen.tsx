@@ -162,8 +162,9 @@ export const TvScreen: FC<Props> = ({
       style={tvStyle}
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
+      onContextMenu={(e) => e.preventDefault()}
     >
-      <img className={classes.tvImg} src={src} alt={alt} />
+      <img className={classes.tvImg} src={src} alt={alt} draggable={false} />
 
       {pixels.map((p) => (
         <span

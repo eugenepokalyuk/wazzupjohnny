@@ -130,11 +130,17 @@ export const Sega: FC = () => {
         <SegaTopBar onOpenTweaks={() => setTweaksOpen((v) => !v)} />
 
         <TitleScreen />
+
         <LevelSelect />
+
         <ProjectsSelect />
+
         <CharacterStats />
+
         <Achievements />
+
         <InsertCoin cheat={cheat} onCheat={activateCheat} />
+
         {unlocked && <BonusStage />}
 
         {cheat && <div className={classes.cheatFlash} />}
