@@ -92,10 +92,11 @@ export const LEVELS: LevelCard[] = [
   },
 ];
 
-/** Featured projects (with a live link) for the in-page STAGE SELECT teaser. */
-export const FEATURED_PROJECTS: ProjectItemProps[] = projectArray
-  .filter((p) => p.url || p.urlGitHub)
-  .slice(0, 4);
+/** Featured projects for the in-page STAGE SELECT teaser — favorites first. */
+export const FEATURED_PROJECTS: ProjectItemProps[] = [
+  ...projectArray.filter((p) => p.favorite),
+  ...projectArray.filter((p) => !p.favorite && (p.url || p.urlGitHub)),
+].slice(0, 4);
 
 export interface ContactCard {
   icon: string;

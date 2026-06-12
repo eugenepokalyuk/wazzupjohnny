@@ -36,7 +36,10 @@ export const Projects: FC = () => {
         )
       : projectArray;
 
-    return [...filtered].sort((a, b) => b.created - a.created);
+    return [...filtered].sort(
+      (a, b) =>
+        (b.favorite ? 1 : 0) - (a.favorite ? 1 : 0) || b.created - a.created,
+    );
   }, [selectedTags]);
 
   return (
