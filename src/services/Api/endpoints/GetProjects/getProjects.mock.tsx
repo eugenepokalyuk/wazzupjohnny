@@ -77,94 +77,7 @@ enum Tag {
   HTML = 'HTML',
 }
 
-export const projectArray: ProjectItemProps[] = [
-  {
-    url: 'https://eugenepokalyuk.github.io/ctypto-analysis/',
-    urlGitHub: 'https://github.com/eugenepokalyuk/ctypto-analysis',
-    badges: [
-      Tag.React,
-      Tag.TypeScript,
-      Tag.Redux,
-      Tag.RTK,
-      Tag.FramerMotion,
-      Tag.SCSS,
-      Tag.Vite,
-    ],
-    title: 'Crypto Advisor',
-    description:
-      'Веб-приложение для технического анализа криптовалютного рынка и управления инвестиционным портфелем',
-    created: 2026,
-  },
-  {
-    url: 'https://forma-one.ru/',
-    badges: [Tag.Next, Tag.TypeScript, Tag.Redux, Tag.RxJS, Tag.SCSS],
-    favorite: true,
-    title: 'Форма',
-    description:
-      'Форма помогает не теряться в зале. Открываешь приложение — видишь что делать сегодня, сколько подходов и с каким весом. Никакого стресса, только удовольствие от тренировки',
-    created: 2026,
-  },
-  {
-    badges: [
-      Tag.React,
-      Tag.TypeScript,
-      Tag.Redux,
-      Tag.RxJS,
-      Tag.Vite,
-      Tag.SCSS,
-    ],
-    title: 'Askymo - Кастдев‑опросы без агентства',
-    description:
-      'B Askymo бренды проводят кампании по анализу потенциальных покупателей и исследованию рынка. В опросах нет сбора персональной информации',
-    created: 2025,
-  },
-  {
-    badges: [
-      Tag.React,
-      Tag.TypeScript,
-      Tag.Redux,
-      Tag.ReduxSaga,
-      Tag.Vite,
-      Tag.SCSS,
-    ],
-    title: 'Web3 Crypto проект',
-    description: 'К сожалению ничего сказать, показать помимо стэка не могу',
-    created: 2025,
-  },
-  {
-    url: 'https://myhalsa.ru/',
-    badges: [
-      Tag.React,
-      Tag.TypeScript,
-      Tag.Redux,
-      Tag.RxJS,
-      Tag.Webpack,
-      Tag.SCSS,
-    ],
-    favorite: true,
-    title: 'Halsa',
-    description:
-      'С 2018 года Halsa создаёт персональные и проверенные решения для красоты и здоровья, одобренные врачами',
-    created: 2025,
-  },
-  {
-    url: 'https://astro-blog-gold-kappa.vercel.app/',
-    urlGitHub: 'https://github.com/eugenepokalyuk/astro-blog',
-    badges: [Tag.Astro, Tag.PReact, Tag.TypeScript, Tag.Alpine, Tag.Tailwind],
-    title: 'Blog',
-    description:
-      'Блог, построенный с помощью Astro — современного фреймворка для сайтов, поддерживающего серверные компоненты и Tailwind CSS для стилизации',
-    created: 2024,
-  },
-  {
-    url: 'https://next-ujjo-hot-sauce.vercel.app/',
-    urlGitHub: 'https://github.com/eugenepokalyuk/next-ujjo-hot-sauce',
-    badges: [Tag.React, Tag.TypeScript, Tag.Next, Tag.Tailwind],
-    title: 'Ujjo Hot Sauce',
-    description:
-      'Сайт на Next.js с Tailwind CSS для продажи уникального продукта — острого соуса для кофе. Включает адаптивные компоненты: шапку, бегущую строку, карточки товаров с нестандартными рамками',
-    created: 2024,
-  },
+const projectArchiveArray = [
   {
     urlGitHub: 'https://github.com/eugenepokalyuk/react-burger',
     badges: [
@@ -182,44 +95,10 @@ export const projectArray: ProjectItemProps[] = [
     created: 2023,
   },
   {
-    url: 'https://xn--d1acamsh7dwd.net/',
-    urlGitHub: 'https://github.com/eugenepokalyuk/react-tg-web-app-dementia',
-    badges: [Tag.React, Tag.Redux, Tag.WebApp],
-    title: 'Фитнес для мозга',
-    description: 'Разработка сайта и тестов для сайта деменция.нет',
-    created: 2023,
-  },
-  {
-    url: 'https://eugenepokalyuk.github.io/react-pet-store/',
-    urlGitHub: 'https://github.com/eugenepokalyuk/react-pet-store',
-    badges: [
-      Tag.React,
-      Tag.TypeScript,
-      Tag.Redux,
-      Tag.Vite,
-      Tag.Tailwind,
-      Tag.RadixUI,
-      Tag.FramerMotion,
-    ],
-    title: 'Online pet store',
-    description:
-      'Онлайн-магазин для животных. Список товаров, корзина, форма оплаты, анимации, виджет карты',
-    created: 2024,
-  },
-  {
     urlGitHub: 'https://github.com/eugenepokalyuk/react-music-collection',
     badges: [Tag.React, Tag.TypeScript, Tag.Vite, Tag.Tailwind],
     title: 'Music collection',
     description: 'Список музыкальной коллекции пользователя Яндекс Музыки',
-    created: 2024,
-  },
-  {
-    url: 'https://vue-skateboarding.vercel.app/',
-    urlGitHub: 'https://github.com/eugenepokalyuk/vue-skateboarding',
-    badges: [Tag.Vue3, Tag.VueRouter, Tag.Vite, Tag.PostCSS, Tag.Tailwind],
-    title: 'Skateboarding',
-    description:
-      'SkateHut был основан в 2007 году Марком Йохансен-Бергом после семейной поездки во Флориду. Его сын увидел Heelys в парке, и семья решила привезти их в Великобританию, где их не было в продаже. Так начался бизнес по продаже Heelys и скейтбордов',
     created: 2024,
   },
   {
@@ -407,4 +286,129 @@ export const projectArray: ProjectItemProps[] = [
       'Лендинг компании, специализирующейся на экстерьере недвижимости. Современный и интуитивный интерфейс на React, акцент на портфолио реализованных проектов с качественными фото и описаниями',
     created: 2024,
   },
+];
+
+export const projectArray: ProjectItemProps[] = [
+  {
+    url: 'https://eugenepokalyuk.github.io/ctypto-analysis/',
+    urlGitHub: 'https://github.com/eugenepokalyuk/ctypto-analysis',
+    badges: [
+      Tag.React,
+      Tag.TypeScript,
+      Tag.Redux,
+      Tag.RTK,
+      Tag.FramerMotion,
+      Tag.SCSS,
+      Tag.Vite,
+    ],
+    title: 'Crypto Advisor',
+    description:
+      'Веб-приложение для технического анализа криптовалютного рынка и управления инвестиционным портфелем',
+    created: 2026,
+  },
+  {
+    url: 'https://forma-one.ru/',
+    badges: [Tag.Next, Tag.TypeScript, Tag.Redux, Tag.RxJS, Tag.SCSS],
+    favorite: true,
+    title: 'Форма',
+    description:
+      'Форма помогает не теряться в зале. Открываешь приложение — видишь что делать сегодня, сколько подходов и с каким весом. Никакого стресса, только удовольствие от тренировки',
+    created: 2026,
+  },
+  {
+    badges: [
+      Tag.React,
+      Tag.TypeScript,
+      Tag.Redux,
+      Tag.RxJS,
+      Tag.Vite,
+      Tag.SCSS,
+    ],
+    title: 'Askymo - Кастдев‑опросы без агентства',
+    description:
+      'B Askymo бренды проводят кампании по анализу потенциальных покупателей и исследованию рынка. В опросах нет сбора персональной информации',
+    created: 2025,
+  },
+  {
+    badges: [
+      Tag.React,
+      Tag.TypeScript,
+      Tag.Redux,
+      Tag.ReduxSaga,
+      Tag.Vite,
+      Tag.SCSS,
+    ],
+    title: 'Web3 Crypto проект',
+    description: 'К сожалению ничего сказать, показать помимо стэка не могу',
+    created: 2025,
+  },
+  {
+    url: 'https://myhalsa.ru/',
+    badges: [
+      Tag.React,
+      Tag.TypeScript,
+      Tag.Redux,
+      Tag.RxJS,
+      Tag.Webpack,
+      Tag.SCSS,
+    ],
+    favorite: true,
+    title: 'Halsa',
+    description:
+      'С 2018 года Halsa создаёт персональные и проверенные решения для красоты и здоровья, одобренные врачами',
+    created: 2025,
+  },
+  {
+    url: 'https://astro-blog-gold-kappa.vercel.app/',
+    urlGitHub: 'https://github.com/eugenepokalyuk/astro-blog',
+    badges: [Tag.Astro, Tag.PReact, Tag.TypeScript, Tag.Alpine, Tag.Tailwind],
+    title: 'Blog',
+    description:
+      'Блог, построенный с помощью Astro — современного фреймворка для сайтов, поддерживающего серверные компоненты и Tailwind CSS для стилизации',
+    created: 2024,
+  },
+  {
+    url: 'https://next-ujjo-hot-sauce.vercel.app/',
+    urlGitHub: 'https://github.com/eugenepokalyuk/next-ujjo-hot-sauce',
+    badges: [Tag.React, Tag.TypeScript, Tag.Next, Tag.Tailwind],
+    title: 'Ujjo Hot Sauce',
+    description:
+      'Сайт на Next.js с Tailwind CSS для продажи уникального продукта — острого соуса для кофе. Включает адаптивные компоненты: шапку, бегущую строку, карточки товаров с нестандартными рамками',
+    created: 2024,
+  },
+  {
+    url: 'https://xn--d1acamsh7dwd.net/',
+    urlGitHub: 'https://github.com/eugenepokalyuk/react-tg-web-app-dementia',
+    badges: [Tag.React, Tag.Redux, Tag.WebApp],
+    title: 'Фитнес для мозга',
+    description: 'Разработка сайта и тестов для сайта деменция.нет',
+    created: 2023,
+  },
+  {
+    url: 'https://eugenepokalyuk.github.io/react-pet-store/',
+    urlGitHub: 'https://github.com/eugenepokalyuk/react-pet-store',
+    badges: [
+      Tag.React,
+      Tag.TypeScript,
+      Tag.Redux,
+      Tag.Vite,
+      Tag.Tailwind,
+      Tag.RadixUI,
+      Tag.FramerMotion,
+    ],
+    title: 'Online pet store',
+    description:
+      'Онлайн-магазин для животных. Список товаров, корзина, форма оплаты, анимации, виджет карты',
+    created: 2024,
+  },
+  {
+    url: 'https://vue-skateboarding.vercel.app/',
+    urlGitHub: 'https://github.com/eugenepokalyuk/vue-skateboarding',
+    badges: [Tag.Vue3, Tag.VueRouter, Tag.Vite, Tag.PostCSS, Tag.Tailwind],
+    title: 'Skateboarding',
+    description:
+      'SkateHut был основан в 2007 году Марком Йохансен-Бергом после семейной поездки во Флориду. Его сын увидел Heelys в парке, и семья решила привезти их в Великобританию, где их не было в продаже. Так начался бизнес по продаже Heelys и скейтбордов',
+    created: 2024,
+  },
+  ...projectArchiveArray,
 ];
