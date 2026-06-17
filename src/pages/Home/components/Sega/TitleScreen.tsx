@@ -43,7 +43,7 @@ export const TitleScreen: FC = () => {
         <span className={classes.blink}>START</span>
       </button>
       <div className={classes.copyright}>
-        © 1991 EUGENE SOFT · ALL RIGHTS RESERVED
+        © {new Date().getFullYear()} EUGENE SOFT · ALL RIGHTS RESERVED
       </div>
 
       <a href="#levels" className={classes.scrolldown} aria-label="scroll">
