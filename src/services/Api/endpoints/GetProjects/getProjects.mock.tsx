@@ -45,6 +45,7 @@ enum Tag {
 
   // Тестирование
   Jest = 'Jest',
+  Vitest = 'Vitest',
   Cypress = 'Cypress',
 
   // Состояние и управление
@@ -289,6 +290,15 @@ const projectArchiveArray = [
 ];
 
 export const projectArray: ProjectItemProps[] = [
+  {
+    url: 'https://www.npmjs.com/package/react-stateful-hooks',
+    urlGitHub: 'https://github.com/eugenepokalyuk/react-stateful-hooks',
+    badges: [Tag.React, Tag.TypeScript, Tag.Vite, Tag.Vitest],
+    title: 'react-stateful-hooks',
+    description:
+      'Небольшая типобезопасная библиотека React-хуков для состояния браузера: localStorage/sessionStorage с синхронизацией между вкладками, дебаунс значений и медиазапросы. SSR-safe, покрыта тестами, собирается в ESM и CJS',
+    created: 2026,
+  },
   {
     url: 'https://eugenepokalyuk.github.io/ctypto-analysis/',
     urlGitHub: 'https://github.com/eugenepokalyuk/ctypto-analysis',
