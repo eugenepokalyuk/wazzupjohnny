@@ -119,10 +119,22 @@ export const CONTACTS: ContactCard[] = [
     href: Links.GitHub,
   },
   {
+    icon: '📦',
+    label: 'npm',
+    hint: '3UP · мои пакеты',
+    href: Links.Npm,
+  },
+  {
     icon: '✉️',
     label: 'Email',
-    hint: '3UP · напиши письмо',
+    hint: '4UP · напиши письмо',
     href: 'mailto:eugene.pokalyuk@gmail.com',
+  },
+  {
+    icon: '⭐️',
+    label: 'npm',
+    hint: '5UP · мой канал',
+    href: Links.TelegramChannel,
   },
 ];
 
