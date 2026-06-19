@@ -120,7 +120,7 @@ export const CONTACTS: ContactCard[] = [
   },
   {
     icon: '📦',
-    label: 'npm',
+    label: 'NPM',
     hint: '3UP · мои пакеты',
     href: Links.Npm,
   },
@@ -132,7 +132,7 @@ export const CONTACTS: ContactCard[] = [
   },
   {
     icon: '⭐️',
-    label: 'npm',
+    label: 'Telegram Channel',
     hint: '5UP · мой канал',
     href: Links.TelegramChannel,
   },
