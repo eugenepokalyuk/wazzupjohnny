@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { PlayIcon } from '@components/ui';
 import { Urls } from '@services/Route/urls';
 
-import classes from './sega.module.scss';
+import classes from '../sega.module.scss';
 import { SegaShell } from './SegaShell';
 
 interface Props {

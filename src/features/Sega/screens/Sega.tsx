@@ -1,18 +1,14 @@
 import { FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useSessionStorage } from 'usehooks-ts';
+import { useSessionStorageState } from 'react-stateful-hooks';
 import clsx from 'clsx';
 
-import {
-  SegaStorageKey,
-  SegaTopBar,
-  Tweaks,
-  useSegaTheme,
-} from '@components/sega';
+import { SegaStorageKey, useSegaTheme } from '../theme';
+import { SegaTopBar, Tweaks } from '../shell';
 
-import classes from '@components/sega/sega.module.scss';
+import classes from '../sega.module.scss';
 
-import { KONAMI } from './sega.data';
-import { SegaContext } from './SegaContext';
+import { KONAMI } from '../data/sega.data';
+import { SegaContext } from '../SegaContext';
 import { TitleScreen } from './TitleScreen';
 import { LevelSelect } from './LevelSelect';
 import { ProjectsSelect } from './ProjectsSelect';
@@ -32,7 +28,7 @@ export const Sega: FC = () => {
     floor,
     setFloor,
   } = useSegaTheme();
-  const [unlocked, setUnlocked] = useSessionStorage<boolean>(
+  const [unlocked, setUnlocked] = useSessionStorageState<boolean>(
     SegaStorageKey.BonusUnlocked,
     false,
   );

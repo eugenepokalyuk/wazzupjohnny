@@ -44,6 +44,9 @@
             "@components/ui/*": [
                 "src/components/ui/*"
             ],
+            "@features/*": [
+                "src/features/*"
+            ],
             "@services/*": [
                 "src/services/*"
             ],

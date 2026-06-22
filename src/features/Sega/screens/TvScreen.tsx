@@ -8,7 +8,7 @@ import {
 } from 'react';
 import clsx from 'clsx';
 
-import classes from '@components/sega/sega.module.scss';
+import classes from '../sega.module.scss';
 
 interface Pixel {
   id: number;

@@ -1,4 +1,4 @@
-import { useSessionStorage } from 'usehooks-ts';
+import { useSessionStorageState } from 'react-stateful-hooks';
 
 /** Session-storage keys (no magic strings scattered around the codebase). */
 export enum SegaStorageKey {
@@ -31,20 +31,23 @@ export interface SegaTheme {
 
 /**
  * Persisted Sega theme state (palette + CRT toggles), shared across every page.
- * usehooks-ts keeps all instances in sync within the tab, so switching the
+ * react-stateful-hooks keeps same-tab instances in sync (and syncs across tabs too), so switching the
  * palette on one page updates the others on navigation.
  */
 export const useSegaTheme = (): SegaTheme => {
-  const [palette, setPalette] = useSessionStorage<PaletteId>(
+  const [palette, setPalette] = useSessionStorageState<PaletteId>(
     SegaStorageKey.Palette,
     'genesis',
   );
-  const [crt, setCrt] = useSessionStorage<boolean>(SegaStorageKey.Crt, true);
-  const [flicker, setFlicker] = useSessionStorage<boolean>(
+  const [crt, setCrt] = useSessionStorageState<boolean>(
+    SegaStorageKey.Crt,
+    true,
+  );
+  const [flicker, setFlicker] = useSessionStorageState<boolean>(
     SegaStorageKey.Flicker,
     true,
   );
-  const [floor, setFloor] = useSessionStorage<boolean>(
+  const [floor, setFloor] = useSessionStorageState<boolean>(
     SegaStorageKey.Floor,
     true,
   );

@@ -3,10 +3,10 @@ import clsx from 'clsx';
 
 import { LinkIcon } from '@components/ui';
 
-import classes from '@components/sega/sega.module.scss';
+import classes from '../sega.module.scss';
 
-import { MEDALS } from './sega.data';
-import { CoursesMock } from './courses.data';
+import { MEDALS } from '../data/sega.data';
+import { CoursesMock } from '../data/courses.data';
 
 export const Achievements: FC = () => (
   <section

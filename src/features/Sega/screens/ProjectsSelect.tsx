@@ -5,8 +5,8 @@ import { PlayIcon } from '@components/ui';
 
 import { Urls } from '@services/Route/urls';
 
-import classes from '@components/sega/sega.module.scss';
-import { FEATURED_PROJECTS } from './sega.data';
+import classes from '../sega.module.scss';
+import { FEATURED_PROJECTS } from '../data/sega.data';
 
 export const ProjectsSelect: FC = () => (
   <section id="projects" className={`${classes.sec} ${classes.projects}`}>

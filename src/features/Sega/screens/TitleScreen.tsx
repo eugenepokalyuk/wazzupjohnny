@@ -2,10 +2,10 @@ import { FC } from 'react';
 import clsx from 'clsx';
 
 import { ArrowUpIcon, PlayIcon } from '@components/ui';
-import classes from '@components/sega/sega.module.scss';
+import classes from '../sega.module.scss';
 
-import { PLAYER_NAME } from './sega.data';
-import { useSega } from './SegaContext';
+import { PLAYER_NAME } from '../data/sega.data';
+import { useSega } from '../SegaContext';
 import { TvScreen } from './TvScreen';
 
 export const TitleScreen: FC = () => {

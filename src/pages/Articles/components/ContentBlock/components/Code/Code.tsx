@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
+import { useCopyToClipboard } from 'react-stateful-hooks';
 import clsx from 'clsx';
 
 import { Button, CopyIcon, DoneIcon, Size, Variant } from '@components/ui';
@@ -13,13 +14,10 @@ interface Props {
 export const Code: FC<Props> = ({ content }) => {
   const isMobile = useMedia(Breakpoints.Mobile);
 
-  const [copied, setCopied] = React.useState<boolean>(false);
+  const [copy, { copied }] = useCopyToClipboard();
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(content).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
+    copy(content);
   };
 
   return (

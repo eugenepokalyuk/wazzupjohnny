@@ -3,9 +3,9 @@ import clsx from 'clsx';
 
 import { ArrowUpIcon } from '@components/ui';
 
-import classes from '@components/sega/sega.module.scss';
-import { ContactCard, CONTACTS, KONAMI_KEYS } from './sega.data';
-import { useSega } from './SegaContext';
+import classes from '../sega.module.scss';
+import { ContactCard, CONTACTS, KONAMI_KEYS } from '../data/sega.data';
+import { useSega } from '../SegaContext';
 
 interface Props {
   cheat: boolean;

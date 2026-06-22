@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import { SegaShell } from '@components/sega';
-import classes from '@components/sega/sega.module.scss';
+import { SegaShell } from '@features/Sega';
+import classes from '@features/Sega/sega.module.scss';
 import { PlayIcon } from '@components/ui';
 import { articlesMock } from '@services/Api';
 import { formatDate } from '@utils/string';

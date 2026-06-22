@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { PlayIcon } from '@components/ui';
 
-import classes from '@components/sega/sega.module.scss';
-import { LevelCard, LEVELS } from './sega.data';
+import classes from '../sega.module.scss';
+import { LevelCard, LEVELS } from '../data/sega.data';
 
 const LevelInner: FC<{ level: LevelCard }> = ({ level }) => (
   <>

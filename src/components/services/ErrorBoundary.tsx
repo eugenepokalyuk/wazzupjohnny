@@ -1,6 +1,6 @@
 import React, { Component, ReactNode } from 'react';
 
-import { SegaError } from '@components/sega';
+import { SegaError } from '@features/Sega';
 
 interface ErrorBoundaryProps {
   children: ReactNode;

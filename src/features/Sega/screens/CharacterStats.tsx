@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import clsx from 'clsx';
 
-import classes from '@components/sega/sega.module.scss';
-import { CHAR_BIO, INVENTORY, PLAYER_NAME, STATS } from './sega.data';
+import classes from '../sega.module.scss';
+import { CHAR_BIO, INVENTORY, PLAYER_NAME, STATS } from '../data/sega.data';
 
 export const CharacterStats: FC = () => (
   <section id="player" className={`${classes.sec} ${classes.player}`}>

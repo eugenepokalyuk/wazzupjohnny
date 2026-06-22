@@ -1,8 +1,8 @@
 import { FC, useMemo, useState } from 'react';
 import clsx from 'clsx';
 
-import { SegaShell } from '@components/sega';
-import classes from '@components/sega/sega.module.scss';
+import { SegaShell } from '@features/Sega';
+import classes from '@features/Sega/sega.module.scss';
 import { PlayIcon } from '@components/ui';
 import { projectArray } from '@services/Api';
 

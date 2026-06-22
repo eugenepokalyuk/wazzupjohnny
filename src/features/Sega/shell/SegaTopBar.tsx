@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { Urls } from '@services/Route/urls';
 import { SettingsIcon, StarIcon } from '@components/ui';
 
-import classes from './sega.module.scss';
+import classes from '../sega.module.scss';
 
 interface Props {
   onOpenTweaks: () => void;

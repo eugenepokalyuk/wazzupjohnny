@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { SegaError } from '@components/sega';
+import { SegaError } from '@features/Sega';
 
 export const Error: FC = () => (
   <SegaError

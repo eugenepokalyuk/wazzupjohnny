@@ -180,5 +180,5 @@ export const KONAMI_KEYS: KonamiKey[] = [
   { type: 'text', label: 'A' },
 ];
 
-export { PALETTES } from '@components/sega/theme';
-export type { PaletteId } from '@components/sega/theme';
+export { PALETTES } from '../theme';
+export type { PaletteId } from '../theme';

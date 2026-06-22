@@ -1,4 +1,4 @@
-import { useMediaQuery } from 'usehooks-ts';
+import { useMediaQuery } from 'react-stateful-hooks';
 
 export enum Breakpoints {
   Mobile = 'mobile',

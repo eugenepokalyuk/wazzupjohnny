@@ -1,10 +1,10 @@
 import { FC, ReactNode, useState } from 'react';
 import clsx from 'clsx';
 
-import classes from './sega.module.scss';
+import classes from '../sega.module.scss';
 import { SegaTopBar } from './SegaTopBar';
 import { Tweaks } from './Tweaks';
-import { useSegaTheme } from './theme';
+import { useSegaTheme } from '../theme';
 
 interface Props {
   children: ReactNode;

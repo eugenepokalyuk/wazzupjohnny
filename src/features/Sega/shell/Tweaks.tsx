@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import clsx from 'clsx';
 
-import classes from './sega.module.scss';
-import { PaletteId, PALETTES } from './theme';
+import classes from '../sega.module.scss';
+import { PaletteId, PALETTES } from '../theme';
 
 interface Props {
   palette: PaletteId;
