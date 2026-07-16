@@ -54,6 +54,7 @@ enum Tag {
   RxJS = 'RxJS',
   ReduxSaga = 'Redux Saga',
   Formik = 'Formik',
+  Zod = 'Zod',
 
   // Веб и серверные технологии
   SSR = 'SSR',
@@ -290,6 +291,21 @@ const projectArchiveArray = [
 ];
 
 export const projectArray: ProjectItemProps[] = [
+  {
+    url: 'https://divodivnoe.com/',
+    badges: [
+      Tag.React,
+      Tag.TypeScript,
+      Tag.Next,
+      Tag.Redux,
+      Tag.RTK,
+      Tag.FramerMotion,
+      Tag.Zod,
+    ],
+    title: 'Диво Дивное',
+    description: 'Сайт цветочной мастерской «Диво Дивное»',
+    created: 2026,
+  },
   {
     url: 'https://www.npmjs.com/package/react-stateful-hooks',
     urlGitHub: 'https://github.com/eugenepokalyuk/react-stateful-hooks',
