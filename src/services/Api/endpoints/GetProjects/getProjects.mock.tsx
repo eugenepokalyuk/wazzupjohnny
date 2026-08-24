@@ -292,6 +292,30 @@ const projectArchiveArray = [
 
 export const projectArray: ProjectItemProps[] = [
   {
+    url: 'https://hivanya.github.io/2026/',
+    badges: [Tag.React, Tag.TypeScript, Tag.Next, Tag.FramerMotion],
+    title: 'Design lead landing page',
+    description: 'Product design lead with 12+ years of experience',
+    created: 2026,
+  },
+  {
+    url: 'https://propestate.ru/object/uchastok-mokhovaya-28b/',
+    badges: [
+      Tag.React,
+      Tag.TypeScript,
+      Tag.Next,
+      Tag.Redux,
+      Tag.RTK,
+      Tag.RxJS,
+      Tag.FramerMotion,
+      Tag.Zod,
+    ],
+    title: 'Коммерческая недвижимость - PropEstate',
+    description:
+      'Объекты в продаже и аренде: бизнес-центры, помещения, участки',
+    created: 2026,
+  },
+  {
     url: 'https://divodivnoe.com/',
     badges: [
       Tag.React,
