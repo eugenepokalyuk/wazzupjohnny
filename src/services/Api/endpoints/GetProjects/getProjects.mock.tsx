@@ -311,8 +311,7 @@ export const projectArray: ProjectItemProps[] = [
       Tag.Zod,
     ],
     title: 'Коммерческая недвижимость - PropEstate',
-    description:
-      'Объекты в продаже и аренде: бизнес-центры, помещения, участки',
+    description: 'Объекты в продаже и аренде: бизнес-центры, помещения, участки',
     created: 2026,
   },
   {
